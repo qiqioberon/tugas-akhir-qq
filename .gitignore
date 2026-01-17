@@ -1,2 +1,4 @@
 /Dataset/
 /output/preprocessing/preprocessed_full/
+/output/baseline_official/
+/hf_cache/
