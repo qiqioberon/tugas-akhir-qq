@@ -8,3 +8,4 @@
 /code/workspaceVastAI/outputs/outputs.zip
 /code/workspaceVastAI/outputs/*/*.pt
 /code/Rancangan_FineTune/setup_publickey.txt
+/venv_infer/
