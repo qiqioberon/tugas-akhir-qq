@@ -1,0 +1,15 @@
+column,missing_count,missing_ratio
+group_id,0,0.0
+clip_id,0,0.0
+split_official,0,0.0
+video_name,0,0.0
+ethnicity,0,0.0
+gender,0,0.0
+age_group,0,0.0
+extraversion,0,0.0
+neuroticism,0,0.0
+agreeableness,0,0.0
+conscientiousness,0,0.0
+openness,0,0.0
+interview,0,0.0
+avg_trait,0,0.0

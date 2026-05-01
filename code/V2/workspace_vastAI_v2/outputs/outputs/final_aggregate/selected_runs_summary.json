@@ -1,0 +1,24 @@
+{
+  "best_val": {
+    "run_id": "run_01_seed_042",
+    "seed": 42,
+    "best_epoch": 24,
+    "stop_epoch": 29,
+    "best_val_S": 0.9019346013665199,
+    "test_MAE_mean": 0.10019008815288544,
+    "test_RMSE_mean": 0.1265869438648224,
+    "test_R2_mean": 0.30306684970855713,
+    "test_Acc_mean": 0.8998099565505981
+  },
+  "median": {
+    "run_id": "run_07_seed_102",
+    "seed": 102,
+    "best_epoch": 17,
+    "stop_epoch": 22,
+    "best_val_S": 0.9018738716840744,
+    "test_MAE_mean": 0.10025262832641602,
+    "test_RMSE_mean": 0.126471146941185,
+    "test_R2_mean": 0.3044038414955139,
+    "test_Acc_mean": 0.899747371673584
+  }
+}

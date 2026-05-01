@@ -41,12 +41,10 @@ __pycache__/
 ~$*.pptx
 
 # Generated notebook and training artifacts
-/code/V1/workspaceVastAI/notebooks/outputs_eval/
-/code/V1/workspaceVastAI/notebooks/mae_plots/
 /code/V1/workspaceVastAI/outputs/
-/code/V2/output EDA/
 /code/V2/workspace_vastAI_v2/logs/logs/
 /code/V2/workspace_vastAI_v2/checkpoints/checkpoints/
-/code/V2/workspace_vastAI_v2/outputs/outputs/
+/code/V2/workspace_vastAI_v2/outputs/outputs/*/*.zip
+/code/V2/workspace_vastAI_v2/outputs/outputs/*/*.pt
 
-/Dokumen/ReferensiDokumen/
+/Dokumen/ReferensiDokumen/*.docx

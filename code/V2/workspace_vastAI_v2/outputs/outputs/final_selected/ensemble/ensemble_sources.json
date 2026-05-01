@@ -1,0 +1,54 @@
+{
+  "sources": [
+    {
+      "run_id": "run_01_seed_042",
+      "checkpoint_dir": "/workspace/finetunev2/checkpoints/final_runs/run_01_seed_042",
+      "prediction_csv": "/workspace/finetunev2/outputs/final_runs/run_01_seed_042/predictions_test_strict.csv"
+    },
+    {
+      "run_id": "run_02_seed_052",
+      "checkpoint_dir": "/workspace/finetunev2/checkpoints/final_runs/run_02_seed_052",
+      "prediction_csv": "/workspace/finetunev2/outputs/final_runs/run_02_seed_052/predictions_test_strict.csv"
+    },
+    {
+      "run_id": "run_03_seed_062",
+      "checkpoint_dir": "/workspace/finetunev2/checkpoints/final_runs/run_03_seed_062",
+      "prediction_csv": "/workspace/finetunev2/outputs/final_runs/run_03_seed_062/predictions_test_strict.csv"
+    },
+    {
+      "run_id": "run_04_seed_072",
+      "checkpoint_dir": "/workspace/finetunev2/checkpoints/final_runs/run_04_seed_072",
+      "prediction_csv": "/workspace/finetunev2/outputs/final_runs/run_04_seed_072/predictions_test_strict.csv"
+    },
+    {
+      "run_id": "run_05_seed_082",
+      "checkpoint_dir": "/workspace/finetunev2/checkpoints/final_runs/run_05_seed_082",
+      "prediction_csv": "/workspace/finetunev2/outputs/final_runs/run_05_seed_082/predictions_test_strict.csv"
+    },
+    {
+      "run_id": "run_06_seed_092",
+      "checkpoint_dir": "/workspace/finetunev2/checkpoints/final_runs/run_06_seed_092",
+      "prediction_csv": "/workspace/finetunev2/outputs/final_runs/run_06_seed_092/predictions_test_strict.csv"
+    },
+    {
+      "run_id": "run_07_seed_102",
+      "checkpoint_dir": "/workspace/finetunev2/checkpoints/final_runs/run_07_seed_102",
+      "prediction_csv": "/workspace/finetunev2/outputs/final_runs/run_07_seed_102/predictions_test_strict.csv"
+    },
+    {
+      "run_id": "run_08_seed_112",
+      "checkpoint_dir": "/workspace/finetunev2/checkpoints/final_runs/run_08_seed_112",
+      "prediction_csv": "/workspace/finetunev2/outputs/final_runs/run_08_seed_112/predictions_test_strict.csv"
+    },
+    {
+      "run_id": "run_09_seed_122",
+      "checkpoint_dir": "/workspace/finetunev2/checkpoints/final_runs/run_09_seed_122",
+      "prediction_csv": "/workspace/finetunev2/outputs/final_runs/run_09_seed_122/predictions_test_strict.csv"
+    },
+    {
+      "run_id": "run_10_seed_132",
+      "checkpoint_dir": "/workspace/finetunev2/checkpoints/final_runs/run_10_seed_132",
+      "prediction_csv": "/workspace/finetunev2/outputs/final_runs/run_10_seed_132/predictions_test_strict.csv"
+    }
+  ]
+}

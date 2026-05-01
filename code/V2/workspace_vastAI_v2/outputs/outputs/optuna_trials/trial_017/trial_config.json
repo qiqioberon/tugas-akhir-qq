@@ -1,0 +1,14 @@
+{
+  "trial_number": 16,
+  "trial_name": "trial_017",
+  "value": 0.9018203839659691,
+  "seed": 42,
+  "hp": {
+    "learning_rate": 0.00020388706979556539,
+    "r": 8,
+    "lora_alpha": 32,
+    "lora_dropout": 0.0,
+    "weight_decay": 0.0011062868174908575,
+    "warmup_ratio": 0.08
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "run_name": "trial_020",
+  "seed": 42,
+  "best_epoch": 8,
+  "stop_epoch": 8,
+  "best_val_S": 0.8983848839998245,
+  "status": "pruned",
+  "total_params": 94727541,
+  "trainable_params": 345605,
+  "hp": {
+    "learning_rate": 0.0001109881107282393,
+    "r": 4,
+    "lora_alpha": 64,
+    "lora_dropout": 0.0,
+    "weight_decay": 0.0008026960258659045,
+    "warmup_ratio": 0.05
+  },
+  "checkpoint_path": "/workspace/finetunev2/checkpoints/optuna_trials/trial_020/best_model.pt"
+}

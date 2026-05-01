@@ -1,0 +1,6 @@
+source,count,unique_clip_id
+metadata_all,10000,10000
+egemaps_all,9974,9974
+hubert_embedding_all,9974,9974
+wav2vec2_embedding_all,9974,9974
+wavlm_embedding_all,9974,9974

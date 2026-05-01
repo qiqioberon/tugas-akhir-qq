@@ -1,0 +1,2 @@
+learning_rate,r,lora_alpha,lora_dropout,weight_decay,warmup_ratio
+0.0002490564837914727,8,32,0.0,0.0012718567841742577,0.08

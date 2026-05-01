@@ -1,0 +1,7 @@
+representasi,sumber,jumlah_sampel,dimensi,keterangan
+Metadata + Label,meta_train/val/test_official.csv,10000,16,"Memuat clip_id, group_id, split official, metadata, dan label Big Five"
+Audio WAV,preprocessed_full,10000,"16 kHz mono, 15 detik",Audio hasil standardisasi untuk kebutuhan preview sinyal dan ekstraksi fitur
+eGeMAPS,baseline_official/egemaps,9974,88,Fitur handcrafted akustik
+hubert,E:\tugas-akhir-qiqi\output\V1\baseline_official\embeddings\hubert,9974,768,Embedding SSL pooled per klip
+wav2vec2,E:\tugas-akhir-qiqi\output\V1\baseline_official\embeddings\wav2vec2,9974,768,Embedding SSL pooled per klip
+wavlm,E:\tugas-akhir-qiqi\output\V1\baseline_official\embeddings\wavlm,9974,768,Embedding SSL pooled per klip

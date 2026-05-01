@@ -1,0 +1,4 @@
+split_official,count,proportion
+train,6000,0.6
+val,2000,0.2
+test,2000,0.2

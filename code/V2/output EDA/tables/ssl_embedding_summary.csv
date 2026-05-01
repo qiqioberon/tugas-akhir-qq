@@ -1,0 +1,10 @@
+model,split,num_samples,embedding_shape,embedding_dim,has_nan,has_inf
+hubert,train,5988,"(5988, 768)",768,False,False
+hubert,val,1994,"(1994, 768)",768,False,False
+hubert,test,1992,"(1992, 768)",768,False,False
+wav2vec2,train,5988,"(5988, 768)",768,False,False
+wav2vec2,val,1994,"(1994, 768)",768,False,False
+wav2vec2,test,1992,"(1992, 768)",768,False,False
+wavlm,train,5988,"(5988, 768)",768,False,False
+wavlm,val,1994,"(1994, 768)",768,False,False
+wavlm,test,1992,"(1992, 768)",768,False,False

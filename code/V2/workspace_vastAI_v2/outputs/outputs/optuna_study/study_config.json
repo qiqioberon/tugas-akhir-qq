@@ -1,0 +1,11 @@
+{
+  "study_name": "wavlm_lora_strict_optuna_v2",
+  "model_name": "microsoft/wavlm-base-plus",
+  "n_trials": 50,
+  "selection_metric": "S",
+  "patience": 5,
+  "batch_size": 40,
+  "split_source": "/workspace/finetunev2/data/manifest_strict_vast.csv",
+  "pruner": "<optuna.pruners._median.MedianPruner object at 0x76b93b31b020>",
+  "optuna_seed": 42
+}

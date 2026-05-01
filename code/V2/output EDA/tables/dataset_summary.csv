@@ -1,0 +1,7 @@
+komponen,nilai,keterangan
+Jumlah total klip,10000,"Gabungan meta_train, meta_val, dan meta_test official"
+Jumlah group_id unik,3060,Unit sumber video/grup
+Jumlah clip_id unik,10000,Unit sampel/klip
+Jumlah trait target,5,"extraversion, neuroticism, agreeableness, conscientiousness, openness"
+Rentang label,0.0000 - 1.0000,Rentang keseluruhan label Big Five
+Modalitas yang digunakan,audio-only,Video asli tidak digunakan sebagai input model

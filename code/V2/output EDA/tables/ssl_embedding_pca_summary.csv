@@ -1,0 +1,4 @@
+model,explained_variance_pc1,explained_variance_pc2,explained_variance_total_2d
+hubert,0.16020808,0.07703201,0.23724008
+wav2vec2,0.2564916,0.08837746,0.34486908
+wavlm,0.099939466,0.078081585,0.17802104
