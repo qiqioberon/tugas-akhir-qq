@@ -1,0 +1,67 @@
+{
+  "backbone": "hubert",
+  "split_tag": "baseline_official",
+  "best_alpha": 1000.0,
+  "alpha_grid": [
+    0.001,
+    0.003,
+    0.01,
+    0.03,
+    0.1,
+    0.3,
+    1.0,
+    3.0,
+    10.0,
+    30.0,
+    100.0,
+    300.0,
+    1000.0,
+    3000.0,
+    10000.0,
+    30000.0,
+    100000.0
+  ],
+  "label_cols": [
+    "extraversion",
+    "neuroticism",
+    "agreeableness",
+    "conscientiousness",
+    "openness"
+  ],
+  "shapes": {
+    "train": [
+      5988,
+      768
+    ],
+    "val": [
+      1994,
+      768
+    ],
+    "test": [
+      1992,
+      768
+    ]
+  },
+  "saved_files": [
+    "alpha_sweep_summary.csv",
+    "alpha_sweep_per_trait.csv",
+    "metrics_val.csv",
+    "metrics_test.csv",
+    "pred_val_full.csv",
+    "pred_test_full.csv",
+    "r2_diagnosis_test.csv",
+    "ridge_analysis_summary.txt",
+    "scaler.joblib",
+    "ridge_multioutput.joblib"
+  ],
+  "saved_figures": [
+    "alpha_sweep_mean_metrics.png",
+    "alpha_sweep_per_trait_mae.png",
+    "alpha_sweep_per_trait_r2.png",
+    "alpha_sweep_coef_norm.png",
+    "diagnosis_target_std_vs_pred_std.png",
+    "diagnosis_rmse_model_vs_naive.png",
+    "scatter_pred_vs_gt_test.png",
+    "hist_target_vs_prediction_test.png"
+  ]
+}

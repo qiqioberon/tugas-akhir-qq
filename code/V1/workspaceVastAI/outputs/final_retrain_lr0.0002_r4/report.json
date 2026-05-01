@@ -1,0 +1,130 @@
+{
+  "phase1": [
+    {
+      "run_name": "phase1_run1_lr0.0001_r8",
+      "lr": 0.0001,
+      "r": 8,
+      "batch_size": 52,
+      "grad_accum_steps": 1,
+      "best_S": 0.9008853957056999,
+      "best_epoch": 19,
+      "best_mae": 0.09911460429430008,
+      "best_acc": 0.9008854031562805,
+      "best_rmse": 0.125167578458786,
+      "best_r2": 0.2551794675231322,
+      "ckpt": "/workspace/ta_finetune/outputs/phase1_run1_lr0.0001_r8/checkpoint_best.pt"
+    },
+    {
+      "run_name": "phase1_run2_lr0.0002_r8",
+      "lr": 0.0002,
+      "r": 8,
+      "batch_size": 52,
+      "grad_accum_steps": 1,
+      "best_S": 0.9013463035225868,
+      "best_epoch": 13,
+      "best_mae": 0.09865369647741318,
+      "best_acc": 0.9013463258743286,
+      "best_rmse": 0.12485164403915405,
+      "best_r2": 0.2591941970285815,
+      "ckpt": "/workspace/ta_finetune/outputs/phase1_run2_lr0.0002_r8/checkpoint_best.pt"
+    }
+  ],
+  "phase2": [
+    {
+      "run_name": "phase2_run1_lr0.0002_r4",
+      "lr": 0.0002,
+      "r": 4,
+      "batch_size": 52,
+      "grad_accum_steps": 1,
+      "best_S": 0.901770830154419,
+      "best_epoch": 20,
+      "best_mae": 0.09822916984558105,
+      "best_acc": 0.9017708897590637,
+      "best_rmse": 0.12416471540927887,
+      "best_r2": 0.26681204887079224,
+      "ckpt": "/workspace/ta_finetune/outputs/phase2_run1_lr0.0002_r4/checkpoint_best.pt"
+    },
+    {
+      "run_name": "phase2_run2_lr0.0002_r8",
+      "lr": 0.0002,
+      "r": 8,
+      "batch_size": 52,
+      "grad_accum_steps": 1,
+      "best_S": 0.9016181975603104,
+      "best_epoch": 20,
+      "best_mae": 0.09838180243968964,
+      "best_acc": 0.9016181826591492,
+      "best_rmse": 0.1242358461022377,
+      "best_r2": 0.26623798985576885,
+      "ckpt": "/workspace/ta_finetune/outputs/phase2_run2_lr0.0002_r8/checkpoint_best.pt"
+    },
+    {
+      "run_name": "phase2_run3_lr0.0002_r16",
+      "lr": 0.0002,
+      "r": 16,
+      "batch_size": 52,
+      "grad_accum_steps": 1,
+      "best_S": 0.9016285464167595,
+      "best_epoch": 17,
+      "best_mae": 0.09837145358324051,
+      "best_acc": 0.9016284942626953,
+      "best_rmse": 0.12412413209676743,
+      "best_r2": 0.2676457158411287,
+      "ckpt": "/workspace/ta_finetune/outputs/phase2_run3_lr0.0002_r16/checkpoint_best.pt"
+    }
+  ],
+  "best": {
+    "lr_best": 0.0002,
+    "r_best": 4,
+    "best_epoch_for_final": 20
+  },
+  "final": {
+    "final_ckpt": "/workspace/ta_finetune/outputs/final_retrain_lr0.0002_r4/final_model.pt",
+    "config": {
+      "model_name": "microsoft/wavlm-base-plus",
+      "split": "strict",
+      "lr": 0.0002,
+      "r": 4,
+      "seed": 42,
+      "epochs": 20,
+      "batch_size": 52,
+      "grad_accum_steps": 1,
+      "use_amp": true
+    }
+  },
+  "test": {
+    "mae_per": [
+      0.10009148716926575,
+      0.10376013070344925,
+      0.10030757635831833,
+      0.10597261786460876,
+      0.09932250529527664
+    ],
+    "mae_mean": 0.10189086198806763,
+    "acc_per": [
+      0.8999085426330566,
+      0.8962398767471313,
+      0.8996924161911011,
+      0.8940273523330688,
+      0.900677502155304
+    ],
+    "acc_mean": 0.8981091380119324,
+    "rmse_per": [
+      0.12596869468688965,
+      0.13213536143302917,
+      0.1269119381904602,
+      0.13441504538059235,
+      0.1262742429971695
+    ],
+    "rmse_mean": 0.12914106249809265,
+    "r2_per": [
+      0.3342775603622441,
+      0.31234585257965564,
+      0.1580291437547714,
+      0.28645659468467255,
+      0.2818188789203282
+    ],
+    "r2_mean": 0.2745856060603344,
+    "S": 0.8981091380119324
+  }
+}

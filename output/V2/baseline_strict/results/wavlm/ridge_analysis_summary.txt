@@ -1,0 +1,8 @@
+Backbone: wavlm
+Split tag folder: baseline_strict
+Best alpha by validation mean MAE: 3000.0
+Best validation mean MAE: 0.097582
+Best validation mean Acc(1-MAE): 0.902418
+Best validation mean RMSE: 0.122693
+Best validation mean R2: 0.283911
+Interpretation: best alpha tidak berada di ujung kanan grid. Artinya sudah mulai terlihat titik optimal / titik balik, sehingga alpha yang terlalu besar tidak selalu memperbaiki performa.

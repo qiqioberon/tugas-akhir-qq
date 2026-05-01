@@ -1,0 +1,7 @@
+Protocol,Split,Clip_count,Group_count,Clip_prop,Group_prop
+official_after_vad_drop,test,1992,1451,0.199719,0.475115
+official_after_vad_drop,train,5988,2620,0.600361,0.857891
+official_after_vad_drop,val,1994,1480,0.19992,0.48461
+strict_group_based,test,2039,617,0.204432,0.20203
+strict_group_based,train,5936,1829,0.595147,0.598887
+strict_group_based,val,1999,608,0.200421,0.199083

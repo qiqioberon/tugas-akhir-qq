@@ -1,0 +1,17 @@
+{
+  "run_name": "run_06_seed_092",
+  "seed": 92,
+  "best_epoch": 19,
+  "best_val_S": 0.9017478972673416,
+  "total_params": 94874997,
+  "trainable_params": 493061,
+  "hp": {
+    "learning_rate": 0.0002490564837914727,
+    "r": 8,
+    "lora_alpha": 32,
+    "lora_dropout": 0.0,
+    "weight_decay": 0.0012718567841742577,
+    "warmup_ratio": 0.08
+  },
+  "is_optuna": false
+}

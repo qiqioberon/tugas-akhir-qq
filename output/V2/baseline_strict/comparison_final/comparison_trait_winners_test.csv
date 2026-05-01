@@ -1,0 +1,6 @@
+trait,model,MAE,R2
+agreeableness,wavlm,0.09858261,0.19447488
+conscientiousness,wavlm,0.1029957,0.33272362
+extraversion,wavlm,0.099199176,0.34672415
+neuroticism,wavlm,0.10191961,0.3443913
+openness,wavlm,0.09670986,0.32719606

@@ -1,0 +1,14 @@
+Backbone: hubert
+Split tag folder: baseline_strict
+Best alpha by validation mean MAE: 3000.0
+Best validation mean MAE: 0.098642
+Best validation mean Acc(1-MAE): 0.901358
+Best validation mean RMSE: 0.124451
+Best validation mean R2: 0.263530
+Interpretation: best alpha tidak berada di ujung kanan grid. Artinya sudah mulai terlihat titik optimal / titik balik, sehingga alpha yang terlalu besar tidak selalu memperbaiki performa.
+
+Kenapa R2 bisa kecil walau Acc(1-MAE) tinggi?
+1) Acc(1-MAE) adalah transformasi langsung dari MAE pada target [0,1], jadi MAE 0.09 otomatis terlihat seperti 'akurasi' 0.91.
+2) R2 mengukur seberapa besar error relatif terhadap variasi target. Kalau sebaran target sempit / variance kecil, error kecil pun bisa tetap menghasilkan R2 yang tidak tinggi.
+3) Ridge dengan alpha besar cenderung melakukan shrinkage, sehingga prediksi mendekati rata-rata dan varians prediksi mengecil. Ini bagus untuk stabilitas MAE, tetapi bisa menahan R2.
+4) Jika std prediksi jauh lebih kecil daripada std target, itu tanda regresi menuju mean (under-dispersed prediction), yang sering membuat R2 rendah.

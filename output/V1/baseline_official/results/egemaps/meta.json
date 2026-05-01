@@ -1,0 +1,31 @@
+{
+  "method": "egemaps",
+  "alpha": 100.0,
+  "alphas_tried": [
+    0.1,
+    1.0,
+    10.0,
+    100.0
+  ],
+  "label_cols": [
+    "extraversion",
+    "neuroticism",
+    "agreeableness",
+    "conscientiousness",
+    "openness"
+  ],
+  "x_shapes": {
+    "train": [
+      5988,
+      88
+    ],
+    "val": [
+      1994,
+      88
+    ],
+    "test": [
+      1992,
+      88
+    ]
+  }
+}

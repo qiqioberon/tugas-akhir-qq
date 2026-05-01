@@ -1,0 +1,3 @@
+Berdasarkan hasil perbandingan empat model baseline, model wavlm menunjukkan kinerja terbaik pada data uji dengan nilai Acc(1-MAE) sebesar 0.9001, MAE sebesar 0.0999, RMSE sebesar 0.1260, dan R2 sebesar 0.3091.
+Model dengan performa berikutnya adalah hubert dengan MAE sebesar 0.1011 dan R2 sebesar 0.2945.
+Secara umum, model berbasis SSL speech representation menunjukkan performa yang lebih baik dibandingkan eGeMAPS pada evaluasi agregat. Namun demikian, nilai R2 seluruh model masih relatif terbatas, yang mengindikasikan bahwa prediksi sudah cukup dekat secara absolut, tetapi kemampuan model dalam menjelaskan variasi target masih belum tinggi.

@@ -1,22 +1,12 @@
-/Dataset/
 /output/preprocessing/preprocessed_full/
-/output/preprocessing/preprocessed_full.zip
-/output/V1/baseline_official/
-/output/V1/baseline_strict/
-/output/V2/baseline_official/
-/output/V2/baseline_strict/
+
 /hf_cache/
 /bukti_invoice/
 /code/V1/workspaceVastAI/outputs/outputs.zip
-/code/V1/workspaceVastAI/outputs/*/*.pt
 
 /code/V2/*.zip
 /code/V2/workspace_vastAI_v2/*.zip
 /code/V2/workspace_vastAI_v2/outputs/outputs.zip
-/code/V2/workspace_vastAI_v2/outputs/*/*.pt
-/code/V2/workspace_vastAI_v2/checkpoints/*/*.pt
-/code/V2/workspace_vastAI_v2/checkpoints/checkpoints/*/*/*.pt
-
 /code/Rancangan_FineTune/setup_publickey.txt
 
 /venv_infer/
@@ -41,10 +31,8 @@ __pycache__/
 ~$*.pptx
 
 # Generated notebook and training artifacts
-/code/V1/workspaceVastAI/outputs/
 /code/V2/workspace_vastAI_v2/logs/logs/
-/code/V2/workspace_vastAI_v2/checkpoints/checkpoints/
 /code/V2/workspace_vastAI_v2/outputs/outputs/*/*.zip
-/code/V2/workspace_vastAI_v2/outputs/outputs/*/*.pt
 
 /Dokumen/ReferensiDokumen/*.docx
+/output/preprocessing/*.zip

@@ -1,0 +1,17 @@
+{
+  "run_name": "trial_043",
+  "seed": 42,
+  "best_epoch": 21,
+  "best_val_S": 0.9019187092781067,
+  "total_params": 94727541,
+  "trainable_params": 345605,
+  "hp": {
+    "learning_rate": 0.0002945365599458406,
+    "r": 4,
+    "lora_alpha": 64,
+    "lora_dropout": 0.15,
+    "weight_decay": 0.00569647621824268,
+    "warmup_ratio": 0.03
+  },
+  "is_optuna": true
+}

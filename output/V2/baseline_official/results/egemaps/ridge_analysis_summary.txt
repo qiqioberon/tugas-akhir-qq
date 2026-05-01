@@ -1,0 +1,8 @@
+Backbone: egemaps
+Split tag folder: baseline_official
+Best alpha by validation mean MAE: 100.0
+Best validation mean MAE: 0.103167
+Best validation mean Acc(1-MAE): 0.896833
+Best validation mean RMSE: 0.130353
+Best validation mean R2: 0.185565
+Interpretation: best alpha tidak berada di ujung kanan grid. Artinya sudah mulai terlihat titik optimal / titik balik, sehingga alpha yang terlalu besar tidak selalu memperbaiki performa.

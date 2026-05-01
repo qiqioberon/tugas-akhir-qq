@@ -1,0 +1,7 @@
+Protocol;Split_A;Split_B;Overlap_group_id_count;Example_overlap_group_id
+official_after_vad_drop;test;train;1198;--Ymqszjv54, -6otZ7M-Mro, -8asrRvfJWA, -DOqN0d8KHw, -Gl98Jn45Fs
+official_after_vad_drop;test;val;687;-6otZ7M-Mro, -8asrRvfJWA, -DOqN0d8KHw, -N6QKrbnaDs, -PWjgx2czwY
+official_after_vad_drop;train;val;1220;-6otZ7M-Mro, -8asrRvfJWA, -9BZ8A9U7TE, -AmMDnVl4s8, -DOqN0d8KHw
+strict_group_based;test;train;0;
+strict_group_based;test;val;0;
+strict_group_based;train;val;0;

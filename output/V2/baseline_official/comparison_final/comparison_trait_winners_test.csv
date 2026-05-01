@@ -1,0 +1,6 @@
+trait,model,MAE,R2
+agreeableness,hubert,0.095196664,0.18586528
+conscientiousness,wavlm,0.097241595,0.35088342
+extraversion,wavlm,0.097650655,0.33956003
+neuroticism,wavlm,0.09697601,0.35557985
+openness,wavlm,0.09480681,0.3259282

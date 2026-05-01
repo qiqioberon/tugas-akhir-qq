@@ -1,0 +1,25 @@
+{
+  "backbone": "wavlm",
+  "alpha": 100.0,
+  "label_cols": [
+    "extraversion",
+    "neuroticism",
+    "agreeableness",
+    "conscientiousness",
+    "openness"
+  ],
+  "shapes": {
+    "train": [
+      5936,
+      768
+    ],
+    "val": [
+      1999,
+      768
+    ],
+    "test": [
+      2039,
+      768
+    ]
+  }
+}

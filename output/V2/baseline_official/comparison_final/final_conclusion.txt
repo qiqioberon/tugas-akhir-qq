@@ -1,0 +1,30 @@
+KESIMPULAN PERBANDINGAN AKHIR BASELINE
+======================================================================
+
+Model terbaik berdasarkan ranking gabungan metrik test adalah: wavlm.
+Model ini memperoleh nilai test Acc(1-MAE) = 0.9036, MAE = 0.0964, RMSE = 0.1208, dan R2 = 0.3131.
+
+Urutan model berdasarkan final rank:
+- Peringkat 1: wavlm | test Acc=0.9036 | MAE=0.0964 | RMSE=0.1208 | R2=0.3131 | best alpha=1000.0
+- Peringkat 2: hubert | test Acc=0.9025 | MAE=0.0975 | RMSE=0.1219 | R2=0.3009 | best alpha=1000.0
+- Peringkat 3: wav2vec2 | test Acc=0.9012 | MAE=0.0988 | RMSE=0.1233 | R2=0.2853 | best alpha=100.0
+- Peringkat 4: egemaps | test Acc=0.8952 | MAE=0.1048 | RMSE=0.1316 | R2=0.1887 | best alpha=100.0
+
+Pemenang per trait berdasarkan test MAE:
+- Trait agreeableness: terbaik = hubert (MAE=0.0952, R2=0.1859)
+- Trait conscientiousness: terbaik = wavlm (MAE=0.0972, R2=0.3509)
+- Trait extraversion: terbaik = wavlm (MAE=0.0977, R2=0.3396)
+- Trait neuroticism: terbaik = wavlm (MAE=0.0970, R2=0.3556)
+- Trait openness: terbaik = wavlm (MAE=0.0948, R2=0.3259)
+
+Interpretasi hasil tuning alpha:
+- wav2vec2: best alpha = 100 tidak berada di ujung kanan grid, sehingga sudah tampak adanya titik optimal / titik balik performa.
+- hubert: best alpha = 1000 tidak berada di ujung kanan grid, sehingga sudah tampak adanya titik optimal / titik balik performa.
+- wavlm: best alpha = 1000 tidak berada di ujung kanan grid, sehingga sudah tampak adanya titik optimal / titik balik performa.
+- egemaps: best alpha = 100 tidak berada di ujung kanan grid, sehingga sudah tampak adanya titik optimal / titik balik performa.
+
+Catatan interpretasi:
+- Nilai Acc(1-MAE) yang tinggi menunjukkan error absolut rata-rata relatif kecil pada skala target 0 sampai 1.
+- Nilai R2 yang tetap rendah menunjukkan bahwa meskipun error absolut kecil, model belum mampu menjelaskan variasi target secara kuat.
+- Kondisi ini dapat terjadi karena distribusi label sempit, prediksi cenderung mendekati rata-rata, atau varians target relatif kecil.
+- Dengan demikian, evaluasi akhir sebaiknya tidak hanya melihat Acc(1-MAE), tetapi juga MAE, RMSE, dan R2 secara bersama-sama.
