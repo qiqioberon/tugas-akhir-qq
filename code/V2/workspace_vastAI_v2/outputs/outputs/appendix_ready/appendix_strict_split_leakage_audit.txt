@@ -1,0 +1,23 @@
+Strict Split Leakage Audit
+
+Manifest:
+E:\tugas-akhir-qiqi\code\V2\workspace_vastAI_v2\data\data\manifest_strict_vast.csv
+
+Kolom split yang digunakan:
+split_strict
+
+Kolom clip yang digunakan:
+clip_id
+
+Kolom group yang digunakan:
+group_id
+
+Jumlah data per split:
+{
+  "train": 5936,
+  "test": 2039,
+  "val": 1999
+}
+
+Kesimpulan:
+Tidak ditemukan overlap clip_id atau group_id antar train, val, dan test berdasarkan kolom yang tersedia pada manifest.

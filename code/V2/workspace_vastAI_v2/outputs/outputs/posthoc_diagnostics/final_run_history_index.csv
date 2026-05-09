@@ -1,0 +1,11 @@
+run_id,seed,run_dir,history_path,history_exists,expected
+run_01_seed_042,42,E:\tugas-akhir-qiqi\code\V2\workspace_vastAI_v2\outputs\outputs\final_runs\run_01_seed_042,E:\tugas-akhir-qiqi\code\V2\workspace_vastAI_v2\outputs\outputs\final_runs\run_01_seed_042\history.csv,True,True
+run_02_seed_052,52,E:\tugas-akhir-qiqi\code\V2\workspace_vastAI_v2\outputs\outputs\final_runs\run_02_seed_052,E:\tugas-akhir-qiqi\code\V2\workspace_vastAI_v2\outputs\outputs\final_runs\run_02_seed_052\history.csv,True,True
+run_03_seed_062,62,E:\tugas-akhir-qiqi\code\V2\workspace_vastAI_v2\outputs\outputs\final_runs\run_03_seed_062,E:\tugas-akhir-qiqi\code\V2\workspace_vastAI_v2\outputs\outputs\final_runs\run_03_seed_062\history.csv,True,True
+run_04_seed_072,72,E:\tugas-akhir-qiqi\code\V2\workspace_vastAI_v2\outputs\outputs\final_runs\run_04_seed_072,E:\tugas-akhir-qiqi\code\V2\workspace_vastAI_v2\outputs\outputs\final_runs\run_04_seed_072\history.csv,True,True
+run_05_seed_082,82,E:\tugas-akhir-qiqi\code\V2\workspace_vastAI_v2\outputs\outputs\final_runs\run_05_seed_082,E:\tugas-akhir-qiqi\code\V2\workspace_vastAI_v2\outputs\outputs\final_runs\run_05_seed_082\history.csv,True,True
+run_06_seed_092,92,E:\tugas-akhir-qiqi\code\V2\workspace_vastAI_v2\outputs\outputs\final_runs\run_06_seed_092,E:\tugas-akhir-qiqi\code\V2\workspace_vastAI_v2\outputs\outputs\final_runs\run_06_seed_092\history.csv,True,True
+run_07_seed_102,102,E:\tugas-akhir-qiqi\code\V2\workspace_vastAI_v2\outputs\outputs\final_runs\run_07_seed_102,E:\tugas-akhir-qiqi\code\V2\workspace_vastAI_v2\outputs\outputs\final_runs\run_07_seed_102\history.csv,True,True
+run_08_seed_112,112,E:\tugas-akhir-qiqi\code\V2\workspace_vastAI_v2\outputs\outputs\final_runs\run_08_seed_112,E:\tugas-akhir-qiqi\code\V2\workspace_vastAI_v2\outputs\outputs\final_runs\run_08_seed_112\history.csv,True,True
+run_09_seed_122,122,E:\tugas-akhir-qiqi\code\V2\workspace_vastAI_v2\outputs\outputs\final_runs\run_09_seed_122,E:\tugas-akhir-qiqi\code\V2\workspace_vastAI_v2\outputs\outputs\final_runs\run_09_seed_122\history.csv,True,True
+run_10_seed_132,132,E:\tugas-akhir-qiqi\code\V2\workspace_vastAI_v2\outputs\outputs\final_runs\run_10_seed_132,E:\tugas-akhir-qiqi\code\V2\workspace_vastAI_v2\outputs\outputs\final_runs\run_10_seed_132\history.csv,True,True

@@ -1,0 +1,22 @@
+Optuna Reproducibility Audit
+
+File konfigurasi:
+E:\tugas-akhir-qiqi\code\V2\workspace_vastAI_v2\outputs\outputs\optuna_study\study_config.json
+
+Seed terkait Optuna ditemukan pada konfigurasi:
+- optuna_seed: 42
+
+Pemeriksaan keyword terkait sampler:
+{
+  "TPESampler": false,
+  "tpesampler": false,
+  "sampler": false,
+  "create_study": false,
+  "OPTUNA_SEED": true,
+  "optuna_seed": true
+}
+
+Catatan interpretasi:
+Notebook utama mencatat konfigurasi Optuna melalui study_config.json jika file tersebut tersedia. Namun, pencatatan optuna_seed saja belum otomatis menjamin reproducibility sampling Optuna secara penuh apabila create_study tidak secara eksplisit menggunakan sampler seperti TPESampler(seed=OPTUNA_SEED). Dengan kata lain, agar proses sampling Optuna benar-benar eksplisit dan lebih mudah direplikasi, sampler sebaiknya ditulis secara langsung, misalnya TPESampler(seed=OPTUNA_SEED), ketika study dibuat.
+
+Audit ini hanya berupa catatan reproducibility. Notebook ini tidak mengubah hasil eksperimen utama, tidak menjalankan Optuna ulang, dan tidak mengganti konfigurasi training.
