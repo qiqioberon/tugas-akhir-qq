@@ -36,3 +36,5 @@ __pycache__/
 
 /Dokumen/ReferensiDokumen/*.docx
 /output/preprocessing/*.zip
+/code/V2/outputs/*.zip
+/output/V2/*/*.zip
