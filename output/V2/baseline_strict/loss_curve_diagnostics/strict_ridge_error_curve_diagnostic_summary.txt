@@ -1,0 +1,11 @@
+Ringkasan diagnostic train-validation error Ridge Regression pada strict split
+==============================================================================
+
+Karena Ridge Regression tidak dilatih secara epoch-based seperti neural network, kurva loss per epoch tidak tersedia. Sebagai pengganti, analisis train-validation ditampilkan terhadap variasi nilai alpha. Setiap titik pada kurva merepresentasikan satu model Ridge yang dilatih dengan nilai alpha tertentu.
+
+Galat yang digunakan pada kurva utama adalah MAE, karena MAE merupakan metrik evaluasi utama pada penelitian ini dan juga digunakan sebagai dasar pemilihan alpha terbaik pada validation set. Dengan demikian, kurva ini digunakan untuk melihat pengaruh regularisasi terhadap performa train dan validation pada strict split, bukan sebagai riwayat loss internal per epoch.
+
+- hubert: selected alpha=3000, train MAE=0.092860, validation MAE=0.098642, train RMSE=0.116681, validation RMSE=0.124451, train R2=0.362580, validation R2=0.263530, train Acc(1-MAE)=0.907140, validation Acc(1-MAE)=0.901358.
+- wav2vec2: selected alpha=1000, train MAE=0.093541, validation MAE=0.101230, train RMSE=0.117546, validation RMSE=0.127404, train R2=0.353511, validation R2=0.228406, train Acc(1-MAE)=0.906459, validation Acc(1-MAE)=0.898770.
+- wavlm: selected alpha=3000, train MAE=0.092169, validation MAE=0.097582, train RMSE=0.116018, validation RMSE=0.122693, train R2=0.369705, validation R2=0.283911, train Acc(1-MAE)=0.907831, validation Acc(1-MAE)=0.902418.
+- egemaps: selected alpha=300, train MAE=0.102901, validation MAE=0.105965, train RMSE=0.129346, validation RMSE=0.133390, train R2=0.219536, validation R2=0.156002, train Acc(1-MAE)=0.897099, validation Acc(1-MAE)=0.894035.
