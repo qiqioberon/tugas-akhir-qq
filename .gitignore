@@ -39,3 +39,5 @@ __pycache__/
 /code/V2/outputs/*.zip
 /output/V2/*/*.zip
 /output/V2/*.zip
+/output/*.zip
+/code/V2/workspace_vastAI_v2/outputs/*.zip
