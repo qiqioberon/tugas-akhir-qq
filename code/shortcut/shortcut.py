@@ -61,8 +61,137 @@ def insert_caption():
 
 
 def insert_cross_reference():
-    # Alt + S, lalu N
-    press_word_sequence(["s", "n"])
+    """
+    Auto cross-reference berdasarkan teks yang diblok.
+
+    Contoh:
+    - Tabel 4.42
+    - Gambar 4.10
+    - Lampiran 49
+
+    Hasil:
+    - otomatis insert cross-reference
+    - Reference to: Only label and number
+    """
+
+    time.sleep(0.25)
+
+    try:
+        word = win32com.client.GetActiveObject("Word.Application")
+        selection = word.Selection
+
+        selected_text = selection.Text.strip()
+
+        if not selected_text:
+            print("Tidak ada teks yang diblok. Membuka dialog cross-reference biasa.")
+            press_word_sequence(["s", "n"])
+            return
+
+        # =========================
+        # NORMALISASI TEKS BLOK
+        # =========================
+        target = selected_text.lower()
+        target = target.replace("\r", "").replace("\n", "").strip()
+        target = " ".join(target.split())
+
+        parts = target.split()
+
+        if len(parts) < 2:
+            print(f"Format teks tidak dikenali: {selected_text}")
+            press_word_sequence(["s", "n"])
+            return
+
+        label_key = parts[0]
+        target_number = parts[1].strip()
+
+        supported_labels = {
+            "tabel": "Tabel",
+            "gambar": "Gambar",
+            "lampiran": "Lampiran",
+        }
+
+        if label_key not in supported_labels:
+            print(f"Jenis referensi belum didukung: {selected_text}")
+            press_word_sequence(["s", "n"])
+            return
+
+        reference_type = supported_labels[label_key]
+
+        # =========================
+        # WORD CONSTANTS
+        # =========================
+        wdOnlyLabelAndNumber = 3
+
+        # =========================
+        # AMBIL ITEM CROSS-REFERENCE
+        # =========================
+        try:
+            items = word.ActiveDocument.GetCrossReferenceItems(reference_type)
+        except Exception as e:
+            print(
+                f"Tidak bisa mengambil daftar cross-reference untuk label: {reference_type}")
+            print("Error:", e)
+            press_word_sequence(["s", "n"])
+            return
+
+        matched_word_index = None
+        matched_item = None
+
+        print(f"Mencari: {reference_type} {target_number}")
+
+        # Penting:
+        # items dari Python biasanya 0-based.
+        # Tapi ReferenceItem untuk Word harus 1-based.
+        for python_index, item in enumerate(items):
+            item_text = str(item).strip()
+            item_lower = item_text.lower()
+            item_lower = " ".join(item_lower.split())
+
+            expected_prefix = f"{label_key} {target_number}"
+
+            print(
+                f"Python index {python_index}, Word index {python_index + 1}: {item_text}")
+
+            if item_lower.startswith(expected_prefix):
+                matched_word_index = python_index + 1
+                matched_item = item_text
+                break
+
+        if matched_word_index is None:
+            print(
+                f"Tidak menemukan {reference_type} dengan nomor: {target_number}")
+            print(f"Teks yang diblok: {selected_text}")
+            print("Membuka dialog cross-reference biasa.")
+            press_word_sequence(["s", "n"])
+            return
+
+        print(f"Match ditemukan: {matched_item}")
+        print(f"Word ReferenceItem index: {matched_word_index}")
+
+        # =========================
+        # HAPUS TEKS YANG DIBLOK
+        # =========================
+        selection.Delete()
+
+        # =========================
+        # INSERT CROSS-REFERENCE
+        # =========================
+        selection.InsertCrossReference(
+            ReferenceType=reference_type,
+            ReferenceKind=wdOnlyLabelAndNumber,
+            ReferenceItem=matched_word_index,
+            InsertAsHyperlink=True,
+            IncludePosition=False,
+            SeparateNumbers=False,
+            SeparatorString=" "
+        )
+
+        print(f"Inserted cross-reference: {matched_item}")
+
+    except Exception as e:
+        print("Failed to auto insert cross-reference:", e)
+        print("Fallback: membuka dialog cross-reference biasa.")
+        press_word_sequence(["s", "n"])
 
 
 def apply_ta_paragraph_format():
