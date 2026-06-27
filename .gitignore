@@ -41,3 +41,15 @@ __pycache__/
 /output/V2/*.zip
 /output/*.zip
 /code/V2/workspace_vastAI_v2/outputs/*.zip
+
+/code/V2/workspace_vastAI_v2_WavLM/*.zip
+/code/V2/workspace_vastAI_v2_WavLM/outputs/outputs.zip
+
+/code/V2/hubert_finetune_all_no_data_cache/*.zip
+/code/V2/hubert_finetune_all_no_data_cache/outputs/outputs.zip
+/code/V2/hubert_finetune_all_no_data_cache/notebooks/FineTuneHuBERTV1_Optuna_Final_executed.ipynb
+/code/V2/hubert_finetune_all_no_data_cache/logs/papermill_stdout.log
+*.zip
+*.sha256
+
+
