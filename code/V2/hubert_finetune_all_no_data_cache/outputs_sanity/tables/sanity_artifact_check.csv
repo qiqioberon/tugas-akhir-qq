@@ -1,0 +1,14 @@
+path,exists,size_mb
+outputs_sanity/optuna_study/best_hp.json,True,0.0002
+outputs_sanity/optuna_study/study_trials.csv,True,0.0003
+outputs_sanity/optuna_study/optuna_top_trials.csv,True,0.0002
+outputs_sanity/final_aggregate/final_runs_summary.csv,True,0.0003
+outputs_sanity/final_aggregate/all_final_histories_long.csv,True,0.0016
+outputs_sanity/final_aggregate/all_runs_history_with_val_loss.csv,True,0.0016
+outputs_sanity/tables/strict_split_leakage_audit.csv,True,0.0003
+outputs_sanity/final_runs/run_01_seed_042/history.csv,True,0.0015
+outputs_sanity/final_runs/run_01_seed_042/loss_curve.png,True,0.0844
+outputs_sanity/final_runs/run_01_seed_042/predictions_test_strict.csv,True,0.0104
+checkpoints_sanity/final_runs/run_01_seed_042/best_model.pt,True,365.8179
+checkpoints_sanity/final_runs/run_01_seed_042/checkpoint_meta.json,True,0.0004
+logs_sanity/train_live.log,True,0.0085

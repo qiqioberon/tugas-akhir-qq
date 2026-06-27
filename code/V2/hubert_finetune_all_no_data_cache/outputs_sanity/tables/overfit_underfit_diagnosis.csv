@@ -1,0 +1,2 @@
+run_id,overfit_diagnosis,underfit_note
+run_01_seed_042,tidak menunjukkan overfitting berat,tidak ada indikasi underfitting yang jelas dari loss

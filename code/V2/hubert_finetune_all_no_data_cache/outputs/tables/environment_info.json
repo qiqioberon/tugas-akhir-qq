@@ -1,0 +1,11 @@
+{
+  "python": "3.14.3 | packaged by conda-forge | (main, Feb  9 2026, 21:56:02) [GCC 14.3.0]",
+  "torch": "2.11.0+cu130",
+  "transformers": "5.9.0",
+  "peft": "0.19.1",
+  "sklearn": "1.8.0",
+  "librosa": "0.11.0",
+  "optuna": "4.8.0",
+  "cuda_available": true,
+  "cuda_device": "NVIDIA RTX A6000"
+}

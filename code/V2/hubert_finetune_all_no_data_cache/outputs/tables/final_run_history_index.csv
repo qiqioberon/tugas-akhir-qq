@@ -1,0 +1,11 @@
+run_id,seed,run_dir,history_path,history_exists
+run_01_seed_042,42,/workspace/hubert_finetune/outputs/final_runs/run_01_seed_042,/workspace/hubert_finetune/outputs/final_runs/run_01_seed_042/history.csv,True
+run_02_seed_052,52,/workspace/hubert_finetune/outputs/final_runs/run_02_seed_052,/workspace/hubert_finetune/outputs/final_runs/run_02_seed_052/history.csv,True
+run_03_seed_062,62,/workspace/hubert_finetune/outputs/final_runs/run_03_seed_062,/workspace/hubert_finetune/outputs/final_runs/run_03_seed_062/history.csv,True
+run_04_seed_072,72,/workspace/hubert_finetune/outputs/final_runs/run_04_seed_072,/workspace/hubert_finetune/outputs/final_runs/run_04_seed_072/history.csv,True
+run_05_seed_082,82,/workspace/hubert_finetune/outputs/final_runs/run_05_seed_082,/workspace/hubert_finetune/outputs/final_runs/run_05_seed_082/history.csv,True
+run_06_seed_092,92,/workspace/hubert_finetune/outputs/final_runs/run_06_seed_092,/workspace/hubert_finetune/outputs/final_runs/run_06_seed_092/history.csv,True
+run_07_seed_102,102,/workspace/hubert_finetune/outputs/final_runs/run_07_seed_102,/workspace/hubert_finetune/outputs/final_runs/run_07_seed_102/history.csv,True
+run_08_seed_112,112,/workspace/hubert_finetune/outputs/final_runs/run_08_seed_112,/workspace/hubert_finetune/outputs/final_runs/run_08_seed_112/history.csv,True
+run_09_seed_122,122,/workspace/hubert_finetune/outputs/final_runs/run_09_seed_122,/workspace/hubert_finetune/outputs/final_runs/run_09_seed_122/history.csv,True
+run_10_seed_132,132,/workspace/hubert_finetune/outputs/final_runs/run_10_seed_132,/workspace/hubert_finetune/outputs/final_runs/run_10_seed_132/history.csv,True

@@ -1,0 +1,19 @@
+{
+  "run_name": "trial_043",
+  "seed": 42,
+  "best_epoch": 5,
+  "best_val_S": 0.902867816388607,
+  "total_params": 94864773,
+  "trainable_params": 493061,
+  "hp": {
+    "learning_rate": 0.00017497098465506388,
+    "r": 8,
+    "lora_alpha": 64,
+    "lora_dropout": 0.05,
+    "weight_decay": 0.018159265986391615,
+    "warmup_ratio": 0.0
+  },
+  "is_optuna": true,
+  "model_name": "facebook/hubert-base-ls960",
+  "experiment_name": "HuBERT_LoRA_Strict"
+}

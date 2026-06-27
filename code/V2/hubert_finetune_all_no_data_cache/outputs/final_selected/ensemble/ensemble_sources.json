@@ -1,0 +1,14 @@
+{
+  "sources": [
+    "/workspace/hubert_finetune/outputs/final_runs/run_01_seed_042/predictions_test_strict.csv",
+    "/workspace/hubert_finetune/outputs/final_runs/run_02_seed_052/predictions_test_strict.csv",
+    "/workspace/hubert_finetune/outputs/final_runs/run_03_seed_062/predictions_test_strict.csv",
+    "/workspace/hubert_finetune/outputs/final_runs/run_04_seed_072/predictions_test_strict.csv",
+    "/workspace/hubert_finetune/outputs/final_runs/run_05_seed_082/predictions_test_strict.csv",
+    "/workspace/hubert_finetune/outputs/final_runs/run_06_seed_092/predictions_test_strict.csv",
+    "/workspace/hubert_finetune/outputs/final_runs/run_07_seed_102/predictions_test_strict.csv",
+    "/workspace/hubert_finetune/outputs/final_runs/run_08_seed_112/predictions_test_strict.csv",
+    "/workspace/hubert_finetune/outputs/final_runs/run_09_seed_122/predictions_test_strict.csv",
+    "/workspace/hubert_finetune/outputs/final_runs/run_10_seed_132/predictions_test_strict.csv"
+  ]
+}

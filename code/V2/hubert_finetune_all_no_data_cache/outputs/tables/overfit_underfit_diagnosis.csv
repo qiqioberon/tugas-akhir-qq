@@ -1,0 +1,11 @@
+run_id,overfit_diagnosis,underfit_note
+run_01_seed_042,tidak menunjukkan overfitting berat,tidak ada indikasi underfitting yang jelas dari loss
+run_02_seed_052,tidak menunjukkan overfitting berat,tidak ada indikasi underfitting yang jelas dari loss
+run_03_seed_062,tidak menunjukkan overfitting berat,tidak ada indikasi underfitting yang jelas dari loss
+run_04_seed_072,tidak menunjukkan overfitting berat,tidak ada indikasi underfitting yang jelas dari loss
+run_05_seed_082,tidak menunjukkan overfitting berat,tidak ada indikasi underfitting yang jelas dari loss
+run_06_seed_092,indikasi gap ringan; perlu dibaca bersama kurva,tidak ada indikasi underfitting yang jelas dari loss
+run_07_seed_102,indikasi gap ringan; perlu dibaca bersama kurva,tidak ada indikasi underfitting yang jelas dari loss
+run_08_seed_112,indikasi gap ringan; perlu dibaca bersama kurva,tidak ada indikasi underfitting yang jelas dari loss
+run_09_seed_122,indikasi gap ringan; perlu dibaca bersama kurva,tidak ada indikasi underfitting yang jelas dari loss
+run_10_seed_132,indikasi gap ringan; perlu dibaca bersama kurva,tidak ada indikasi underfitting yang jelas dari loss

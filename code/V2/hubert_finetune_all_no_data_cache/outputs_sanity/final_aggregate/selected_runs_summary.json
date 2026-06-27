@@ -1,0 +1,26 @@
+{
+  "best_val": {
+    "run_id": "run_01_seed_042",
+    "seed": 42,
+    "best_epoch": 2,
+    "stop_epoch": 2,
+    "best_val_S": 0.8749189078807831,
+    "test_MAE_mean": 0.1176608353853225,
+    "test_RMSE_mean": 0.1435169726610183,
+    "test_R2_mean": -0.0211141347885131,
+    "test_Acc_mean": 0.8823391795158386,
+    "checkpoint_path": "/workspace/hubert_finetune/checkpoints_sanity/final_runs/run_01_seed_042/best_model.pt"
+  },
+  "median": {
+    "run_id": "run_01_seed_042",
+    "seed": 42,
+    "best_epoch": 2,
+    "stop_epoch": 2,
+    "best_val_S": 0.8749189078807831,
+    "test_MAE_mean": 0.1176608353853225,
+    "test_RMSE_mean": 0.1435169726610183,
+    "test_R2_mean": -0.0211141347885131,
+    "test_Acc_mean": 0.8823391795158386,
+    "checkpoint_path": "/workspace/hubert_finetune/checkpoints_sanity/final_runs/run_01_seed_042/best_model.pt"
+  }
+}

@@ -1,0 +1,2 @@
+number,value,state,params_learning_rate,params_lora_alpha,params_lora_dropout,params_r,params_warmup_ratio,params_weight_decay,datetime_start,datetime_complete,duration
+0,0.8749189078807831,COMPLETE,0.00013410758562377848,32,0.15,8,0.0,0.0018958594997496498,2026-05-28 19:43:48.297371,2026-05-28 19:44:02.777916,0 days 00:00:14.480545

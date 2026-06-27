@@ -1,0 +1,1001 @@
+[2026-05-28 20:03:08] 
+================================================================================
+Utilities loaded
+================================================================================
+[2026-05-28 20:03:08] 
+================================================================================
+Cell | Prepare manifest_strict_vast.csv and audit split
+================================================================================
+[2026-05-28 20:03:08] Existing manifest_strict_vast.csv found: /workspace/hubert_finetune/data/manifest_strict_vast.csv
+[2026-05-28 20:03:08] 
+================================================================================
+Cell | Load manifest_strict_vast.csv and split data
+================================================================================
+[2026-05-28 20:03:09] train/val/test: 5936 / 1999 / 2039
+[2026-05-28 20:03:09] 
+================================================================================
+Cell | Dataset and DataLoader
+================================================================================
+[2026-05-28 20:03:09] Batch input_values: (40, 240000) | y: (40, 5) | first clip: -N6QKrbnaDs.001
+[2026-05-28 20:03:10] 
+================================================================================
+Cell | HuBERT + LoRA + regression head
+================================================================================
+[2026-05-28 20:03:12] Total params: 94,864,773
+[2026-05-28 20:03:12] Trainable params: 493,061 (0.5198%)
+[2026-05-28 20:03:13] Forward output shape: (40, 5)
+[2026-05-28 20:03:14] 
+================================================================================
+Cell | Metrics
+================================================================================
+[2026-05-28 20:03:14] 
+================================================================================
+Cell | Plot helpers
+================================================================================
+[2026-05-28 20:03:14] 
+================================================================================
+Cell | Predict and evaluate
+================================================================================
+[2026-05-28 20:03:14] 
+================================================================================
+Cell | Optimizer, scheduler, checkpoint, train epoch
+================================================================================
+[2026-05-28 20:03:14] 
+================================================================================
+Cell | Single run training function
+================================================================================
+[2026-05-28 20:03:14] 
+================================================================================
+Cell | Optuna search space and objective
+================================================================================
+[2026-05-28 20:03:14] 
+================================================================================
+Cell | Run Optuna
+================================================================================
+[2026-05-28 20:03:15] Study loaded: hubert_lora_strict_optuna | total_trials_before=0 | complete_before=0 | remaining=50
+[2026-05-28 20:03:16] [OPTUNA] trial_001 start | hp={'learning_rate': 0.00012816842992683473, 'r': 4, 'lora_alpha': 64, 'lora_dropout': 0.15, 'weight_decay': 0.015177021393917542, 'warmup_ratio': 0.0}
+[2026-05-28 20:03:16] [trial_001] START | seed=42 | hp={'learning_rate': 0.00012816842992683473, 'r': 4, 'lora_alpha': 64, 'lora_dropout': 0.15, 'weight_decay': 0.015177021393917542, 'warmup_ratio': 0.0}
+[2026-05-28 20:05:31] [trial_001] epoch=001 | train_loss=0.109216 | val_MAE=0.103300 | val_S=0.896700 | best_S=0.896700 @epoch=1 | patience=0/5
+[2026-05-28 20:07:45] [trial_001] epoch=002 | train_loss=0.100674 | val_MAE=0.100639 | val_S=0.899361 | best_S=0.899361 @epoch=2 | patience=0/5
+[2026-05-28 20:10:00] [trial_001] epoch=003 | train_loss=0.098164 | val_MAE=0.100199 | val_S=0.899801 | best_S=0.899801 @epoch=3 | patience=0/5
+[2026-05-28 20:12:14] [trial_001] epoch=004 | train_loss=0.097118 | val_MAE=0.097981 | val_S=0.902019 | best_S=0.902019 @epoch=4 | patience=0/5
+[2026-05-28 20:14:27] [trial_001] epoch=005 | train_loss=0.095110 | val_MAE=0.098046 | val_S=0.901954 | best_S=0.902019 @epoch=4 | patience=1/5
+[2026-05-28 20:16:40] [trial_001] epoch=006 | train_loss=0.093664 | val_MAE=0.098989 | val_S=0.901011 | best_S=0.902019 @epoch=4 | patience=2/5
+[2026-05-28 20:18:53] [trial_001] epoch=007 | train_loss=0.092695 | val_MAE=0.100239 | val_S=0.899761 | best_S=0.902019 @epoch=4 | patience=3/5
+[2026-05-28 20:21:11] [trial_001] epoch=008 | train_loss=0.091743 | val_MAE=0.099275 | val_S=0.900725 | best_S=0.902019 @epoch=4 | patience=4/5
+[2026-05-28 20:23:25] [trial_001] epoch=009 | train_loss=0.091376 | val_MAE=0.098169 | val_S=0.901831 | best_S=0.902019 @epoch=4 | patience=5/5
+[2026-05-28 20:23:25] [trial_001] early stopping at epoch=9
+[2026-05-28 20:23:32] [trial_001] DONE | best_epoch=4 | best_val_S=0.902019 | test_MAE=nan | test_R2=nan
+[2026-05-28 20:23:33] [OPTUNA] trial_001 done | best_val_S=0.902019
+[2026-05-28 20:23:34] [OPTUNA] trial_002 start | hp={'learning_rate': 0.0001016436906561294, 'r': 4, 'lora_alpha': 16, 'lora_dropout': 0.15, 'weight_decay': 0.007233619949447476, 'warmup_ratio': 0.08}
+[2026-05-28 20:23:35] [trial_002] START | seed=42 | hp={'learning_rate': 0.0001016436906561294, 'r': 4, 'lora_alpha': 16, 'lora_dropout': 0.15, 'weight_decay': 0.007233619949447476, 'warmup_ratio': 0.08}
+[2026-05-28 20:26:16] [trial_002] epoch=001 | train_loss=0.122241 | val_MAE=0.118787 | val_S=0.881213 | best_S=0.881213 @epoch=1 | patience=0/5
+[2026-05-28 20:28:26] [trial_002] epoch=002 | train_loss=0.117525 | val_MAE=0.114336 | val_S=0.885664 | best_S=0.885664 @epoch=2 | patience=0/5
+[2026-05-28 20:30:36] [trial_002] epoch=003 | train_loss=0.112097 | val_MAE=0.107089 | val_S=0.892911 | best_S=0.892911 @epoch=3 | patience=0/5
+[2026-05-28 20:32:46] [trial_002] epoch=004 | train_loss=0.105548 | val_MAE=0.104406 | val_S=0.895594 | best_S=0.895594 @epoch=4 | patience=0/5
+[2026-05-28 20:34:55] [trial_002] epoch=005 | train_loss=0.102935 | val_MAE=0.102852 | val_S=0.897148 | best_S=0.897148 @epoch=5 | patience=0/5
+[2026-05-28 20:37:02] [trial_002] epoch=006 | train_loss=0.101136 | val_MAE=0.103110 | val_S=0.896890 | best_S=0.897148 @epoch=5 | patience=1/5
+[2026-05-28 20:39:11] [trial_002] epoch=007 | train_loss=0.099889 | val_MAE=0.100945 | val_S=0.899055 | best_S=0.899055 @epoch=7 | patience=0/5
+[2026-05-28 20:41:20] [trial_002] epoch=008 | train_loss=0.098941 | val_MAE=0.100625 | val_S=0.899375 | best_S=0.899375 @epoch=8 | patience=0/5
+[2026-05-28 20:43:31] [trial_002] epoch=009 | train_loss=0.098260 | val_MAE=0.099118 | val_S=0.900882 | best_S=0.900882 @epoch=9 | patience=0/5
+[2026-05-28 20:45:41] [trial_002] epoch=010 | train_loss=0.096941 | val_MAE=0.099001 | val_S=0.900999 | best_S=0.900999 @epoch=10 | patience=0/5
+[2026-05-28 20:47:51] [trial_002] epoch=011 | train_loss=0.096066 | val_MAE=0.098420 | val_S=0.901580 | best_S=0.901580 @epoch=11 | patience=0/5
+[2026-05-28 20:50:01] [trial_002] epoch=012 | train_loss=0.095224 | val_MAE=0.098906 | val_S=0.901094 | best_S=0.901580 @epoch=11 | patience=1/5
+[2026-05-28 20:52:06] [trial_002] epoch=013 | train_loss=0.094905 | val_MAE=0.098938 | val_S=0.901062 | best_S=0.901580 @epoch=11 | patience=2/5
+[2026-05-28 20:54:18] [trial_002] epoch=014 | train_loss=0.094437 | val_MAE=0.097869 | val_S=0.902131 | best_S=0.902131 @epoch=14 | patience=0/5
+[2026-05-28 20:56:27] [trial_002] epoch=015 | train_loss=0.093597 | val_MAE=0.098438 | val_S=0.901562 | best_S=0.902131 @epoch=14 | patience=1/5
+[2026-05-28 20:58:37] [trial_002] epoch=016 | train_loss=0.092741 | val_MAE=0.098924 | val_S=0.901076 | best_S=0.902131 @epoch=14 | patience=2/5
+[2026-05-28 21:00:42] [trial_002] epoch=017 | train_loss=0.092382 | val_MAE=0.099176 | val_S=0.900824 | best_S=0.902131 @epoch=14 | patience=3/5
+[2026-05-28 21:02:50] [trial_002] epoch=018 | train_loss=0.092399 | val_MAE=0.098768 | val_S=0.901232 | best_S=0.902131 @epoch=14 | patience=4/5
+[2026-05-28 21:04:59] [trial_002] epoch=019 | train_loss=0.091658 | val_MAE=0.098320 | val_S=0.901680 | best_S=0.902131 @epoch=14 | patience=5/5
+[2026-05-28 21:04:59] [trial_002] early stopping at epoch=19
+[2026-05-28 21:05:05] [trial_002] DONE | best_epoch=14 | best_val_S=0.902131 | test_MAE=nan | test_R2=nan
+[2026-05-28 21:05:07] [OPTUNA] trial_002 done | best_val_S=0.902131
+[2026-05-28 21:05:08] [OPTUNA] trial_003 start | hp={'learning_rate': 0.00025305525892573504, 'r': 4, 'lora_alpha': 32, 'lora_dropout': 0.0, 'weight_decay': 0.003116037615666865, 'warmup_ratio': 0.1}
+[2026-05-28 21:05:09] [trial_003] START | seed=42 | hp={'learning_rate': 0.00025305525892573504, 'r': 4, 'lora_alpha': 32, 'lora_dropout': 0.0, 'weight_decay': 0.003116037615666865, 'warmup_ratio': 0.1}
+[2026-05-28 21:07:17] [trial_003] epoch=001 | train_loss=0.121287 | val_MAE=0.116468 | val_S=0.883532 | best_S=0.883532 @epoch=1 | patience=0/5
+[2026-05-28 21:09:17] [trial_003] epoch=002 | train_loss=0.113378 | val_MAE=0.106747 | val_S=0.893253 | best_S=0.893253 @epoch=2 | patience=0/5
+[2026-05-28 21:11:20] [trial_003] epoch=003 | train_loss=0.104391 | val_MAE=0.104084 | val_S=0.895916 | best_S=0.895916 @epoch=3 | patience=0/5
+[2026-05-28 21:13:21] [trial_003] epoch=004 | train_loss=0.102015 | val_MAE=0.101654 | val_S=0.898346 | best_S=0.898346 @epoch=4 | patience=0/5
+[2026-05-28 21:15:29] [trial_003] epoch=005 | train_loss=0.099854 | val_MAE=0.099830 | val_S=0.900170 | best_S=0.900170 @epoch=5 | patience=0/5
+[2026-05-28 21:17:35] [trial_003] epoch=006 | train_loss=0.098025 | val_MAE=0.099889 | val_S=0.900111 | best_S=0.900170 @epoch=5 | patience=1/5
+[2026-05-28 21:19:42] [trial_003] epoch=007 | train_loss=0.096489 | val_MAE=0.101262 | val_S=0.898738 | best_S=0.900170 @epoch=5 | patience=2/5
+[2026-05-28 21:21:49] [trial_003] epoch=008 | train_loss=0.095601 | val_MAE=0.100564 | val_S=0.899436 | best_S=0.900170 @epoch=5 | patience=3/5
+[2026-05-28 21:23:57] [trial_003] epoch=009 | train_loss=0.094834 | val_MAE=0.097601 | val_S=0.902399 | best_S=0.902399 @epoch=9 | patience=0/5
+[2026-05-28 21:26:04] [trial_003] epoch=010 | train_loss=0.092680 | val_MAE=0.098865 | val_S=0.901135 | best_S=0.902399 @epoch=9 | patience=1/5
+[2026-05-28 21:28:11] [trial_003] epoch=011 | train_loss=0.091871 | val_MAE=0.098361 | val_S=0.901639 | best_S=0.902399 @epoch=9 | patience=2/5
+[2026-05-28 21:30:15] [trial_003] epoch=012 | train_loss=0.090089 | val_MAE=0.098613 | val_S=0.901387 | best_S=0.902399 @epoch=9 | patience=3/5
+[2026-05-28 21:32:22] [trial_003] epoch=013 | train_loss=0.089484 | val_MAE=0.098692 | val_S=0.901308 | best_S=0.902399 @epoch=9 | patience=4/5
+[2026-05-28 21:34:29] [trial_003] epoch=014 | train_loss=0.087944 | val_MAE=0.098987 | val_S=0.901013 | best_S=0.902399 @epoch=9 | patience=5/5
+[2026-05-28 21:34:29] [trial_003] early stopping at epoch=14
+[2026-05-28 21:34:36] [trial_003] DONE | best_epoch=9 | best_val_S=0.902399 | test_MAE=nan | test_R2=nan
+[2026-05-28 21:34:38] [OPTUNA] trial_003 done | best_val_S=0.902399
+[2026-05-28 21:34:39] [OPTUNA] trial_004 start | hp={'learning_rate': 7.078141236027314e-05, 'r': 16, 'lora_alpha': 32, 'lora_dropout': 0.1, 'weight_decay': 0.006013742266783056, 'warmup_ratio': 0.08}
+[2026-05-28 21:34:40] [trial_004] START | seed=42 | hp={'learning_rate': 7.078141236027314e-05, 'r': 16, 'lora_alpha': 32, 'lora_dropout': 0.1, 'weight_decay': 0.006013742266783056, 'warmup_ratio': 0.08}
+[2026-05-28 21:36:45] [trial_004] epoch=001 | train_loss=0.122814 | val_MAE=0.119752 | val_S=0.880248 | best_S=0.880248 @epoch=1 | patience=0/5
+[2026-05-28 21:38:55] [trial_004] epoch=002 | train_loss=0.118899 | val_MAE=0.115656 | val_S=0.884344 | best_S=0.884344 @epoch=2 | patience=0/5
+[2026-05-28 21:41:05] [trial_004] epoch=003 | train_loss=0.114005 | val_MAE=0.109849 | val_S=0.890151 | best_S=0.890151 @epoch=3 | patience=0/5
+[2026-05-28 21:43:14] [trial_004] epoch=004 | train_loss=0.107087 | val_MAE=0.104303 | val_S=0.895697 | best_S=0.895697 @epoch=4 | patience=0/5
+[2026-05-28 21:45:24] [trial_004] epoch=005 | train_loss=0.103472 | val_MAE=0.104110 | val_S=0.895890 | best_S=0.895890 @epoch=5 | patience=0/5
+[2026-05-28 21:47:34] [trial_004] epoch=006 | train_loss=0.101579 | val_MAE=0.102882 | val_S=0.897118 | best_S=0.897118 @epoch=6 | patience=0/5
+[2026-05-28 21:49:44] [trial_004] epoch=007 | train_loss=0.100043 | val_MAE=0.101394 | val_S=0.898606 | best_S=0.898606 @epoch=7 | patience=0/5
+[2026-05-28 21:51:56] [trial_004] epoch=008 | train_loss=0.099297 | val_MAE=0.101262 | val_S=0.898738 | best_S=0.898738 @epoch=8 | patience=0/5
+[2026-05-28 21:54:06] [trial_004] epoch=009 | train_loss=0.098155 | val_MAE=0.099454 | val_S=0.900546 | best_S=0.900546 @epoch=9 | patience=0/5
+[2026-05-28 21:56:17] [trial_004] epoch=010 | train_loss=0.097131 | val_MAE=0.098956 | val_S=0.901044 | best_S=0.901044 @epoch=10 | patience=0/5
+[2026-05-28 21:58:24] [trial_004] epoch=011 | train_loss=0.096176 | val_MAE=0.098535 | val_S=0.901465 | best_S=0.901465 @epoch=11 | patience=0/5
+[2026-05-28 22:00:31] [trial_004] epoch=012 | train_loss=0.095256 | val_MAE=0.098420 | val_S=0.901580 | best_S=0.901580 @epoch=12 | patience=0/5
+[2026-05-28 22:02:41] [trial_004] epoch=013 | train_loss=0.094580 | val_MAE=0.098986 | val_S=0.901014 | best_S=0.901580 @epoch=12 | patience=1/5
+[2026-05-28 22:04:51] [trial_004] epoch=014 | train_loss=0.094003 | val_MAE=0.099048 | val_S=0.900952 | best_S=0.901580 @epoch=12 | patience=2/5
+[2026-05-28 22:07:00] [trial_004] epoch=015 | train_loss=0.093727 | val_MAE=0.099191 | val_S=0.900809 | best_S=0.901580 @epoch=12 | patience=3/5
+[2026-05-28 22:09:06] [trial_004] epoch=016 | train_loss=0.093549 | val_MAE=0.098325 | val_S=0.901675 | best_S=0.901675 @epoch=16 | patience=0/5
+[2026-05-28 22:11:15] [trial_004] epoch=017 | train_loss=0.092363 | val_MAE=0.099202 | val_S=0.900798 | best_S=0.901675 @epoch=16 | patience=1/5
+[2026-05-28 22:13:25] [trial_004] epoch=018 | train_loss=0.091549 | val_MAE=0.102116 | val_S=0.897884 | best_S=0.901675 @epoch=16 | patience=2/5
+[2026-05-28 22:15:34] [trial_004] epoch=019 | train_loss=0.091292 | val_MAE=0.098941 | val_S=0.901059 | best_S=0.901675 @epoch=16 | patience=3/5
+[2026-05-28 22:17:38] [trial_004] epoch=020 | train_loss=0.091524 | val_MAE=0.100097 | val_S=0.899903 | best_S=0.901675 @epoch=16 | patience=4/5
+[2026-05-28 22:19:46] [trial_004] epoch=021 | train_loss=0.090326 | val_MAE=0.099460 | val_S=0.900540 | best_S=0.901675 @epoch=16 | patience=5/5
+[2026-05-28 22:19:46] [trial_004] early stopping at epoch=21
+[2026-05-28 22:19:50] [trial_004] DONE | best_epoch=16 | best_val_S=0.901675 | test_MAE=nan | test_R2=nan
+[2026-05-28 22:19:51] [OPTUNA] trial_004 done | best_val_S=0.901675
+[2026-05-28 22:19:52] [OPTUNA] trial_005 start | hp={'learning_rate': 6.777577972027804e-05, 'r': 8, 'lora_alpha': 32, 'lora_dropout': 0.0, 'weight_decay': 0.00010339503569942701, 'warmup_ratio': 0.08}
+[2026-05-28 22:19:53] [trial_005] START | seed=42 | hp={'learning_rate': 6.777577972027804e-05, 'r': 8, 'lora_alpha': 32, 'lora_dropout': 0.0, 'weight_decay': 0.00010339503569942701, 'warmup_ratio': 0.08}
+[2026-05-28 22:22:00] [trial_005] epoch=001 | train_loss=0.122589 | val_MAE=0.119649 | val_S=0.880351 | best_S=0.880351 @epoch=1 | patience=0/5
+[2026-05-28 22:24:08] [trial_005] epoch=002 | train_loss=0.119025 | val_MAE=0.115511 | val_S=0.884489 | best_S=0.884489 @epoch=2 | patience=0/5
+[2026-05-28 22:26:17] [trial_005] epoch=003 | train_loss=0.114537 | val_MAE=0.110754 | val_S=0.889246 | best_S=0.889246 @epoch=3 | patience=0/5
+[2026-05-28 22:28:25] [trial_005] epoch=004 | train_loss=0.107867 | val_MAE=0.104965 | val_S=0.895035 | best_S=0.895035 @epoch=4 | patience=0/5
+[2026-05-28 22:30:31] [trial_005] epoch=005 | train_loss=0.103863 | val_MAE=0.103868 | val_S=0.896132 | best_S=0.896132 @epoch=5 | patience=0/5
+[2026-05-28 22:32:40] [trial_005] epoch=006 | train_loss=0.102238 | val_MAE=0.102595 | val_S=0.897405 | best_S=0.897405 @epoch=6 | patience=0/5
+[2026-05-28 22:34:45] [trial_005] epoch=007 | train_loss=0.100368 | val_MAE=0.101513 | val_S=0.898487 | best_S=0.898487 @epoch=7 | patience=0/5
+[2026-05-28 22:36:50] [trial_005] epoch=008 | train_loss=0.099088 | val_MAE=0.103490 | val_S=0.896510 | best_S=0.898487 @epoch=7 | patience=1/5
+[2026-05-28 22:38:53] [trial_005] epoch=009 | train_loss=0.098448 | val_MAE=0.099633 | val_S=0.900367 | best_S=0.900367 @epoch=9 | patience=0/5
+[2026-05-28 22:40:56] [trial_005] epoch=010 | train_loss=0.097180 | val_MAE=0.100811 | val_S=0.899189 | best_S=0.900367 @epoch=9 | patience=1/5
+[2026-05-28 22:43:04] [trial_005] epoch=011 | train_loss=0.096816 | val_MAE=0.099313 | val_S=0.900687 | best_S=0.900687 @epoch=11 | patience=0/5
+[2026-05-28 22:45:12] [trial_005] epoch=012 | train_loss=0.096143 | val_MAE=0.099279 | val_S=0.900721 | best_S=0.900721 @epoch=12 | patience=0/5
+[2026-05-28 22:47:21] [trial_005] epoch=013 | train_loss=0.095173 | val_MAE=0.098636 | val_S=0.901364 | best_S=0.901364 @epoch=13 | patience=0/5
+[2026-05-28 22:49:28] [trial_005] epoch=014 | train_loss=0.094759 | val_MAE=0.100024 | val_S=0.899976 | best_S=0.901364 @epoch=13 | patience=1/5
+[2026-05-28 22:51:35] [trial_005] epoch=015 | train_loss=0.093999 | val_MAE=0.100051 | val_S=0.899949 | best_S=0.901364 @epoch=13 | patience=2/5
+[2026-05-28 22:53:43] [trial_005] epoch=016 | train_loss=0.093672 | val_MAE=0.099135 | val_S=0.900865 | best_S=0.901364 @epoch=13 | patience=3/5
+[2026-05-28 22:55:50] [trial_005] epoch=017 | train_loss=0.092933 | val_MAE=0.101917 | val_S=0.898083 | best_S=0.901364 @epoch=13 | patience=4/5
+[2026-05-28 22:57:57] [trial_005] epoch=018 | train_loss=0.092707 | val_MAE=0.099949 | val_S=0.900051 | best_S=0.901364 @epoch=13 | patience=5/5
+[2026-05-28 22:57:57] [trial_005] early stopping at epoch=18
+[2026-05-28 22:58:04] [trial_005] DONE | best_epoch=13 | best_val_S=0.901364 | test_MAE=nan | test_R2=nan
+[2026-05-28 22:58:06] [OPTUNA] trial_005 done | best_val_S=0.901364
+[2026-05-28 22:58:08] [OPTUNA] trial_006 start | hp={'learning_rate': 6.405638623469674e-05, 'r': 16, 'lora_alpha': 16, 'lora_dropout': 0.0, 'weight_decay': 0.0014259536642673354, 'warmup_ratio': 0.03}
+[2026-05-28 22:58:09] [trial_006] START | seed=42 | hp={'learning_rate': 6.405638623469674e-05, 'r': 16, 'lora_alpha': 16, 'lora_dropout': 0.0, 'weight_decay': 0.0014259536642673354, 'warmup_ratio': 0.03}
+[2026-05-28 23:00:18] [trial_006] epoch=001 | train_loss=0.121833 | val_MAE=0.117479 | val_S=0.882521 | best_S=0.882521 @epoch=1 | patience=0/5
+[2026-05-28 23:02:27] [trial_006] epoch=002 | train_loss=0.115840 | val_MAE=0.111794 | val_S=0.888206 | best_S=0.888206 @epoch=2 | patience=0/5
+[2026-05-28 23:04:37] [trial_006] epoch=003 | train_loss=0.107254 | val_MAE=0.104171 | val_S=0.895829 | best_S=0.895829 @epoch=3 | patience=0/5
+[2026-05-28 23:06:46] [trial_006] epoch=004 | train_loss=0.102630 | val_MAE=0.102935 | val_S=0.897065 | best_S=0.897065 @epoch=4 | patience=0/5
+[2026-05-28 23:08:54] [trial_006] epoch=005 | train_loss=0.101195 | val_MAE=0.102514 | val_S=0.897486 | best_S=0.897486 @epoch=5 | patience=0/5
+[2026-05-28 23:11:03] [trial_006] epoch=006 | train_loss=0.099727 | val_MAE=0.101330 | val_S=0.898670 | best_S=0.898670 @epoch=6 | patience=0/5
+[2026-05-28 23:13:12] [trial_006] epoch=007 | train_loss=0.098580 | val_MAE=0.100303 | val_S=0.899697 | best_S=0.899697 @epoch=7 | patience=0/5
+[2026-05-28 23:15:19] [trial_006] epoch=008 | train_loss=0.098308 | val_MAE=0.100006 | val_S=0.899994 | best_S=0.899994 @epoch=8 | patience=0/5
+[2026-05-28 23:17:25] [trial_006] epoch=009 | train_loss=0.097267 | val_MAE=0.098924 | val_S=0.901076 | best_S=0.901076 @epoch=9 | patience=0/5
+[2026-05-28 23:19:30] [trial_006] epoch=010 | train_loss=0.096336 | val_MAE=0.098969 | val_S=0.901031 | best_S=0.901076 @epoch=9 | patience=1/5
+[2026-05-28 23:21:39] [trial_006] epoch=011 | train_loss=0.095795 | val_MAE=0.098571 | val_S=0.901429 | best_S=0.901429 @epoch=11 | patience=0/5
+[2026-05-28 23:23:47] [trial_006] epoch=012 | train_loss=0.095329 | val_MAE=0.098304 | val_S=0.901696 | best_S=0.901696 @epoch=12 | patience=0/5
+[2026-05-28 23:25:55] [trial_006] epoch=013 | train_loss=0.094931 | val_MAE=0.098886 | val_S=0.901114 | best_S=0.901696 @epoch=12 | patience=1/5
+[2026-05-28 23:28:00] [trial_006] epoch=014 | train_loss=0.094391 | val_MAE=0.098435 | val_S=0.901565 | best_S=0.901696 @epoch=12 | patience=2/5
+[2026-05-28 23:30:08] [trial_006] epoch=015 | train_loss=0.094510 | val_MAE=0.099374 | val_S=0.900626 | best_S=0.901696 @epoch=12 | patience=3/5
+[2026-05-28 23:32:12] [trial_006] epoch=016 | train_loss=0.094373 | val_MAE=0.098282 | val_S=0.901718 | best_S=0.901718 @epoch=16 | patience=0/5
+[2026-05-28 23:34:18] [trial_006] epoch=017 | train_loss=0.093575 | val_MAE=0.098741 | val_S=0.901259 | best_S=0.901718 @epoch=16 | patience=1/5
+[2026-05-28 23:36:25] [trial_006] epoch=018 | train_loss=0.092920 | val_MAE=0.099919 | val_S=0.900081 | best_S=0.901718 @epoch=16 | patience=2/5
+[2026-05-28 23:38:34] [trial_006] epoch=019 | train_loss=0.092859 | val_MAE=0.098274 | val_S=0.901726 | best_S=0.901726 @epoch=19 | patience=0/5
+[2026-05-28 23:40:40] [trial_006] epoch=020 | train_loss=0.092890 | val_MAE=0.099811 | val_S=0.900189 | best_S=0.901726 @epoch=19 | patience=1/5
+[2026-05-28 23:42:48] [trial_006] epoch=021 | train_loss=0.092134 | val_MAE=0.098394 | val_S=0.901606 | best_S=0.901726 @epoch=19 | patience=2/5
+[2026-05-28 23:45:00] [trial_006] epoch=022 | train_loss=0.091975 | val_MAE=0.099284 | val_S=0.900716 | best_S=0.901726 @epoch=19 | patience=3/5
+[2026-05-28 23:47:03] [trial_006] epoch=023 | train_loss=0.091733 | val_MAE=0.099514 | val_S=0.900486 | best_S=0.901726 @epoch=19 | patience=4/5
+[2026-05-28 23:49:10] [trial_006] epoch=024 | train_loss=0.091271 | val_MAE=0.098959 | val_S=0.901041 | best_S=0.901726 @epoch=19 | patience=5/5
+[2026-05-28 23:49:10] [trial_006] early stopping at epoch=24
+[2026-05-28 23:49:17] [trial_006] DONE | best_epoch=19 | best_val_S=0.901726 | test_MAE=nan | test_R2=nan
+[2026-05-28 23:49:19] [OPTUNA] trial_006 done | best_val_S=0.901726
+[2026-05-28 23:49:20] [OPTUNA] trial_007 start | hp={'learning_rate': 0.00019846883330703027, 'r': 4, 'lora_alpha': 32, 'lora_dropout': 0.1, 'weight_decay': 0.0006370553894948335, 'warmup_ratio': 0.0}
+[2026-05-28 23:49:21] [trial_007] START | seed=42 | hp={'learning_rate': 0.00019846883330703027, 'r': 4, 'lora_alpha': 32, 'lora_dropout': 0.1, 'weight_decay': 0.0006370553894948335, 'warmup_ratio': 0.0}
+[2026-05-28 23:51:32] [trial_007] epoch=001 | train_loss=0.108076 | val_MAE=0.102770 | val_S=0.897230 | best_S=0.897230 @epoch=1 | patience=0/5
+[2026-05-28 23:53:43] [trial_007] epoch=002 | train_loss=0.099926 | val_MAE=0.100088 | val_S=0.899912 | best_S=0.899912 @epoch=2 | patience=0/5
+[2026-05-28 23:55:54] [trial_007] epoch=003 | train_loss=0.097319 | val_MAE=0.099309 | val_S=0.900691 | best_S=0.900691 @epoch=3 | patience=0/5
+[2026-05-28 23:58:04] [trial_007] epoch=004 | train_loss=0.096289 | val_MAE=0.097945 | val_S=0.902055 | best_S=0.902055 @epoch=4 | patience=0/5
+[2026-05-29 00:00:12] [trial_007] epoch=005 | train_loss=0.094257 | val_MAE=0.097988 | val_S=0.902012 | best_S=0.902055 @epoch=4 | patience=1/5
+[2026-05-29 00:02:21] [trial_007] epoch=006 | train_loss=0.092781 | val_MAE=0.099094 | val_S=0.900906 | best_S=0.902055 @epoch=4 | patience=2/5
+[2026-05-29 00:04:30] [trial_007] epoch=007 | train_loss=0.091680 | val_MAE=0.099901 | val_S=0.900099 | best_S=0.902055 @epoch=4 | patience=3/5
+[2026-05-29 00:06:48] [trial_007] epoch=008 | train_loss=0.090789 | val_MAE=0.099607 | val_S=0.900393 | best_S=0.902055 @epoch=4 | patience=4/5
+[2026-05-29 00:09:03] [trial_007] epoch=009 | train_loss=0.090378 | val_MAE=0.098513 | val_S=0.901487 | best_S=0.902055 @epoch=4 | patience=5/5
+[2026-05-29 00:09:03] [trial_007] early stopping at epoch=9
+[2026-05-29 00:09:07] [trial_007] DONE | best_epoch=4 | best_val_S=0.902055 | test_MAE=nan | test_R2=nan
+[2026-05-29 00:09:09] [OPTUNA] trial_007 done | best_val_S=0.902055
+[2026-05-29 00:09:10] [OPTUNA] trial_008 start | hp={'learning_rate': 0.00019154249833572368, 'r': 8, 'lora_alpha': 64, 'lora_dropout': 0.15, 'weight_decay': 0.0007805947859163245, 'warmup_ratio': 0.1}
+[2026-05-29 00:09:11] [trial_008] START | seed=42 | hp={'learning_rate': 0.00019154249833572368, 'r': 8, 'lora_alpha': 64, 'lora_dropout': 0.15, 'weight_decay': 0.0007805947859163245, 'warmup_ratio': 0.1}
+[2026-05-29 00:11:20] [trial_008] epoch=001 | train_loss=0.121625 | val_MAE=0.117122 | val_S=0.882878 | best_S=0.882878 @epoch=1 | patience=0/5
+[2026-05-29 00:13:30] [trial_008] epoch=002 | train_loss=0.114841 | val_MAE=0.109605 | val_S=0.890395 | best_S=0.890395 @epoch=2 | patience=0/5
+[2026-05-29 00:15:41] [trial_008] epoch=003 | train_loss=0.105741 | val_MAE=0.103542 | val_S=0.896458 | best_S=0.896458 @epoch=3 | patience=0/5
+[2026-05-29 00:17:51] [trial_008] epoch=004 | train_loss=0.101608 | val_MAE=0.103709 | val_S=0.896291 | best_S=0.896458 @epoch=3 | patience=1/5
+[2026-05-29 00:20:01] [trial_008] epoch=005 | train_loss=0.100081 | val_MAE=0.102323 | val_S=0.897677 | best_S=0.897677 @epoch=5 | patience=0/5
+[2026-05-29 00:22:13] [trial_008] epoch=006 | train_loss=0.098443 | val_MAE=0.099231 | val_S=0.900769 | best_S=0.900769 @epoch=6 | patience=0/5
+[2026-05-29 00:24:24] [trial_008] epoch=007 | train_loss=0.096639 | val_MAE=0.098383 | val_S=0.901617 | best_S=0.901617 @epoch=7 | patience=0/5
+[2026-05-29 00:26:33] [trial_008] epoch=008 | train_loss=0.095732 | val_MAE=0.098653 | val_S=0.901347 | best_S=0.901617 @epoch=7 | patience=1/5
+[2026-05-29 00:28:43] [trial_008] epoch=009 | train_loss=0.094462 | val_MAE=0.101755 | val_S=0.898245 | best_S=0.901617 @epoch=7 | patience=2/5
+[2026-05-29 00:30:53] [trial_008] epoch=010 | train_loss=0.092792 | val_MAE=0.098090 | val_S=0.901910 | best_S=0.901910 @epoch=10 | patience=0/5
+[2026-05-29 00:33:02] [trial_008] epoch=011 | train_loss=0.091722 | val_MAE=0.098189 | val_S=0.901811 | best_S=0.901910 @epoch=10 | patience=1/5
+[2026-05-29 00:35:08] [trial_008] epoch=012 | train_loss=0.090542 | val_MAE=0.101391 | val_S=0.898609 | best_S=0.901910 @epoch=10 | patience=2/5
+[2026-05-29 00:37:18] [trial_008] epoch=013 | train_loss=0.089193 | val_MAE=0.099635 | val_S=0.900365 | best_S=0.901910 @epoch=10 | patience=3/5
+[2026-05-29 00:39:27] [trial_008] epoch=014 | train_loss=0.087561 | val_MAE=0.101006 | val_S=0.898994 | best_S=0.901910 @epoch=10 | patience=4/5
+[2026-05-29 00:41:37] [trial_008] epoch=015 | train_loss=0.086328 | val_MAE=0.100052 | val_S=0.899948 | best_S=0.901910 @epoch=10 | patience=5/5
+[2026-05-29 00:41:37] [trial_008] early stopping at epoch=15
+[2026-05-29 00:41:44] [trial_008] DONE | best_epoch=10 | best_val_S=0.901910 | test_MAE=nan | test_R2=nan
+[2026-05-29 00:41:46] [OPTUNA] trial_008 done | best_val_S=0.901910
+[2026-05-29 00:41:48] [OPTUNA] trial_009 start | hp={'learning_rate': 0.000256262267608854, 'r': 4, 'lora_alpha': 16, 'lora_dropout': 0.0, 'weight_decay': 0.0001478262035558581, 'warmup_ratio': 0.0}
+[2026-05-29 00:41:49] [trial_009] START | seed=42 | hp={'learning_rate': 0.000256262267608854, 'r': 4, 'lora_alpha': 16, 'lora_dropout': 0.0, 'weight_decay': 0.0001478262035558581, 'warmup_ratio': 0.0}
+[2026-05-29 00:43:59] [trial_009] epoch=001 | train_loss=0.107562 | val_MAE=0.102433 | val_S=0.897567 | best_S=0.897567 @epoch=1 | patience=0/5
+[2026-05-29 00:46:07] [trial_009] epoch=002 | train_loss=0.099748 | val_MAE=0.099595 | val_S=0.900405 | best_S=0.900405 @epoch=2 | patience=0/5
+[2026-05-29 00:48:12] [trial_009] epoch=003 | train_loss=0.096999 | val_MAE=0.098905 | val_S=0.901095 | best_S=0.901095 @epoch=3 | patience=0/5
+[2026-05-29 00:50:19] [trial_009] epoch=004 | train_loss=0.095826 | val_MAE=0.097872 | val_S=0.902128 | best_S=0.902128 @epoch=4 | patience=0/5
+[2026-05-29 00:52:28] [trial_009] epoch=005 | train_loss=0.094012 | val_MAE=0.097733 | val_S=0.902267 | best_S=0.902267 @epoch=5 | patience=0/5
+[2026-05-29 00:54:33] [trial_009] epoch=006 | train_loss=0.092748 | val_MAE=0.099789 | val_S=0.900211 | best_S=0.902267 @epoch=5 | patience=1/5
+[2026-05-29 00:56:39] [trial_009] epoch=007 | train_loss=0.091664 | val_MAE=0.099443 | val_S=0.900557 | best_S=0.902267 @epoch=5 | patience=2/5
+[2026-05-29 00:58:46] [trial_009] epoch=008 | train_loss=0.090681 | val_MAE=0.099394 | val_S=0.900606 | best_S=0.902267 @epoch=5 | patience=3/5
+[2026-05-29 01:00:53] [trial_009] epoch=009 | train_loss=0.090125 | val_MAE=0.098289 | val_S=0.901711 | best_S=0.902267 @epoch=5 | patience=4/5
+[2026-05-29 01:03:00] [trial_009] epoch=010 | train_loss=0.088306 | val_MAE=0.099252 | val_S=0.900748 | best_S=0.902267 @epoch=5 | patience=5/5
+[2026-05-29 01:03:00] [trial_009] early stopping at epoch=10
+[2026-05-29 01:03:07] [trial_009] DONE | best_epoch=5 | best_val_S=0.902267 | test_MAE=nan | test_R2=nan
+[2026-05-29 01:03:09] [OPTUNA] trial_009 done | best_val_S=0.902267
+[2026-05-29 01:03:11] [OPTUNA] trial_010 start | hp={'learning_rate': 0.00019339553103594638, 'r': 4, 'lora_alpha': 64, 'lora_dropout': 0.1, 'weight_decay': 0.001358798508266401, 'warmup_ratio': 0.03}
+[2026-05-29 01:03:12] [trial_010] START | seed=42 | hp={'learning_rate': 0.00019339553103594638, 'r': 4, 'lora_alpha': 64, 'lora_dropout': 0.1, 'weight_decay': 0.001358798508266401, 'warmup_ratio': 0.03}
+[2026-05-29 01:05:23] [trial_010] epoch=001 | train_loss=0.118930 | val_MAE=0.110916 | val_S=0.889084 | best_S=0.889084 @epoch=1 | patience=0/5
+[2026-05-29 01:07:34] [trial_010] epoch=002 | train_loss=0.105463 | val_MAE=0.102955 | val_S=0.897045 | best_S=0.897045 @epoch=2 | patience=0/5
+[2026-05-29 01:09:45] [trial_010] epoch=003 | train_loss=0.100866 | val_MAE=0.100983 | val_S=0.899017 | best_S=0.899017 @epoch=3 | patience=0/5
+[2026-05-29 01:11:55] [trial_010] epoch=004 | train_loss=0.098982 | val_MAE=0.098186 | val_S=0.901814 | best_S=0.901814 @epoch=4 | patience=0/5
+[2026-05-29 01:14:06] [trial_010] epoch=005 | train_loss=0.096090 | val_MAE=0.098039 | val_S=0.901961 | best_S=0.901961 @epoch=5 | patience=0/5
+[2026-05-29 01:16:15] [trial_010] epoch=006 | train_loss=0.093964 | val_MAE=0.099102 | val_S=0.900898 | best_S=0.901961 @epoch=5 | patience=1/5
+[2026-05-29 01:18:25] [trial_010] epoch=007 | train_loss=0.092507 | val_MAE=0.100131 | val_S=0.899869 | best_S=0.901961 @epoch=5 | patience=2/5
+[2026-05-29 01:20:31] [trial_010] epoch=008 | train_loss=0.091151 | val_MAE=0.099989 | val_S=0.900011 | best_S=0.901961 @epoch=5 | patience=3/5
+[2026-05-29 01:22:37] [trial_010] epoch=009 | train_loss=0.090684 | val_MAE=0.098405 | val_S=0.901595 | best_S=0.901961 @epoch=5 | patience=4/5
+[2026-05-29 01:24:46] [trial_010] epoch=010 | train_loss=0.087985 | val_MAE=0.099022 | val_S=0.900978 | best_S=0.901961 @epoch=5 | patience=5/5
+[2026-05-29 01:24:46] [trial_010] early stopping at epoch=10
+[2026-05-29 01:24:53] [trial_010] DONE | best_epoch=5 | best_val_S=0.901961 | test_MAE=nan | test_R2=nan
+[2026-05-29 01:24:55] [OPTUNA] trial_010 done | best_val_S=0.901961
+[2026-05-29 01:24:57] [OPTUNA] trial_011 start | hp={'learning_rate': 0.0002804431335162141, 'r': 8, 'lora_alpha': 32, 'lora_dropout': 0.05, 'weight_decay': 0.004002326672973162, 'warmup_ratio': 0.1}
+[2026-05-29 01:24:59] [trial_011] START | seed=42 | hp={'learning_rate': 0.0002804431335162141, 'r': 8, 'lora_alpha': 32, 'lora_dropout': 0.05, 'weight_decay': 0.004002326672973162, 'warmup_ratio': 0.1}
+[2026-05-29 01:27:11] [trial_011] epoch=001 | train_loss=0.121090 | val_MAE=0.116199 | val_S=0.883801 | best_S=0.883801 @epoch=1 | patience=0/5
+[2026-05-29 01:29:21] [trial_011] epoch=002 | train_loss=0.113474 | val_MAE=0.107677 | val_S=0.892323 | best_S=0.892323 @epoch=2 | patience=0/5
+[2026-05-29 01:31:32] [trial_011] epoch=003 | train_loss=0.104357 | val_MAE=0.103040 | val_S=0.896960 | best_S=0.896960 @epoch=3 | patience=0/5
+[2026-05-29 01:33:41] [trial_011] epoch=004 | train_loss=0.101010 | val_MAE=0.103134 | val_S=0.896866 | best_S=0.896960 @epoch=3 | patience=1/5
+[2026-05-29 01:35:52] [trial_011] epoch=005 | train_loss=0.099503 | val_MAE=0.100891 | val_S=0.899109 | best_S=0.899109 @epoch=5 | patience=0/5
+[2026-05-29 01:38:02] [trial_011] epoch=006 | train_loss=0.097716 | val_MAE=0.098969 | val_S=0.901031 | best_S=0.901031 @epoch=6 | patience=0/5
+[2026-05-29 01:40:13] [trial_011] epoch=007 | train_loss=0.096108 | val_MAE=0.098220 | val_S=0.901780 | best_S=0.901780 @epoch=7 | patience=0/5
+[2026-05-29 01:42:21] [trial_011] epoch=008 | train_loss=0.095080 | val_MAE=0.098759 | val_S=0.901241 | best_S=0.901780 @epoch=7 | patience=1/5
+[2026-05-29 01:44:31] [trial_011] epoch=009 | train_loss=0.093775 | val_MAE=0.102226 | val_S=0.897774 | best_S=0.901780 @epoch=7 | patience=2/5
+[2026-05-29 01:44:31] [trial_011] PRUNED at epoch=9 | best_S=0.901780
+[2026-05-29 01:44:36] [OPTUNA] trial_011 pruned
+[2026-05-29 01:44:38] [OPTUNA] trial_012 start | hp={'learning_rate': 0.0002751914415109942, 'r': 4, 'lora_alpha': 16, 'lora_dropout': 0.0, 'weight_decay': 0.0001310054671209171, 'warmup_ratio': 0.05}
+[2026-05-29 01:44:39] [trial_012] START | seed=42 | hp={'learning_rate': 0.0002751914415109942, 'r': 4, 'lora_alpha': 16, 'lora_dropout': 0.0, 'weight_decay': 0.0001310054671209171, 'warmup_ratio': 0.05}
+[2026-05-29 01:46:44] [trial_012] epoch=001 | train_loss=0.119812 | val_MAE=0.114155 | val_S=0.885845 | best_S=0.885845 @epoch=1 | patience=0/5
+[2026-05-29 01:48:50] [trial_012] epoch=002 | train_loss=0.108646 | val_MAE=0.104153 | val_S=0.895847 | best_S=0.895847 @epoch=2 | patience=0/5
+[2026-05-29 01:50:58] [trial_012] epoch=003 | train_loss=0.101964 | val_MAE=0.103077 | val_S=0.896923 | best_S=0.896923 @epoch=3 | patience=0/5
+[2026-05-29 01:53:06] [trial_012] epoch=004 | train_loss=0.100399 | val_MAE=0.099447 | val_S=0.900553 | best_S=0.900553 @epoch=4 | patience=0/5
+[2026-05-29 01:55:15] [trial_012] epoch=005 | train_loss=0.097762 | val_MAE=0.098612 | val_S=0.901388 | best_S=0.901388 @epoch=5 | patience=0/5
+[2026-05-29 01:57:22] [trial_012] epoch=006 | train_loss=0.095914 | val_MAE=0.099203 | val_S=0.900797 | best_S=0.901388 @epoch=5 | patience=1/5
+[2026-05-29 01:59:30] [trial_012] epoch=007 | train_loss=0.094392 | val_MAE=0.100358 | val_S=0.899642 | best_S=0.901388 @epoch=5 | patience=2/5
+[2026-05-29 02:01:38] [trial_012] epoch=008 | train_loss=0.093428 | val_MAE=0.098723 | val_S=0.901277 | best_S=0.901388 @epoch=5 | patience=3/5
+[2026-05-29 02:03:46] [trial_012] epoch=009 | train_loss=0.092495 | val_MAE=0.097865 | val_S=0.902135 | best_S=0.902135 @epoch=9 | patience=0/5
+[2026-05-29 02:05:50] [trial_012] epoch=010 | train_loss=0.090471 | val_MAE=0.098861 | val_S=0.901139 | best_S=0.902135 @epoch=9 | patience=1/5
+[2026-05-29 02:07:52] [trial_012] epoch=011 | train_loss=0.089799 | val_MAE=0.098461 | val_S=0.901539 | best_S=0.902135 @epoch=9 | patience=2/5
+[2026-05-29 02:09:59] [trial_012] epoch=012 | train_loss=0.088268 | val_MAE=0.099172 | val_S=0.900828 | best_S=0.902135 @epoch=9 | patience=3/5
+[2026-05-29 02:12:02] [trial_012] epoch=013 | train_loss=0.087860 | val_MAE=0.099324 | val_S=0.900676 | best_S=0.902135 @epoch=9 | patience=4/5
+[2026-05-29 02:14:05] [trial_012] epoch=014 | train_loss=0.086742 | val_MAE=0.099049 | val_S=0.900951 | best_S=0.902135 @epoch=9 | patience=5/5
+[2026-05-29 02:14:05] [trial_012] early stopping at epoch=14
+[2026-05-29 02:14:09] [trial_012] DONE | best_epoch=9 | best_val_S=0.902135 | test_MAE=nan | test_R2=nan
+[2026-05-29 02:14:11] [OPTUNA] trial_012 done | best_val_S=0.902135
+[2026-05-29 02:14:12] [OPTUNA] trial_013 start | hp={'learning_rate': 0.00015236785550059876, 'r': 4, 'lora_alpha': 16, 'lora_dropout': 0.0, 'weight_decay': 0.00032605316799197713, 'warmup_ratio': 0.1}
+[2026-05-29 02:14:13] [trial_013] START | seed=42 | hp={'learning_rate': 0.00015236785550059876, 'r': 4, 'lora_alpha': 16, 'lora_dropout': 0.0, 'weight_decay': 0.00032605316799197713, 'warmup_ratio': 0.1}
+[2026-05-29 02:16:21] [trial_013] epoch=001 | train_loss=0.122064 | val_MAE=0.118293 | val_S=0.881707 | best_S=0.881707 @epoch=1 | patience=0/5
+[2026-05-29 02:18:30] [trial_013] epoch=002 | train_loss=0.116783 | val_MAE=0.113648 | val_S=0.886352 | best_S=0.886352 @epoch=2 | patience=0/5
+[2026-05-29 02:20:39] [trial_013] epoch=003 | train_loss=0.110322 | val_MAE=0.105497 | val_S=0.894503 | best_S=0.894503 @epoch=3 | patience=0/5
+[2026-05-29 02:22:46] [trial_013] epoch=004 | train_loss=0.104459 | val_MAE=0.103988 | val_S=0.896012 | best_S=0.896012 @epoch=4 | patience=0/5
+[2026-05-29 02:24:52] [trial_013] epoch=005 | train_loss=0.102278 | val_MAE=0.102433 | val_S=0.897567 | best_S=0.897567 @epoch=5 | patience=0/5
+[2026-05-29 02:27:00] [trial_013] epoch=006 | train_loss=0.100515 | val_MAE=0.102371 | val_S=0.897629 | best_S=0.897629 @epoch=6 | patience=0/5
+[2026-05-29 02:29:09] [trial_013] epoch=007 | train_loss=0.099239 | val_MAE=0.100266 | val_S=0.899734 | best_S=0.899734 @epoch=7 | patience=0/5
+[2026-05-29 02:31:17] [trial_013] epoch=008 | train_loss=0.098246 | val_MAE=0.100027 | val_S=0.899973 | best_S=0.899973 @epoch=8 | patience=0/5
+[2026-05-29 02:31:17] [trial_013] PRUNED at epoch=8 | best_S=0.899973
+[2026-05-29 02:31:22] [OPTUNA] trial_013 pruned
+[2026-05-29 02:31:24] [OPTUNA] trial_014 start | hp={'learning_rate': 0.00029854541609775943, 'r': 4, 'lora_alpha': 32, 'lora_dropout': 0.0, 'weight_decay': 0.002887410598711304, 'warmup_ratio': 0.0}
+[2026-05-29 02:31:25] [trial_014] START | seed=42 | hp={'learning_rate': 0.00029854541609775943, 'r': 4, 'lora_alpha': 32, 'lora_dropout': 0.0, 'weight_decay': 0.002887410598711304, 'warmup_ratio': 0.0}
+[2026-05-29 02:33:34] [trial_014] epoch=001 | train_loss=0.106666 | val_MAE=0.102500 | val_S=0.897500 | best_S=0.897500 @epoch=1 | patience=0/5
+[2026-05-29 02:35:43] [trial_014] epoch=002 | train_loss=0.098890 | val_MAE=0.099284 | val_S=0.900716 | best_S=0.900716 @epoch=2 | patience=0/5
+[2026-05-29 02:37:52] [trial_014] epoch=003 | train_loss=0.096000 | val_MAE=0.098514 | val_S=0.901486 | best_S=0.901486 @epoch=3 | patience=0/5
+[2026-05-29 02:39:59] [trial_014] epoch=004 | train_loss=0.094932 | val_MAE=0.097333 | val_S=0.902667 | best_S=0.902667 @epoch=4 | patience=0/5
+[2026-05-29 02:41:58] [trial_014] epoch=005 | train_loss=0.092487 | val_MAE=0.099165 | val_S=0.900835 | best_S=0.902667 @epoch=4 | patience=1/5
+[2026-05-29 02:44:05] [trial_014] epoch=006 | train_loss=0.090857 | val_MAE=0.099947 | val_S=0.900053 | best_S=0.902667 @epoch=4 | patience=2/5
+[2026-05-29 02:46:12] [trial_014] epoch=007 | train_loss=0.089489 | val_MAE=0.100065 | val_S=0.899935 | best_S=0.902667 @epoch=4 | patience=3/5
+[2026-05-29 02:48:20] [trial_014] epoch=008 | train_loss=0.088134 | val_MAE=0.100226 | val_S=0.899774 | best_S=0.902667 @epoch=4 | patience=4/5
+[2026-05-29 02:50:27] [trial_014] epoch=009 | train_loss=0.087504 | val_MAE=0.099214 | val_S=0.900786 | best_S=0.902667 @epoch=4 | patience=5/5
+[2026-05-29 02:50:27] [trial_014] early stopping at epoch=9
+[2026-05-29 02:50:34] [trial_014] DONE | best_epoch=4 | best_val_S=0.902667 | test_MAE=nan | test_R2=nan
+[2026-05-29 02:50:36] [OPTUNA] trial_014 done | best_val_S=0.902667
+[2026-05-29 02:50:38] [OPTUNA] trial_015 start | hp={'learning_rate': 0.00022183648338864904, 'r': 16, 'lora_alpha': 32, 'lora_dropout': 0.05, 'weight_decay': 0.002723461067869246, 'warmup_ratio': 0.05}
+[2026-05-29 02:50:40] [trial_015] START | seed=42 | hp={'learning_rate': 0.00022183648338864904, 'r': 16, 'lora_alpha': 32, 'lora_dropout': 0.05, 'weight_decay': 0.002723461067869246, 'warmup_ratio': 0.05}
+[2026-05-29 02:52:52] [trial_015] epoch=001 | train_loss=0.120421 | val_MAE=0.114966 | val_S=0.885034 | best_S=0.885034 @epoch=1 | patience=0/5
+[2026-05-29 02:55:02] [trial_015] epoch=002 | train_loss=0.109538 | val_MAE=0.104698 | val_S=0.895302 | best_S=0.895302 @epoch=2 | patience=0/5
+[2026-05-29 02:57:13] [trial_015] epoch=003 | train_loss=0.102448 | val_MAE=0.102589 | val_S=0.897411 | best_S=0.897411 @epoch=3 | patience=0/5
+[2026-05-29 02:59:24] [trial_015] epoch=004 | train_loss=0.099432 | val_MAE=0.100168 | val_S=0.899832 | best_S=0.899832 @epoch=4 | patience=0/5
+[2026-05-29 03:01:33] [trial_015] epoch=005 | train_loss=0.098197 | val_MAE=0.100286 | val_S=0.899714 | best_S=0.899832 @epoch=4 | patience=1/5
+[2026-05-29 03:03:44] [trial_015] epoch=006 | train_loss=0.096081 | val_MAE=0.101474 | val_S=0.898526 | best_S=0.899832 @epoch=4 | patience=2/5
+[2026-05-29 03:05:55] [trial_015] epoch=007 | train_loss=0.094351 | val_MAE=0.098356 | val_S=0.901644 | best_S=0.901644 @epoch=7 | patience=0/5
+[2026-05-29 03:07:59] [trial_015] epoch=008 | train_loss=0.093079 | val_MAE=0.098382 | val_S=0.901618 | best_S=0.901644 @epoch=7 | patience=1/5
+[2026-05-29 03:10:05] [trial_015] epoch=009 | train_loss=0.091884 | val_MAE=0.099957 | val_S=0.900043 | best_S=0.901644 @epoch=7 | patience=2/5
+[2026-05-29 03:10:05] [trial_015] PRUNED at epoch=9 | best_S=0.901644
+[2026-05-29 03:10:09] [OPTUNA] trial_015 pruned
+[2026-05-29 03:10:10] [OPTUNA] trial_016 start | hp={'learning_rate': 9.575071209256323e-05, 'r': 4, 'lora_alpha': 32, 'lora_dropout': 0.0, 'weight_decay': 0.002339062470420964, 'warmup_ratio': 0.1}
+[2026-05-29 03:10:11] [trial_016] START | seed=42 | hp={'learning_rate': 9.575071209256323e-05, 'r': 4, 'lora_alpha': 32, 'lora_dropout': 0.0, 'weight_decay': 0.002339062470420964, 'warmup_ratio': 0.1}
+[2026-05-29 03:12:21] [trial_016] epoch=001 | train_loss=0.122514 | val_MAE=0.119419 | val_S=0.880581 | best_S=0.880581 @epoch=1 | patience=0/5
+[2026-05-29 03:14:29] [trial_016] epoch=002 | train_loss=0.118275 | val_MAE=0.114840 | val_S=0.885160 | best_S=0.885160 @epoch=2 | patience=0/5
+[2026-05-29 03:16:38] [trial_016] epoch=003 | train_loss=0.112951 | val_MAE=0.107975 | val_S=0.892025 | best_S=0.892025 @epoch=3 | patience=0/5
+[2026-05-29 03:18:47] [trial_016] epoch=004 | train_loss=0.106340 | val_MAE=0.105048 | val_S=0.894952 | best_S=0.894952 @epoch=4 | patience=0/5
+[2026-05-29 03:20:56] [trial_016] epoch=005 | train_loss=0.103397 | val_MAE=0.103040 | val_S=0.896960 | best_S=0.896960 @epoch=5 | patience=0/5
+[2026-05-29 03:23:04] [trial_016] epoch=006 | train_loss=0.101484 | val_MAE=0.103967 | val_S=0.896033 | best_S=0.896960 @epoch=5 | patience=1/5
+[2026-05-29 03:25:13] [trial_016] epoch=007 | train_loss=0.100211 | val_MAE=0.101072 | val_S=0.898928 | best_S=0.898928 @epoch=7 | patience=0/5
+[2026-05-29 03:27:22] [trial_016] epoch=008 | train_loss=0.099197 | val_MAE=0.100848 | val_S=0.899152 | best_S=0.899152 @epoch=8 | patience=0/5
+[2026-05-29 03:27:22] [trial_016] PRUNED at epoch=8 | best_S=0.899152
+[2026-05-29 03:27:26] [OPTUNA] trial_016 pruned
+[2026-05-29 03:27:29] [OPTUNA] trial_017 start | hp={'learning_rate': 0.00014653867789443266, 'r': 4, 'lora_alpha': 32, 'lora_dropout': 0.0, 'weight_decay': 0.017020522244809586, 'warmup_ratio': 0.0}
+[2026-05-29 03:27:31] [trial_017] START | seed=42 | hp={'learning_rate': 0.00014653867789443266, 'r': 4, 'lora_alpha': 32, 'lora_dropout': 0.0, 'weight_decay': 0.017020522244809586, 'warmup_ratio': 0.0}
+[2026-05-29 03:29:40] [trial_017] epoch=001 | train_loss=0.109318 | val_MAE=0.103478 | val_S=0.896522 | best_S=0.896522 @epoch=1 | patience=0/5
+[2026-05-29 03:31:48] [trial_017] epoch=002 | train_loss=0.101021 | val_MAE=0.100798 | val_S=0.899202 | best_S=0.899202 @epoch=2 | patience=0/5
+[2026-05-29 03:33:55] [trial_017] epoch=003 | train_loss=0.098585 | val_MAE=0.100483 | val_S=0.899517 | best_S=0.899517 @epoch=3 | patience=0/5
+[2026-05-29 03:36:02] [trial_017] epoch=004 | train_loss=0.097431 | val_MAE=0.098161 | val_S=0.901839 | best_S=0.901839 @epoch=4 | patience=0/5
+[2026-05-29 03:38:10] [trial_017] epoch=005 | train_loss=0.095460 | val_MAE=0.097858 | val_S=0.902142 | best_S=0.902142 @epoch=5 | patience=0/5
+[2026-05-29 03:40:13] [trial_017] epoch=006 | train_loss=0.094182 | val_MAE=0.099446 | val_S=0.900554 | best_S=0.902142 @epoch=5 | patience=1/5
+[2026-05-29 03:42:21] [trial_017] epoch=007 | train_loss=0.093361 | val_MAE=0.099120 | val_S=0.900880 | best_S=0.902142 @epoch=5 | patience=2/5
+[2026-05-29 03:44:28] [trial_017] epoch=008 | train_loss=0.092586 | val_MAE=0.099063 | val_S=0.900937 | best_S=0.902142 @epoch=5 | patience=3/5
+[2026-05-29 03:46:34] [trial_017] epoch=009 | train_loss=0.092183 | val_MAE=0.097729 | val_S=0.902271 | best_S=0.902271 @epoch=9 | patience=0/5
+[2026-05-29 03:48:38] [trial_017] epoch=010 | train_loss=0.090523 | val_MAE=0.098405 | val_S=0.901595 | best_S=0.902271 @epoch=9 | patience=1/5
+[2026-05-29 03:50:46] [trial_017] epoch=011 | train_loss=0.089924 | val_MAE=0.098877 | val_S=0.901123 | best_S=0.902271 @epoch=9 | patience=2/5
+[2026-05-29 03:52:47] [trial_017] epoch=012 | train_loss=0.088687 | val_MAE=0.098998 | val_S=0.901002 | best_S=0.902271 @epoch=9 | patience=3/5
+[2026-05-29 03:54:53] [trial_017] epoch=013 | train_loss=0.088219 | val_MAE=0.099263 | val_S=0.900737 | best_S=0.902271 @epoch=9 | patience=4/5
+[2026-05-29 03:57:01] [trial_017] epoch=014 | train_loss=0.087490 | val_MAE=0.099290 | val_S=0.900710 | best_S=0.902271 @epoch=9 | patience=5/5
+[2026-05-29 03:57:01] [trial_017] early stopping at epoch=14
+[2026-05-29 03:57:08] [trial_017] DONE | best_epoch=9 | best_val_S=0.902271 | test_MAE=nan | test_R2=nan
+[2026-05-29 03:57:10] [OPTUNA] trial_017 done | best_val_S=0.902271
+[2026-05-29 03:57:13] [OPTUNA] trial_018 start | hp={'learning_rate': 0.00029383339606697475, 'r': 4, 'lora_alpha': 32, 'lora_dropout': 0.0, 'weight_decay': 0.008586479441585956, 'warmup_ratio': 0.1}
+[2026-05-29 03:57:15] [trial_018] START | seed=42 | hp={'learning_rate': 0.00029383339606697475, 'r': 4, 'lora_alpha': 32, 'lora_dropout': 0.0, 'weight_decay': 0.008586479441585956, 'warmup_ratio': 0.1}
+[2026-05-29 03:59:24] [trial_018] epoch=001 | train_loss=0.121021 | val_MAE=0.115943 | val_S=0.884057 | best_S=0.884057 @epoch=1 | patience=0/5
+[2026-05-29 04:01:32] [trial_018] epoch=002 | train_loss=0.112206 | val_MAE=0.105886 | val_S=0.894114 | best_S=0.894114 @epoch=2 | patience=0/5
+[2026-05-29 04:03:41] [trial_018] epoch=003 | train_loss=0.103658 | val_MAE=0.103851 | val_S=0.896149 | best_S=0.896149 @epoch=3 | patience=0/5
+[2026-05-29 04:05:48] [trial_018] epoch=004 | train_loss=0.101573 | val_MAE=0.100846 | val_S=0.899154 | best_S=0.899154 @epoch=4 | patience=0/5
+[2026-05-29 04:07:53] [trial_018] epoch=005 | train_loss=0.099270 | val_MAE=0.099332 | val_S=0.900668 | best_S=0.900668 @epoch=5 | patience=0/5
+[2026-05-29 04:10:00] [trial_018] epoch=006 | train_loss=0.097448 | val_MAE=0.099506 | val_S=0.900494 | best_S=0.900668 @epoch=5 | patience=1/5
+[2026-05-29 04:12:07] [trial_018] epoch=007 | train_loss=0.095989 | val_MAE=0.102141 | val_S=0.897859 | best_S=0.900668 @epoch=5 | patience=2/5
+[2026-05-29 04:14:15] [trial_018] epoch=008 | train_loss=0.095115 | val_MAE=0.099786 | val_S=0.900214 | best_S=0.900668 @epoch=5 | patience=3/5
+[2026-05-29 04:14:15] [trial_018] PRUNED at epoch=8 | best_S=0.900668
+[2026-05-29 04:14:19] [OPTUNA] trial_018 pruned
+[2026-05-29 04:14:22] [OPTUNA] trial_019 start | hp={'learning_rate': 0.00023003109715021564, 'r': 8, 'lora_alpha': 32, 'lora_dropout': 0.05, 'weight_decay': 0.0036725031700217434, 'warmup_ratio': 0.0}
+[2026-05-29 04:14:23] [trial_019] START | seed=42 | hp={'learning_rate': 0.00023003109715021564, 'r': 8, 'lora_alpha': 32, 'lora_dropout': 0.05, 'weight_decay': 0.0036725031700217434, 'warmup_ratio': 0.0}
+[2026-05-29 04:16:35] [trial_019] epoch=001 | train_loss=0.107220 | val_MAE=0.101418 | val_S=0.898582 | best_S=0.898582 @epoch=1 | patience=0/5
+[2026-05-29 04:18:45] [trial_019] epoch=002 | train_loss=0.099868 | val_MAE=0.101020 | val_S=0.898980 | best_S=0.898980 @epoch=2 | patience=0/5
+[2026-05-29 04:20:56] [trial_019] epoch=003 | train_loss=0.097194 | val_MAE=0.098022 | val_S=0.901978 | best_S=0.901978 @epoch=3 | patience=0/5
+[2026-05-29 04:23:05] [trial_019] epoch=004 | train_loss=0.094590 | val_MAE=0.099790 | val_S=0.900210 | best_S=0.901978 @epoch=3 | patience=1/5
+[2026-05-29 04:25:14] [trial_019] epoch=005 | train_loss=0.093527 | val_MAE=0.097047 | val_S=0.902953 | best_S=0.902953 @epoch=5 | patience=0/5
+[2026-05-29 04:27:22] [trial_019] epoch=006 | train_loss=0.092245 | val_MAE=0.098525 | val_S=0.901475 | best_S=0.902953 @epoch=5 | patience=1/5
+[2026-05-29 04:29:32] [trial_019] epoch=007 | train_loss=0.090735 | val_MAE=0.097134 | val_S=0.902866 | best_S=0.902953 @epoch=5 | patience=2/5
+[2026-05-29 04:31:40] [trial_019] epoch=008 | train_loss=0.089992 | val_MAE=0.097787 | val_S=0.902213 | best_S=0.902953 @epoch=5 | patience=3/5
+[2026-05-29 04:33:49] [trial_019] epoch=009 | train_loss=0.088086 | val_MAE=0.098884 | val_S=0.901116 | best_S=0.902953 @epoch=5 | patience=4/5
+[2026-05-29 04:35:59] [trial_019] epoch=010 | train_loss=0.086945 | val_MAE=0.098078 | val_S=0.901922 | best_S=0.902953 @epoch=5 | patience=5/5
+[2026-05-29 04:35:59] [trial_019] early stopping at epoch=10
+[2026-05-29 04:36:06] [trial_019] DONE | best_epoch=5 | best_val_S=0.902953 | test_MAE=nan | test_R2=nan
+[2026-05-29 04:36:08] [OPTUNA] trial_019 done | best_val_S=0.902953
+[2026-05-29 04:36:11] [OPTUNA] trial_020 start | hp={'learning_rate': 0.0001685004117153162, 'r': 8, 'lora_alpha': 32, 'lora_dropout': 0.05, 'weight_decay': 0.0013011406264549638, 'warmup_ratio': 0.0}
+[2026-05-29 04:36:13] [trial_020] START | seed=42 | hp={'learning_rate': 0.0001685004117153162, 'r': 8, 'lora_alpha': 32, 'lora_dropout': 0.05, 'weight_decay': 0.0013011406264549638, 'warmup_ratio': 0.0}
+[2026-05-29 04:38:22] [trial_020] epoch=001 | train_loss=0.108495 | val_MAE=0.102759 | val_S=0.897241 | best_S=0.897241 @epoch=1 | patience=0/5
+[2026-05-29 04:40:31] [trial_020] epoch=002 | train_loss=0.100813 | val_MAE=0.101019 | val_S=0.898981 | best_S=0.898981 @epoch=2 | patience=0/5
+[2026-05-29 04:42:41] [trial_020] epoch=003 | train_loss=0.097937 | val_MAE=0.098420 | val_S=0.901580 | best_S=0.901580 @epoch=3 | patience=0/5
+[2026-05-29 04:44:52] [trial_020] epoch=004 | train_loss=0.095759 | val_MAE=0.099318 | val_S=0.900682 | best_S=0.901580 @epoch=3 | patience=1/5
+[2026-05-29 04:47:03] [trial_020] epoch=005 | train_loss=0.094916 | val_MAE=0.097542 | val_S=0.902458 | best_S=0.902458 @epoch=5 | patience=0/5
+[2026-05-29 04:49:12] [trial_020] epoch=006 | train_loss=0.093609 | val_MAE=0.099084 | val_S=0.900916 | best_S=0.902458 @epoch=5 | patience=1/5
+[2026-05-29 04:51:22] [trial_020] epoch=007 | train_loss=0.092696 | val_MAE=0.097606 | val_S=0.902394 | best_S=0.902458 @epoch=5 | patience=2/5
+[2026-05-29 04:53:31] [trial_020] epoch=008 | train_loss=0.091793 | val_MAE=0.097636 | val_S=0.902364 | best_S=0.902458 @epoch=5 | patience=3/5
+[2026-05-29 04:55:37] [trial_020] epoch=009 | train_loss=0.090381 | val_MAE=0.099491 | val_S=0.900509 | best_S=0.902458 @epoch=5 | patience=4/5
+[2026-05-29 04:57:47] [trial_020] epoch=010 | train_loss=0.089465 | val_MAE=0.097859 | val_S=0.902141 | best_S=0.902458 @epoch=5 | patience=5/5
+[2026-05-29 04:57:47] [trial_020] early stopping at epoch=10
+[2026-05-29 04:57:54] [trial_020] DONE | best_epoch=5 | best_val_S=0.902458 | test_MAE=nan | test_R2=nan
+[2026-05-29 04:57:56] [OPTUNA] trial_020 done | best_val_S=0.902458
+[2026-05-29 04:57:59] [OPTUNA] trial_021 start | hp={'learning_rate': 0.00021992849763565598, 'r': 8, 'lora_alpha': 64, 'lora_dropout': 0.05, 'weight_decay': 0.005414058201690377, 'warmup_ratio': 0.0}
+[2026-05-29 04:58:01] [trial_021] START | seed=42 | hp={'learning_rate': 0.00021992849763565598, 'r': 8, 'lora_alpha': 64, 'lora_dropout': 0.05, 'weight_decay': 0.005414058201690377, 'warmup_ratio': 0.0}
+[2026-05-29 05:00:13] [trial_021] epoch=001 | train_loss=0.107078 | val_MAE=0.101473 | val_S=0.898527 | best_S=0.898527 @epoch=1 | patience=0/5
+[2026-05-29 05:02:22] [trial_021] epoch=002 | train_loss=0.099656 | val_MAE=0.102219 | val_S=0.897781 | best_S=0.898527 @epoch=1 | patience=1/5
+[2026-05-29 05:04:33] [trial_021] epoch=003 | train_loss=0.096896 | val_MAE=0.098020 | val_S=0.901980 | best_S=0.901980 @epoch=3 | patience=0/5
+[2026-05-29 05:06:43] [trial_021] epoch=004 | train_loss=0.093790 | val_MAE=0.100448 | val_S=0.899552 | best_S=0.901980 @epoch=3 | patience=1/5
+[2026-05-29 05:08:54] [trial_021] epoch=005 | train_loss=0.092580 | val_MAE=0.097205 | val_S=0.902795 | best_S=0.902795 @epoch=5 | patience=0/5
+[2026-05-29 05:11:03] [trial_021] epoch=006 | train_loss=0.091234 | val_MAE=0.098988 | val_S=0.901012 | best_S=0.902795 @epoch=5 | patience=1/5
+[2026-05-29 05:13:12] [trial_021] epoch=007 | train_loss=0.088929 | val_MAE=0.097955 | val_S=0.902045 | best_S=0.902795 @epoch=5 | patience=2/5
+[2026-05-29 05:15:20] [trial_021] epoch=008 | train_loss=0.088053 | val_MAE=0.098200 | val_S=0.901800 | best_S=0.902795 @epoch=5 | patience=3/5
+[2026-05-29 05:17:30] [trial_021] epoch=009 | train_loss=0.085800 | val_MAE=0.099231 | val_S=0.900769 | best_S=0.902795 @epoch=5 | patience=4/5
+[2026-05-29 05:19:39] [trial_021] epoch=010 | train_loss=0.084290 | val_MAE=0.099089 | val_S=0.900911 | best_S=0.902795 @epoch=5 | patience=5/5
+[2026-05-29 05:19:39] [trial_021] early stopping at epoch=10
+[2026-05-29 05:19:45] [trial_021] DONE | best_epoch=5 | best_val_S=0.902795 | test_MAE=nan | test_R2=nan
+[2026-05-29 05:19:48] [OPTUNA] trial_021 done | best_val_S=0.902795
+[2026-05-29 05:19:50] [OPTUNA] trial_022 start | hp={'learning_rate': 0.00022683949727203586, 'r': 8, 'lora_alpha': 64, 'lora_dropout': 0.05, 'weight_decay': 0.005219754576262371, 'warmup_ratio': 0.0}
+[2026-05-29 05:19:53] [trial_022] START | seed=42 | hp={'learning_rate': 0.00022683949727203586, 'r': 8, 'lora_alpha': 64, 'lora_dropout': 0.05, 'weight_decay': 0.005219754576262371, 'warmup_ratio': 0.0}
+[2026-05-29 05:22:05] [trial_022] epoch=001 | train_loss=0.106859 | val_MAE=0.101307 | val_S=0.898693 | best_S=0.898693 @epoch=1 | patience=0/5
+[2026-05-29 05:24:13] [trial_022] epoch=002 | train_loss=0.099603 | val_MAE=0.101529 | val_S=0.898471 | best_S=0.898693 @epoch=1 | patience=1/5
+[2026-05-29 05:26:23] [trial_022] epoch=003 | train_loss=0.096799 | val_MAE=0.098006 | val_S=0.901994 | best_S=0.901994 @epoch=3 | patience=0/5
+[2026-05-29 05:28:33] [trial_022] epoch=004 | train_loss=0.093678 | val_MAE=0.100469 | val_S=0.899531 | best_S=0.901994 @epoch=3 | patience=1/5
+[2026-05-29 05:30:44] [trial_022] epoch=005 | train_loss=0.092474 | val_MAE=0.097465 | val_S=0.902535 | best_S=0.902535 @epoch=5 | patience=0/5
+[2026-05-29 05:32:53] [trial_022] epoch=006 | train_loss=0.091109 | val_MAE=0.099249 | val_S=0.900751 | best_S=0.902535 @epoch=5 | patience=1/5
+[2026-05-29 05:35:02] [trial_022] epoch=007 | train_loss=0.088614 | val_MAE=0.097780 | val_S=0.902220 | best_S=0.902535 @epoch=5 | patience=2/5
+[2026-05-29 05:37:11] [trial_022] epoch=008 | train_loss=0.087908 | val_MAE=0.098412 | val_S=0.901588 | best_S=0.902535 @epoch=5 | patience=3/5
+[2026-05-29 05:39:18] [trial_022] epoch=009 | train_loss=0.085653 | val_MAE=0.099194 | val_S=0.900806 | best_S=0.902535 @epoch=5 | patience=4/5
+[2026-05-29 05:41:28] [trial_022] epoch=010 | train_loss=0.084063 | val_MAE=0.098361 | val_S=0.901639 | best_S=0.902535 @epoch=5 | patience=5/5
+[2026-05-29 05:41:28] [trial_022] early stopping at epoch=10
+[2026-05-29 05:41:35] [trial_022] DONE | best_epoch=5 | best_val_S=0.902535 | test_MAE=nan | test_R2=nan
+[2026-05-29 05:41:37] [OPTUNA] trial_022 done | best_val_S=0.902535
+[2026-05-29 05:41:40] [OPTUNA] trial_023 start | hp={'learning_rate': 5.277800140775892e-05, 'r': 8, 'lora_alpha': 64, 'lora_dropout': 0.05, 'weight_decay': 0.012034219069067036, 'warmup_ratio': 0.0}
+[2026-05-29 05:41:42] [trial_023] START | seed=42 | hp={'learning_rate': 5.277800140775892e-05, 'r': 8, 'lora_alpha': 64, 'lora_dropout': 0.05, 'weight_decay': 0.012034219069067036, 'warmup_ratio': 0.0}
+[2026-05-29 05:43:54] [trial_023] epoch=001 | train_loss=0.114691 | val_MAE=0.106078 | val_S=0.893922 | best_S=0.893922 @epoch=1 | patience=0/5
+[2026-05-29 05:45:58] [trial_023] epoch=002 | train_loss=0.104530 | val_MAE=0.103548 | val_S=0.896452 | best_S=0.896452 @epoch=2 | patience=0/5
+[2026-05-29 05:48:09] [trial_023] epoch=003 | train_loss=0.101293 | val_MAE=0.101551 | val_S=0.898449 | best_S=0.898449 @epoch=3 | patience=0/5
+[2026-05-29 05:50:19] [trial_023] epoch=004 | train_loss=0.099451 | val_MAE=0.101607 | val_S=0.898393 | best_S=0.898449 @epoch=3 | patience=1/5
+[2026-05-29 05:52:29] [trial_023] epoch=005 | train_loss=0.098717 | val_MAE=0.099786 | val_S=0.900214 | best_S=0.900214 @epoch=5 | patience=0/5
+[2026-05-29 05:54:35] [trial_023] epoch=006 | train_loss=0.097686 | val_MAE=0.099420 | val_S=0.900580 | best_S=0.900580 @epoch=6 | patience=0/5
+[2026-05-29 05:56:43] [trial_023] epoch=007 | train_loss=0.096593 | val_MAE=0.099424 | val_S=0.900576 | best_S=0.900580 @epoch=6 | patience=1/5
+[2026-05-29 05:58:51] [trial_023] epoch=008 | train_loss=0.095931 | val_MAE=0.100739 | val_S=0.899261 | best_S=0.900580 @epoch=6 | patience=2/5
+[2026-05-29 05:58:51] [trial_023] PRUNED at epoch=8 | best_S=0.900580
+[2026-05-29 05:58:54] [OPTUNA] trial_023 pruned
+[2026-05-29 05:58:56] [OPTUNA] trial_024 start | hp={'learning_rate': 0.00022488062580055168, 'r': 8, 'lora_alpha': 64, 'lora_dropout': 0.05, 'weight_decay': 0.002163992066902662, 'warmup_ratio': 0.0}
+[2026-05-29 05:58:58] [trial_024] START | seed=42 | hp={'learning_rate': 0.00022488062580055168, 'r': 8, 'lora_alpha': 64, 'lora_dropout': 0.05, 'weight_decay': 0.002163992066902662, 'warmup_ratio': 0.0}
+[2026-05-29 06:01:06] [trial_024] epoch=001 | train_loss=0.106907 | val_MAE=0.101508 | val_S=0.898492 | best_S=0.898492 @epoch=1 | patience=0/5
+[2026-05-29 06:03:16] [trial_024] epoch=002 | train_loss=0.099604 | val_MAE=0.101438 | val_S=0.898562 | best_S=0.898562 @epoch=2 | patience=0/5
+[2026-05-29 06:05:27] [trial_024] epoch=003 | train_loss=0.096763 | val_MAE=0.098009 | val_S=0.901991 | best_S=0.901991 @epoch=3 | patience=0/5
+[2026-05-29 06:07:36] [trial_024] epoch=004 | train_loss=0.093730 | val_MAE=0.100342 | val_S=0.899658 | best_S=0.901991 @epoch=3 | patience=1/5
+[2026-05-29 06:09:47] [trial_024] epoch=005 | train_loss=0.092496 | val_MAE=0.097268 | val_S=0.902732 | best_S=0.902732 @epoch=5 | patience=0/5
+[2026-05-29 06:11:56] [trial_024] epoch=006 | train_loss=0.091116 | val_MAE=0.099309 | val_S=0.900691 | best_S=0.902732 @epoch=5 | patience=1/5
+[2026-05-29 06:14:06] [trial_024] epoch=007 | train_loss=0.088731 | val_MAE=0.097579 | val_S=0.902421 | best_S=0.902732 @epoch=5 | patience=2/5
+[2026-05-29 06:16:10] [trial_024] epoch=008 | train_loss=0.088068 | val_MAE=0.097983 | val_S=0.902017 | best_S=0.902732 @epoch=5 | patience=3/5
+[2026-05-29 06:18:16] [trial_024] epoch=009 | train_loss=0.085797 | val_MAE=0.099193 | val_S=0.900807 | best_S=0.902732 @epoch=5 | patience=4/5
+[2026-05-29 06:20:25] [trial_024] epoch=010 | train_loss=0.084133 | val_MAE=0.098747 | val_S=0.901253 | best_S=0.902732 @epoch=5 | patience=5/5
+[2026-05-29 06:20:25] [trial_024] early stopping at epoch=10
+[2026-05-29 06:20:32] [trial_024] DONE | best_epoch=5 | best_val_S=0.902732 | test_MAE=nan | test_R2=nan
+[2026-05-29 06:20:35] [OPTUNA] trial_024 done | best_val_S=0.902732
+[2026-05-29 06:20:38] [OPTUNA] trial_025 start | hp={'learning_rate': 0.00021800993446902697, 'r': 8, 'lora_alpha': 64, 'lora_dropout': 0.05, 'weight_decay': 0.001800048932369112, 'warmup_ratio': 0.0}
+[2026-05-29 06:20:40] [trial_025] START | seed=42 | hp={'learning_rate': 0.00021800993446902697, 'r': 8, 'lora_alpha': 64, 'lora_dropout': 0.05, 'weight_decay': 0.001800048932369112, 'warmup_ratio': 0.0}
+[2026-05-29 06:22:49] [trial_025] epoch=001 | train_loss=0.107068 | val_MAE=0.101419 | val_S=0.898581 | best_S=0.898581 @epoch=1 | patience=0/5
+[2026-05-29 06:24:57] [trial_025] epoch=002 | train_loss=0.099659 | val_MAE=0.101894 | val_S=0.898106 | best_S=0.898581 @epoch=1 | patience=1/5
+[2026-05-29 06:27:08] [trial_025] epoch=003 | train_loss=0.096827 | val_MAE=0.097960 | val_S=0.902040 | best_S=0.902040 @epoch=3 | patience=0/5
+[2026-05-29 06:29:19] [trial_025] epoch=004 | train_loss=0.093836 | val_MAE=0.100345 | val_S=0.899655 | best_S=0.902040 @epoch=3 | patience=1/5
+[2026-05-29 06:31:29] [trial_025] epoch=005 | train_loss=0.092606 | val_MAE=0.097181 | val_S=0.902819 | best_S=0.902819 @epoch=5 | patience=0/5
+[2026-05-29 06:33:38] [trial_025] epoch=006 | train_loss=0.091221 | val_MAE=0.099515 | val_S=0.900485 | best_S=0.902819 @epoch=5 | patience=1/5
+[2026-05-29 06:35:44] [trial_025] epoch=007 | train_loss=0.089006 | val_MAE=0.097859 | val_S=0.902141 | best_S=0.902819 @epoch=5 | patience=2/5
+[2026-05-29 06:37:51] [trial_025] epoch=008 | train_loss=0.088181 | val_MAE=0.098351 | val_S=0.901649 | best_S=0.902819 @epoch=5 | patience=3/5
+[2026-05-29 06:39:58] [trial_025] epoch=009 | train_loss=0.085868 | val_MAE=0.099214 | val_S=0.900786 | best_S=0.902819 @epoch=5 | patience=4/5
+[2026-05-29 06:42:07] [trial_025] epoch=010 | train_loss=0.084394 | val_MAE=0.098448 | val_S=0.901552 | best_S=0.902819 @epoch=5 | patience=5/5
+[2026-05-29 06:42:07] [trial_025] early stopping at epoch=10
+[2026-05-29 06:42:14] [trial_025] DONE | best_epoch=5 | best_val_S=0.902819 | test_MAE=nan | test_R2=nan
+[2026-05-29 06:42:17] [OPTUNA] trial_025 done | best_val_S=0.902819
+[2026-05-29 06:42:20] [OPTUNA] trial_026 start | hp={'learning_rate': 0.000160893955849915, 'r': 8, 'lora_alpha': 64, 'lora_dropout': 0.05, 'weight_decay': 0.009881180539172373, 'warmup_ratio': 0.0}
+[2026-05-29 06:42:23] [trial_026] START | seed=42 | hp={'learning_rate': 0.000160893955849915, 'r': 8, 'lora_alpha': 64, 'lora_dropout': 0.05, 'weight_decay': 0.009881180539172373, 'warmup_ratio': 0.0}
+[2026-05-29 06:44:31] [trial_026] epoch=001 | train_loss=0.108137 | val_MAE=0.102077 | val_S=0.897923 | best_S=0.897923 @epoch=1 | patience=0/5
+[2026-05-29 06:46:40] [trial_026] epoch=002 | train_loss=0.100557 | val_MAE=0.101126 | val_S=0.898874 | best_S=0.898874 @epoch=2 | patience=0/5
+[2026-05-29 06:48:49] [trial_026] epoch=003 | train_loss=0.097553 | val_MAE=0.098025 | val_S=0.901975 | best_S=0.901975 @epoch=3 | patience=0/5
+[2026-05-29 06:50:58] [trial_026] epoch=004 | train_loss=0.095044 | val_MAE=0.099768 | val_S=0.900232 | best_S=0.901975 @epoch=3 | patience=1/5
+[2026-05-29 06:53:06] [trial_026] epoch=005 | train_loss=0.093945 | val_MAE=0.097208 | val_S=0.902792 | best_S=0.902792 @epoch=5 | patience=0/5
+[2026-05-29 06:55:13] [trial_026] epoch=006 | train_loss=0.092654 | val_MAE=0.098545 | val_S=0.901455 | best_S=0.902792 @epoch=5 | patience=1/5
+[2026-05-29 06:57:21] [trial_026] epoch=007 | train_loss=0.091031 | val_MAE=0.097255 | val_S=0.902745 | best_S=0.902792 @epoch=5 | patience=2/5
+[2026-05-29 06:59:29] [trial_026] epoch=008 | train_loss=0.090199 | val_MAE=0.097522 | val_S=0.902478 | best_S=0.902792 @epoch=5 | patience=3/5
+[2026-05-29 07:01:37] [trial_026] epoch=009 | train_loss=0.088488 | val_MAE=0.098895 | val_S=0.901105 | best_S=0.902792 @epoch=5 | patience=4/5
+[2026-05-29 07:03:45] [trial_026] epoch=010 | train_loss=0.087254 | val_MAE=0.097925 | val_S=0.902075 | best_S=0.902792 @epoch=5 | patience=5/5
+[2026-05-29 07:03:45] [trial_026] early stopping at epoch=10
+[2026-05-29 07:03:52] [trial_026] DONE | best_epoch=5 | best_val_S=0.902792 | test_MAE=nan | test_R2=nan
+[2026-05-29 07:03:55] [OPTUNA] trial_026 done | best_val_S=0.902792
+[2026-05-29 07:03:58] [OPTUNA] trial_027 start | hp={'learning_rate': 0.00013211829650491301, 'r': 8, 'lora_alpha': 64, 'lora_dropout': 0.05, 'weight_decay': 0.004215733863989446, 'warmup_ratio': 0.03}
+[2026-05-29 07:04:01] [trial_027] START | seed=42 | hp={'learning_rate': 0.00013211829650491301, 'r': 8, 'lora_alpha': 64, 'lora_dropout': 0.05, 'weight_decay': 0.004215733863989446, 'warmup_ratio': 0.03}
+[2026-05-29 07:06:10] [trial_027] epoch=001 | train_loss=0.120026 | val_MAE=0.114201 | val_S=0.885799 | best_S=0.885799 @epoch=1 | patience=0/5
+[2026-05-29 07:08:18] [trial_027] epoch=002 | train_loss=0.108421 | val_MAE=0.104316 | val_S=0.895684 | best_S=0.895684 @epoch=2 | patience=0/5
+[2026-05-29 07:10:29] [trial_027] epoch=003 | train_loss=0.101794 | val_MAE=0.100702 | val_S=0.899298 | best_S=0.899298 @epoch=3 | patience=0/5
+[2026-05-29 07:12:40] [trial_027] epoch=004 | train_loss=0.098603 | val_MAE=0.100498 | val_S=0.899502 | best_S=0.899502 @epoch=4 | patience=0/5
+[2026-05-29 07:14:50] [trial_027] epoch=005 | train_loss=0.096871 | val_MAE=0.098074 | val_S=0.901926 | best_S=0.901926 @epoch=5 | patience=0/5
+[2026-05-29 07:17:00] [trial_027] epoch=006 | train_loss=0.095125 | val_MAE=0.099139 | val_S=0.900861 | best_S=0.901926 @epoch=5 | patience=1/5
+[2026-05-29 07:19:11] [trial_027] epoch=007 | train_loss=0.093673 | val_MAE=0.097611 | val_S=0.902389 | best_S=0.902389 @epoch=7 | patience=0/5
+[2026-05-29 07:21:20] [trial_027] epoch=008 | train_loss=0.092678 | val_MAE=0.098000 | val_S=0.902000 | best_S=0.902389 @epoch=7 | patience=1/5
+[2026-05-29 07:23:30] [trial_027] epoch=009 | train_loss=0.091383 | val_MAE=0.100017 | val_S=0.899983 | best_S=0.902389 @epoch=7 | patience=2/5
+[2026-05-29 07:25:36] [trial_027] epoch=010 | train_loss=0.089930 | val_MAE=0.098572 | val_S=0.901428 | best_S=0.902389 @epoch=7 | patience=3/5
+[2026-05-29 07:27:42] [trial_027] epoch=011 | train_loss=0.089151 | val_MAE=0.098644 | val_S=0.901356 | best_S=0.902389 @epoch=7 | patience=4/5
+[2026-05-29 07:29:51] [trial_027] epoch=012 | train_loss=0.088186 | val_MAE=0.101481 | val_S=0.898519 | best_S=0.902389 @epoch=7 | patience=5/5
+[2026-05-29 07:29:51] [trial_027] early stopping at epoch=12
+[2026-05-29 07:29:58] [trial_027] DONE | best_epoch=7 | best_val_S=0.902389 | test_MAE=nan | test_R2=nan
+[2026-05-29 07:30:02] [OPTUNA] trial_027 done | best_val_S=0.902389
+[2026-05-29 07:30:05] [OPTUNA] trial_028 start | hp={'learning_rate': 0.0001713943119240088, 'r': 8, 'lora_alpha': 64, 'lora_dropout': 0.05, 'weight_decay': 0.000600644989225615, 'warmup_ratio': 0.0}
+[2026-05-29 07:30:08] [trial_028] START | seed=42 | hp={'learning_rate': 0.0001713943119240088, 'r': 8, 'lora_alpha': 64, 'lora_dropout': 0.05, 'weight_decay': 0.000600644989225615, 'warmup_ratio': 0.0}
+[2026-05-29 07:32:20] [trial_028] epoch=001 | train_loss=0.107927 | val_MAE=0.101881 | val_S=0.898119 | best_S=0.898119 @epoch=1 | patience=0/5
+[2026-05-29 07:34:30] [trial_028] epoch=002 | train_loss=0.100473 | val_MAE=0.100936 | val_S=0.899064 | best_S=0.899064 @epoch=2 | patience=0/5
+[2026-05-29 07:36:40] [trial_028] epoch=003 | train_loss=0.097407 | val_MAE=0.098030 | val_S=0.901970 | best_S=0.901970 @epoch=3 | patience=0/5
+[2026-05-29 07:38:51] [trial_028] epoch=004 | train_loss=0.094774 | val_MAE=0.100367 | val_S=0.899633 | best_S=0.901970 @epoch=3 | patience=1/5
+[2026-05-29 07:41:02] [trial_028] epoch=005 | train_loss=0.093695 | val_MAE=0.097246 | val_S=0.902754 | best_S=0.902754 @epoch=5 | patience=0/5
+[2026-05-29 07:43:11] [trial_028] epoch=006 | train_loss=0.092354 | val_MAE=0.098607 | val_S=0.901393 | best_S=0.902754 @epoch=5 | patience=1/5
+[2026-05-29 07:45:19] [trial_028] epoch=007 | train_loss=0.090637 | val_MAE=0.097435 | val_S=0.902565 | best_S=0.902754 @epoch=5 | patience=2/5
+[2026-05-29 07:47:28] [trial_028] epoch=008 | train_loss=0.089841 | val_MAE=0.097577 | val_S=0.902423 | best_S=0.902754 @epoch=5 | patience=3/5
+[2026-05-29 07:49:37] [trial_028] epoch=009 | train_loss=0.087885 | val_MAE=0.098903 | val_S=0.901097 | best_S=0.902754 @epoch=5 | patience=4/5
+[2026-05-29 07:51:47] [trial_028] epoch=010 | train_loss=0.086681 | val_MAE=0.097903 | val_S=0.902097 | best_S=0.902754 @epoch=5 | patience=5/5
+[2026-05-29 07:51:47] [trial_028] early stopping at epoch=10
+[2026-05-29 07:51:53] [trial_028] DONE | best_epoch=5 | best_val_S=0.902754 | test_MAE=nan | test_R2=nan
+[2026-05-29 07:51:57] [OPTUNA] trial_028 done | best_val_S=0.902754
+[2026-05-29 07:52:00] [OPTUNA] trial_029 start | hp={'learning_rate': 0.00021023995769500287, 'r': 8, 'lora_alpha': 64, 'lora_dropout': 0.05, 'weight_decay': 0.0016142090498195653, 'warmup_ratio': 0.05}
+[2026-05-29 07:52:03] [trial_029] START | seed=42 | hp={'learning_rate': 0.00021023995769500287, 'r': 8, 'lora_alpha': 64, 'lora_dropout': 0.05, 'weight_decay': 0.0016142090498195653, 'warmup_ratio': 0.05}
+[2026-05-29 07:54:15] [trial_029] epoch=001 | train_loss=0.120119 | val_MAE=0.114400 | val_S=0.885600 | best_S=0.885600 @epoch=1 | patience=0/5
+[2026-05-29 07:56:21] [trial_029] epoch=002 | train_loss=0.108838 | val_MAE=0.104778 | val_S=0.895222 | best_S=0.895222 @epoch=2 | patience=0/5
+[2026-05-29 07:58:31] [trial_029] epoch=003 | train_loss=0.101811 | val_MAE=0.101468 | val_S=0.898532 | best_S=0.898532 @epoch=3 | patience=0/5
+[2026-05-29 08:00:37] [trial_029] epoch=004 | train_loss=0.099010 | val_MAE=0.101368 | val_S=0.898632 | best_S=0.898632 @epoch=4 | patience=0/5
+[2026-05-29 08:02:48] [trial_029] epoch=005 | train_loss=0.097290 | val_MAE=0.098325 | val_S=0.901675 | best_S=0.901675 @epoch=5 | patience=0/5
+[2026-05-29 08:04:57] [trial_029] epoch=006 | train_loss=0.095265 | val_MAE=0.099371 | val_S=0.900629 | best_S=0.901675 @epoch=5 | patience=1/5
+[2026-05-29 08:07:01] [trial_029] epoch=007 | train_loss=0.093040 | val_MAE=0.098087 | val_S=0.901913 | best_S=0.901913 @epoch=7 | patience=0/5
+[2026-05-29 08:09:10] [trial_029] epoch=008 | train_loss=0.091992 | val_MAE=0.097927 | val_S=0.902073 | best_S=0.902073 @epoch=8 | patience=0/5
+[2026-05-29 08:09:10] [trial_029] PRUNED at epoch=8 | best_S=0.902073
+[2026-05-29 08:09:15] [OPTUNA] trial_029 pruned
+[2026-05-29 08:09:19] [OPTUNA] trial_030 start | hp={'learning_rate': 0.00011763485816018083, 'r': 8, 'lora_alpha': 64, 'lora_dropout': 0.15, 'weight_decay': 0.0010483873759114114, 'warmup_ratio': 0.0}
+[2026-05-29 08:09:22] [trial_030] START | seed=42 | hp={'learning_rate': 0.00011763485816018083, 'r': 8, 'lora_alpha': 64, 'lora_dropout': 0.15, 'weight_decay': 0.0010483873759114114, 'warmup_ratio': 0.0}
+[2026-05-29 08:11:33] [trial_030] epoch=001 | train_loss=0.109563 | val_MAE=0.103137 | val_S=0.896863 | best_S=0.896863 @epoch=1 | patience=0/5
+[2026-05-29 08:13:37] [trial_030] epoch=002 | train_loss=0.101559 | val_MAE=0.101544 | val_S=0.898456 | best_S=0.898456 @epoch=2 | patience=0/5
+[2026-05-29 08:15:48] [trial_030] epoch=003 | train_loss=0.098521 | val_MAE=0.098785 | val_S=0.901215 | best_S=0.901215 @epoch=3 | patience=0/5
+[2026-05-29 08:17:55] [trial_030] epoch=004 | train_loss=0.096276 | val_MAE=0.099532 | val_S=0.900468 | best_S=0.901215 @epoch=3 | patience=1/5
+[2026-05-29 08:20:01] [trial_030] epoch=005 | train_loss=0.095340 | val_MAE=0.097908 | val_S=0.902092 | best_S=0.902092 @epoch=5 | patience=0/5
+[2026-05-29 08:22:08] [trial_030] epoch=006 | train_loss=0.094096 | val_MAE=0.098925 | val_S=0.901075 | best_S=0.902092 @epoch=5 | patience=1/5
+[2026-05-29 08:24:19] [trial_030] epoch=007 | train_loss=0.093125 | val_MAE=0.097674 | val_S=0.902326 | best_S=0.902326 @epoch=7 | patience=0/5
+[2026-05-29 08:26:27] [trial_030] epoch=008 | train_loss=0.092200 | val_MAE=0.098060 | val_S=0.901940 | best_S=0.902326 @epoch=7 | patience=1/5
+[2026-05-29 08:28:31] [trial_030] epoch=009 | train_loss=0.090932 | val_MAE=0.099009 | val_S=0.900991 | best_S=0.902326 @epoch=7 | patience=2/5
+[2026-05-29 08:28:32] [trial_030] PRUNED at epoch=9 | best_S=0.902326
+[2026-05-29 08:28:37] [OPTUNA] trial_030 pruned
+[2026-05-29 08:28:40] [OPTUNA] trial_031 start | hp={'learning_rate': 0.00024407639258203724, 'r': 8, 'lora_alpha': 64, 'lora_dropout': 0.05, 'weight_decay': 0.004192317293480451, 'warmup_ratio': 0.0}
+[2026-05-29 08:28:43] [trial_031] START | seed=42 | hp={'learning_rate': 0.00024407639258203724, 'r': 8, 'lora_alpha': 64, 'lora_dropout': 0.05, 'weight_decay': 0.004192317293480451, 'warmup_ratio': 0.0}
+[2026-05-29 08:30:55] [trial_031] epoch=001 | train_loss=0.106535 | val_MAE=0.101083 | val_S=0.898917 | best_S=0.898917 @epoch=1 | patience=0/5
+[2026-05-29 08:33:01] [trial_031] epoch=002 | train_loss=0.099553 | val_MAE=0.101021 | val_S=0.898979 | best_S=0.898979 @epoch=2 | patience=0/5
+[2026-05-29 08:35:06] [trial_031] epoch=003 | train_loss=0.096629 | val_MAE=0.097935 | val_S=0.902065 | best_S=0.902065 @epoch=3 | patience=0/5
+[2026-05-29 08:37:16] [trial_031] epoch=004 | train_loss=0.093494 | val_MAE=0.100441 | val_S=0.899559 | best_S=0.902065 @epoch=3 | patience=1/5
+[2026-05-29 08:39:20] [trial_031] epoch=005 | train_loss=0.092263 | val_MAE=0.097365 | val_S=0.902635 | best_S=0.902635 @epoch=5 | patience=0/5
+[2026-05-29 08:41:25] [trial_031] epoch=006 | train_loss=0.090855 | val_MAE=0.099166 | val_S=0.900834 | best_S=0.902635 @epoch=5 | patience=1/5
+[2026-05-29 08:43:34] [trial_031] epoch=007 | train_loss=0.088376 | val_MAE=0.097981 | val_S=0.902019 | best_S=0.902635 @epoch=5 | patience=2/5
+[2026-05-29 08:45:43] [trial_031] epoch=008 | train_loss=0.087641 | val_MAE=0.098172 | val_S=0.901828 | best_S=0.902635 @epoch=5 | patience=3/5
+[2026-05-29 08:47:53] [trial_031] epoch=009 | train_loss=0.085276 | val_MAE=0.099361 | val_S=0.900639 | best_S=0.902635 @epoch=5 | patience=4/5
+[2026-05-29 08:50:04] [trial_031] epoch=010 | train_loss=0.083681 | val_MAE=0.098823 | val_S=0.901177 | best_S=0.902635 @epoch=5 | patience=5/5
+[2026-05-29 08:50:04] [trial_031] early stopping at epoch=10
+[2026-05-29 08:50:11] [trial_031] DONE | best_epoch=5 | best_val_S=0.902635 | test_MAE=nan | test_R2=nan
+[2026-05-29 08:50:15] [OPTUNA] trial_031 done | best_val_S=0.902635
+[2026-05-29 08:50:18] [OPTUNA] trial_032 start | hp={'learning_rate': 0.0001741662183598834, 'r': 8, 'lora_alpha': 64, 'lora_dropout': 0.05, 'weight_decay': 0.009797141531899079, 'warmup_ratio': 0.0}
+[2026-05-29 08:50:21] [trial_032] START | seed=42 | hp={'learning_rate': 0.0001741662183598834, 'r': 8, 'lora_alpha': 64, 'lora_dropout': 0.05, 'weight_decay': 0.009797141531899079, 'warmup_ratio': 0.0}
+[2026-05-29 08:52:30] [trial_032] epoch=001 | train_loss=0.107874 | val_MAE=0.101884 | val_S=0.898116 | best_S=0.898116 @epoch=1 | patience=0/5
+[2026-05-29 08:54:40] [trial_032] epoch=002 | train_loss=0.100421 | val_MAE=0.101080 | val_S=0.898920 | best_S=0.898920 @epoch=2 | patience=0/5
+[2026-05-29 08:56:51] [trial_032] epoch=003 | train_loss=0.097361 | val_MAE=0.097960 | val_S=0.902040 | best_S=0.902040 @epoch=3 | patience=0/5
+[2026-05-29 08:58:58] [trial_032] epoch=004 | train_loss=0.094732 | val_MAE=0.100185 | val_S=0.899815 | best_S=0.902040 @epoch=3 | patience=1/5
+[2026-05-29 09:01:09] [trial_032] epoch=005 | train_loss=0.093574 | val_MAE=0.097152 | val_S=0.902848 | best_S=0.902848 @epoch=5 | patience=0/5
+[2026-05-29 09:03:17] [trial_032] epoch=006 | train_loss=0.092243 | val_MAE=0.098300 | val_S=0.901700 | best_S=0.902848 @epoch=5 | patience=1/5
+[2026-05-29 09:05:27] [trial_032] epoch=007 | train_loss=0.090512 | val_MAE=0.097380 | val_S=0.902620 | best_S=0.902848 @epoch=5 | patience=2/5
+[2026-05-29 09:07:36] [trial_032] epoch=008 | train_loss=0.089662 | val_MAE=0.097879 | val_S=0.902121 | best_S=0.902848 @epoch=5 | patience=3/5
+[2026-05-29 09:09:46] [trial_032] epoch=009 | train_loss=0.087714 | val_MAE=0.098698 | val_S=0.901302 | best_S=0.902848 @epoch=5 | patience=4/5
+[2026-05-29 09:11:56] [trial_032] epoch=010 | train_loss=0.086432 | val_MAE=0.097945 | val_S=0.902055 | best_S=0.902848 @epoch=5 | patience=5/5
+[2026-05-29 09:11:56] [trial_032] early stopping at epoch=10
+[2026-05-29 09:12:03] [trial_032] DONE | best_epoch=5 | best_val_S=0.902848 | test_MAE=nan | test_R2=nan
+[2026-05-29 09:12:06] [OPTUNA] trial_032 done | best_val_S=0.902848
+[2026-05-29 09:12:10] [OPTUNA] trial_033 start | hp={'learning_rate': 0.00018032130694329454, 'r': 8, 'lora_alpha': 64, 'lora_dropout': 0.05, 'weight_decay': 0.01971525522905382, 'warmup_ratio': 0.0}
+[2026-05-29 09:12:13] [trial_033] START | seed=42 | hp={'learning_rate': 0.00018032130694329454, 'r': 8, 'lora_alpha': 64, 'lora_dropout': 0.05, 'weight_decay': 0.01971525522905382, 'warmup_ratio': 0.0}
+[2026-05-29 09:14:25] [trial_033] epoch=001 | train_loss=0.107778 | val_MAE=0.101802 | val_S=0.898198 | best_S=0.898198 @epoch=1 | patience=0/5
+[2026-05-29 09:16:35] [trial_033] epoch=002 | train_loss=0.100289 | val_MAE=0.101265 | val_S=0.898735 | best_S=0.898735 @epoch=2 | patience=0/5
+[2026-05-29 09:18:46] [trial_033] epoch=003 | train_loss=0.097242 | val_MAE=0.098099 | val_S=0.901901 | best_S=0.901901 @epoch=3 | patience=0/5
+[2026-05-29 09:20:56] [trial_033] epoch=004 | train_loss=0.094567 | val_MAE=0.100221 | val_S=0.899779 | best_S=0.901901 @epoch=3 | patience=1/5
+[2026-05-29 09:23:07] [trial_033] epoch=005 | train_loss=0.093483 | val_MAE=0.097202 | val_S=0.902798 | best_S=0.902798 @epoch=5 | patience=0/5
+[2026-05-29 09:25:17] [trial_033] epoch=006 | train_loss=0.092089 | val_MAE=0.098405 | val_S=0.901595 | best_S=0.902798 @epoch=5 | patience=1/5
+[2026-05-29 09:27:24] [trial_033] epoch=007 | train_loss=0.090220 | val_MAE=0.097421 | val_S=0.902579 | best_S=0.902798 @epoch=5 | patience=2/5
+[2026-05-29 09:29:33] [trial_033] epoch=008 | train_loss=0.089510 | val_MAE=0.097737 | val_S=0.902263 | best_S=0.902798 @epoch=5 | patience=3/5
+[2026-05-29 09:31:38] [trial_033] epoch=009 | train_loss=0.087504 | val_MAE=0.098921 | val_S=0.901079 | best_S=0.902798 @epoch=5 | patience=4/5
+[2026-05-29 09:33:47] [trial_033] epoch=010 | train_loss=0.086300 | val_MAE=0.098126 | val_S=0.901874 | best_S=0.902798 @epoch=5 | patience=5/5
+[2026-05-29 09:33:47] [trial_033] early stopping at epoch=10
+[2026-05-29 09:33:54] [trial_033] DONE | best_epoch=5 | best_val_S=0.902798 | test_MAE=nan | test_R2=nan
+[2026-05-29 09:33:58] [OPTUNA] trial_033 done | best_val_S=0.902798
+[2026-05-29 09:34:01] [OPTUNA] trial_034 start | hp={'learning_rate': 0.00017499240623784106, 'r': 8, 'lora_alpha': 64, 'lora_dropout': 0.05, 'weight_decay': 0.019610221050137874, 'warmup_ratio': 0.0}
+[2026-05-29 09:34:05] [trial_034] START | seed=42 | hp={'learning_rate': 0.00017499240623784106, 'r': 8, 'lora_alpha': 64, 'lora_dropout': 0.05, 'weight_decay': 0.019610221050137874, 'warmup_ratio': 0.0}
+[2026-05-29 09:36:17] [trial_034] epoch=001 | train_loss=0.107848 | val_MAE=0.101778 | val_S=0.898222 | best_S=0.898222 @epoch=1 | patience=0/5
+[2026-05-29 09:38:27] [trial_034] epoch=002 | train_loss=0.100382 | val_MAE=0.100923 | val_S=0.899077 | best_S=0.899077 @epoch=2 | patience=0/5
+[2026-05-29 09:40:38] [trial_034] epoch=003 | train_loss=0.097358 | val_MAE=0.097964 | val_S=0.902036 | best_S=0.902036 @epoch=3 | patience=0/5
+[2026-05-29 09:42:45] [trial_034] epoch=004 | train_loss=0.094724 | val_MAE=0.100404 | val_S=0.899596 | best_S=0.902036 @epoch=3 | patience=1/5
+[2026-05-29 09:44:56] [trial_034] epoch=005 | train_loss=0.093575 | val_MAE=0.097199 | val_S=0.902801 | best_S=0.902801 @epoch=5 | patience=0/5
+[2026-05-29 09:47:02] [trial_034] epoch=006 | train_loss=0.092268 | val_MAE=0.098335 | val_S=0.901665 | best_S=0.902801 @epoch=5 | patience=1/5
+[2026-05-29 09:49:09] [trial_034] epoch=007 | train_loss=0.090565 | val_MAE=0.097355 | val_S=0.902645 | best_S=0.902801 @epoch=5 | patience=2/5
+[2026-05-29 09:51:17] [trial_034] epoch=008 | train_loss=0.089740 | val_MAE=0.097603 | val_S=0.902397 | best_S=0.902801 @epoch=5 | patience=3/5
+[2026-05-29 09:53:23] [trial_034] epoch=009 | train_loss=0.087721 | val_MAE=0.098811 | val_S=0.901189 | best_S=0.902801 @epoch=5 | patience=4/5
+[2026-05-29 09:55:28] [trial_034] epoch=010 | train_loss=0.086564 | val_MAE=0.097956 | val_S=0.902044 | best_S=0.902801 @epoch=5 | patience=5/5
+[2026-05-29 09:55:28] [trial_034] early stopping at epoch=10
+[2026-05-29 09:55:33] [trial_034] DONE | best_epoch=5 | best_val_S=0.902801 | test_MAE=nan | test_R2=nan
+[2026-05-29 09:55:36] [OPTUNA] trial_034 done | best_val_S=0.902801
+[2026-05-29 09:55:40] [OPTUNA] trial_035 start | hp={'learning_rate': 0.00013784179731799742, 'r': 16, 'lora_alpha': 64, 'lora_dropout': 0.05, 'weight_decay': 0.014272835782130736, 'warmup_ratio': 0.08}
+[2026-05-29 09:55:43] [trial_035] START | seed=42 | hp={'learning_rate': 0.00013784179731799742, 'r': 16, 'lora_alpha': 64, 'lora_dropout': 0.05, 'weight_decay': 0.014272835782130736, 'warmup_ratio': 0.08}
+[2026-05-29 09:57:55] [trial_035] epoch=001 | train_loss=0.122040 | val_MAE=0.117797 | val_S=0.882203 | best_S=0.882203 @epoch=1 | patience=0/5
+[2026-05-29 10:00:06] [trial_035] epoch=002 | train_loss=0.115561 | val_MAE=0.109610 | val_S=0.890390 | best_S=0.890390 @epoch=2 | patience=0/5
+[2026-05-29 10:02:16] [trial_035] epoch=003 | train_loss=0.106199 | val_MAE=0.103996 | val_S=0.896004 | best_S=0.896004 @epoch=3 | patience=0/5
+[2026-05-29 10:04:24] [trial_035] epoch=004 | train_loss=0.101787 | val_MAE=0.102303 | val_S=0.897697 | best_S=0.897697 @epoch=4 | patience=0/5
+[2026-05-29 10:06:35] [trial_035] epoch=005 | train_loss=0.100594 | val_MAE=0.101783 | val_S=0.898217 | best_S=0.898217 @epoch=5 | patience=0/5
+[2026-05-29 10:08:41] [trial_035] epoch=006 | train_loss=0.098211 | val_MAE=0.104987 | val_S=0.895013 | best_S=0.898217 @epoch=5 | patience=1/5
+[2026-05-29 10:10:52] [trial_035] epoch=007 | train_loss=0.097040 | val_MAE=0.099524 | val_S=0.900476 | best_S=0.900476 @epoch=7 | patience=0/5
+[2026-05-29 10:13:02] [trial_035] epoch=008 | train_loss=0.096041 | val_MAE=0.098877 | val_S=0.901123 | best_S=0.901123 @epoch=8 | patience=0/5
+[2026-05-29 10:13:02] [trial_035] PRUNED at epoch=8 | best_S=0.901123
+[2026-05-29 10:13:08] [OPTUNA] trial_035 pruned
+[2026-05-29 10:13:11] [OPTUNA] trial_036 start | hp={'learning_rate': 9.938249653928833e-05, 'r': 8, 'lora_alpha': 64, 'lora_dropout': 0.15, 'weight_decay': 0.008629696027272293, 'warmup_ratio': 0.0}
+[2026-05-29 10:13:14] [trial_036] START | seed=42 | hp={'learning_rate': 9.938249653928833e-05, 'r': 8, 'lora_alpha': 64, 'lora_dropout': 0.15, 'weight_decay': 0.008629696027272293, 'warmup_ratio': 0.0}
+[2026-05-29 10:15:27] [trial_036] epoch=001 | train_loss=0.110453 | val_MAE=0.103724 | val_S=0.896276 | best_S=0.896276 @epoch=1 | patience=0/5
+[2026-05-29 10:17:34] [trial_036] epoch=002 | train_loss=0.102203 | val_MAE=0.101964 | val_S=0.898036 | best_S=0.898036 @epoch=2 | patience=0/5
+[2026-05-29 10:19:45] [trial_036] epoch=003 | train_loss=0.099183 | val_MAE=0.099267 | val_S=0.900733 | best_S=0.900733 @epoch=3 | patience=0/5
+[2026-05-29 10:21:55] [trial_036] epoch=004 | train_loss=0.096990 | val_MAE=0.099528 | val_S=0.900472 | best_S=0.900733 @epoch=3 | patience=1/5
+[2026-05-29 10:24:02] [trial_036] epoch=005 | train_loss=0.096052 | val_MAE=0.098703 | val_S=0.901297 | best_S=0.901297 @epoch=5 | patience=0/5
+[2026-05-29 10:26:09] [trial_036] epoch=006 | train_loss=0.095012 | val_MAE=0.099078 | val_S=0.900922 | best_S=0.901297 @epoch=5 | patience=1/5
+[2026-05-29 10:28:18] [trial_036] epoch=007 | train_loss=0.094056 | val_MAE=0.098089 | val_S=0.901911 | best_S=0.901911 @epoch=7 | patience=0/5
+[2026-05-29 10:30:27] [trial_036] epoch=008 | train_loss=0.093095 | val_MAE=0.098761 | val_S=0.901239 | best_S=0.901911 @epoch=7 | patience=1/5
+[2026-05-29 10:30:27] [trial_036] PRUNED at epoch=8 | best_S=0.901911
+[2026-05-29 10:30:33] [OPTUNA] trial_036 pruned
+[2026-05-29 10:30:36] [OPTUNA] trial_037 start | hp={'learning_rate': 0.0001877311387205458, 'r': 8, 'lora_alpha': 64, 'lora_dropout': 0.05, 'weight_decay': 0.007040851759127784, 'warmup_ratio': 0.08}
+[2026-05-29 10:30:39] [trial_037] START | seed=42 | hp={'learning_rate': 0.0001877311387205458, 'r': 8, 'lora_alpha': 64, 'lora_dropout': 0.05, 'weight_decay': 0.007040851759127784, 'warmup_ratio': 0.08}
+[2026-05-29 10:32:52] [trial_037] epoch=001 | train_loss=0.121288 | val_MAE=0.116360 | val_S=0.883640 | best_S=0.883640 @epoch=1 | patience=0/5
+[2026-05-29 10:34:57] [trial_037] epoch=002 | train_loss=0.113526 | val_MAE=0.107332 | val_S=0.892668 | best_S=0.892668 @epoch=2 | patience=0/5
+[2026-05-29 10:37:06] [trial_037] epoch=003 | train_loss=0.104437 | val_MAE=0.102949 | val_S=0.897051 | best_S=0.897051 @epoch=3 | patience=0/5
+[2026-05-29 10:39:17] [trial_037] epoch=004 | train_loss=0.100966 | val_MAE=0.103225 | val_S=0.896775 | best_S=0.897051 @epoch=3 | patience=1/5
+[2026-05-29 10:41:24] [trial_037] epoch=005 | train_loss=0.099250 | val_MAE=0.100523 | val_S=0.899477 | best_S=0.899477 @epoch=5 | patience=0/5
+[2026-05-29 10:43:27] [trial_037] epoch=006 | train_loss=0.097443 | val_MAE=0.099404 | val_S=0.900596 | best_S=0.900596 @epoch=6 | patience=0/5
+[2026-05-29 10:45:36] [trial_037] epoch=007 | train_loss=0.095721 | val_MAE=0.097900 | val_S=0.902100 | best_S=0.902100 @epoch=7 | patience=0/5
+[2026-05-29 10:47:46] [trial_037] epoch=008 | train_loss=0.094725 | val_MAE=0.098765 | val_S=0.901235 | best_S=0.902100 @epoch=7 | patience=1/5
+[2026-05-29 10:47:46] [trial_037] PRUNED at epoch=8 | best_S=0.902100
+[2026-05-29 10:47:52] [OPTUNA] trial_037 pruned
+[2026-05-29 10:47:55] [OPTUNA] trial_038 start | hp={'learning_rate': 0.0002478324790962056, 'r': 16, 'lora_alpha': 16, 'lora_dropout': 0.1, 'weight_decay': 0.013097738642588619, 'warmup_ratio': 0.0}
+[2026-05-29 10:47:59] [trial_038] START | seed=42 | hp={'learning_rate': 0.0002478324790962056, 'r': 16, 'lora_alpha': 16, 'lora_dropout': 0.1, 'weight_decay': 0.013097738642588619, 'warmup_ratio': 0.0}
+[2026-05-29 10:50:11] [trial_038] epoch=001 | train_loss=0.107863 | val_MAE=0.104712 | val_S=0.895288 | best_S=0.895288 @epoch=1 | patience=0/5
+[2026-05-29 10:52:22] [trial_038] epoch=002 | train_loss=0.099431 | val_MAE=0.100280 | val_S=0.899720 | best_S=0.899720 @epoch=2 | patience=0/5
+[2026-05-29 10:54:29] [trial_038] epoch=003 | train_loss=0.097072 | val_MAE=0.098590 | val_S=0.901410 | best_S=0.901410 @epoch=3 | patience=0/5
+[2026-05-29 10:56:39] [trial_038] epoch=004 | train_loss=0.095244 | val_MAE=0.099422 | val_S=0.900578 | best_S=0.901410 @epoch=3 | patience=1/5
+[2026-05-29 10:58:44] [trial_038] epoch=005 | train_loss=0.094384 | val_MAE=0.099257 | val_S=0.900743 | best_S=0.901410 @epoch=3 | patience=2/5
+[2026-05-29 11:00:54] [trial_038] epoch=006 | train_loss=0.092662 | val_MAE=0.100273 | val_S=0.899727 | best_S=0.901410 @epoch=3 | patience=3/5
+[2026-05-29 11:03:01] [trial_038] epoch=007 | train_loss=0.091719 | val_MAE=0.097862 | val_S=0.902138 | best_S=0.902138 @epoch=7 | patience=0/5
+[2026-05-29 11:05:08] [trial_038] epoch=008 | train_loss=0.091082 | val_MAE=0.098546 | val_S=0.901454 | best_S=0.902138 @epoch=7 | patience=1/5
+[2026-05-29 11:05:08] [trial_038] PRUNED at epoch=8 | best_S=0.902138
+[2026-05-29 11:05:14] [OPTUNA] trial_038 pruned
+[2026-05-29 11:05:18] [OPTUNA] trial_039 start | hp={'learning_rate': 0.00015429666732240063, 'r': 8, 'lora_alpha': 64, 'lora_dropout': 0.05, 'weight_decay': 0.011459794409694947, 'warmup_ratio': 0.03}
+[2026-05-29 11:05:21] [trial_039] START | seed=42 | hp={'learning_rate': 0.00015429666732240063, 'r': 8, 'lora_alpha': 64, 'lora_dropout': 0.05, 'weight_decay': 0.011459794409694947, 'warmup_ratio': 0.03}
+[2026-05-29 11:07:33] [trial_039] epoch=001 | train_loss=0.119669 | val_MAE=0.113421 | val_S=0.886579 | best_S=0.886579 @epoch=1 | patience=0/5
+[2026-05-29 11:09:41] [trial_039] epoch=002 | train_loss=0.107440 | val_MAE=0.104128 | val_S=0.895872 | best_S=0.895872 @epoch=2 | patience=0/5
+[2026-05-29 11:11:52] [trial_039] epoch=003 | train_loss=0.101141 | val_MAE=0.101563 | val_S=0.898437 | best_S=0.898437 @epoch=3 | patience=0/5
+[2026-05-29 11:14:03] [trial_039] epoch=004 | train_loss=0.098176 | val_MAE=0.100892 | val_S=0.899108 | best_S=0.899108 @epoch=4 | patience=0/5
+[2026-05-29 11:16:14] [trial_039] epoch=005 | train_loss=0.096395 | val_MAE=0.097808 | val_S=0.902192 | best_S=0.902192 @epoch=5 | patience=0/5
+[2026-05-29 11:18:21] [trial_039] epoch=006 | train_loss=0.094463 | val_MAE=0.099128 | val_S=0.900872 | best_S=0.902192 @epoch=5 | patience=1/5
+[2026-05-29 11:20:31] [trial_039] epoch=007 | train_loss=0.092971 | val_MAE=0.097868 | val_S=0.902132 | best_S=0.902192 @epoch=5 | patience=2/5
+[2026-05-29 11:22:42] [trial_039] epoch=008 | train_loss=0.092045 | val_MAE=0.097666 | val_S=0.902334 | best_S=0.902334 @epoch=8 | patience=0/5
+[2026-05-29 11:22:42] [trial_039] PRUNED at epoch=8 | best_S=0.902334
+[2026-05-29 11:22:48] [OPTUNA] trial_039 pruned
+[2026-05-29 11:22:52] [OPTUNA] trial_040 start | hp={'learning_rate': 0.00011760181716380968, 'r': 8, 'lora_alpha': 64, 'lora_dropout': 0.05, 'weight_decay': 0.0019503409957612144, 'warmup_ratio': 0.0}
+[2026-05-29 11:22:55] [trial_040] START | seed=42 | hp={'learning_rate': 0.00011760181716380968, 'r': 8, 'lora_alpha': 64, 'lora_dropout': 0.05, 'weight_decay': 0.0019503409957612144, 'warmup_ratio': 0.0}
+[2026-05-29 11:25:07] [trial_040] epoch=001 | train_loss=0.109557 | val_MAE=0.103190 | val_S=0.896810 | best_S=0.896810 @epoch=1 | patience=0/5
+[2026-05-29 11:27:14] [trial_040] epoch=002 | train_loss=0.101547 | val_MAE=0.101361 | val_S=0.898639 | best_S=0.898639 @epoch=2 | patience=0/5
+[2026-05-29 11:29:24] [trial_040] epoch=003 | train_loss=0.098547 | val_MAE=0.098635 | val_S=0.901365 | best_S=0.901365 @epoch=3 | patience=0/5
+[2026-05-29 11:31:31] [trial_040] epoch=004 | train_loss=0.096279 | val_MAE=0.099622 | val_S=0.900378 | best_S=0.901365 @epoch=3 | patience=1/5
+[2026-05-29 11:33:42] [trial_040] epoch=005 | train_loss=0.095335 | val_MAE=0.097816 | val_S=0.902184 | best_S=0.902184 @epoch=5 | patience=0/5
+[2026-05-29 11:35:52] [trial_040] epoch=006 | train_loss=0.094069 | val_MAE=0.099037 | val_S=0.900963 | best_S=0.902184 @epoch=5 | patience=1/5
+[2026-05-29 11:38:03] [trial_040] epoch=007 | train_loss=0.093103 | val_MAE=0.097661 | val_S=0.902339 | best_S=0.902339 @epoch=7 | patience=0/5
+[2026-05-29 11:40:12] [trial_040] epoch=008 | train_loss=0.092091 | val_MAE=0.098044 | val_S=0.901956 | best_S=0.902339 @epoch=7 | patience=1/5
+[2026-05-29 11:40:12] [trial_040] PRUNED at epoch=8 | best_S=0.902339
+[2026-05-29 11:40:18] [OPTUNA] trial_040 pruned
+[2026-05-29 11:40:22] [OPTUNA] trial_041 start | hp={'learning_rate': 0.00020902902028954837, 'r': 8, 'lora_alpha': 32, 'lora_dropout': 0.1, 'weight_decay': 0.006475140129164982, 'warmup_ratio': 0.08}
+[2026-05-29 11:40:26] [trial_041] START | seed=42 | hp={'learning_rate': 0.00020902902028954837, 'r': 8, 'lora_alpha': 32, 'lora_dropout': 0.1, 'weight_decay': 0.006475140129164982, 'warmup_ratio': 0.08}
+[2026-05-29 11:42:39] [trial_041] epoch=001 | train_loss=0.121221 | val_MAE=0.116431 | val_S=0.883569 | best_S=0.883569 @epoch=1 | patience=0/5
+[2026-05-29 11:44:47] [trial_041] epoch=002 | train_loss=0.113966 | val_MAE=0.108449 | val_S=0.891551 | best_S=0.891551 @epoch=2 | patience=0/5
+[2026-05-29 11:46:58] [trial_041] epoch=003 | train_loss=0.104676 | val_MAE=0.103195 | val_S=0.896805 | best_S=0.896805 @epoch=3 | patience=0/5
+[2026-05-29 11:49:09] [trial_041] epoch=004 | train_loss=0.101247 | val_MAE=0.103331 | val_S=0.896669 | best_S=0.896805 @epoch=3 | patience=1/5
+[2026-05-29 11:51:20] [trial_041] epoch=005 | train_loss=0.099762 | val_MAE=0.101276 | val_S=0.898724 | best_S=0.898724 @epoch=5 | patience=0/5
+[2026-05-29 11:53:29] [trial_041] epoch=006 | train_loss=0.097942 | val_MAE=0.099247 | val_S=0.900753 | best_S=0.900753 @epoch=6 | patience=0/5
+[2026-05-29 11:55:39] [trial_041] epoch=007 | train_loss=0.096389 | val_MAE=0.098408 | val_S=0.901592 | best_S=0.901592 @epoch=7 | patience=0/5
+[2026-05-29 11:57:48] [trial_041] epoch=008 | train_loss=0.095413 | val_MAE=0.099564 | val_S=0.900436 | best_S=0.901592 @epoch=7 | patience=1/5
+[2026-05-29 11:57:48] [trial_041] PRUNED at epoch=8 | best_S=0.901592
+[2026-05-29 11:57:54] [OPTUNA] trial_041 pruned
+[2026-05-29 11:57:58] [OPTUNA] trial_042 start | hp={'learning_rate': 0.00018323185191611416, 'r': 8, 'lora_alpha': 64, 'lora_dropout': 0.05, 'weight_decay': 0.01990595122422978, 'warmup_ratio': 0.0}
+[2026-05-29 11:58:01] [trial_042] START | seed=42 | hp={'learning_rate': 0.00018323185191611416, 'r': 8, 'lora_alpha': 64, 'lora_dropout': 0.05, 'weight_decay': 0.01990595122422978, 'warmup_ratio': 0.0}
+[2026-05-29 12:00:14] [trial_042] epoch=001 | train_loss=0.107723 | val_MAE=0.101772 | val_S=0.898228 | best_S=0.898228 @epoch=1 | patience=0/5
+[2026-05-29 12:02:22] [trial_042] epoch=002 | train_loss=0.100229 | val_MAE=0.101844 | val_S=0.898156 | best_S=0.898228 @epoch=1 | patience=1/5
+[2026-05-29 12:04:30] [trial_042] epoch=003 | train_loss=0.097216 | val_MAE=0.098031 | val_S=0.901969 | best_S=0.901969 @epoch=3 | patience=0/5
+[2026-05-29 12:06:32] [trial_042] epoch=004 | train_loss=0.094444 | val_MAE=0.100158 | val_S=0.899842 | best_S=0.901969 @epoch=3 | patience=1/5
+[2026-05-29 12:08:43] [trial_042] epoch=005 | train_loss=0.093366 | val_MAE=0.097036 | val_S=0.902964 | best_S=0.902964 @epoch=5 | patience=0/5
+[2026-05-29 12:10:52] [trial_042] epoch=006 | train_loss=0.091981 | val_MAE=0.098713 | val_S=0.901287 | best_S=0.902964 @epoch=5 | patience=1/5
+[2026-05-29 12:13:03] [trial_042] epoch=007 | train_loss=0.090098 | val_MAE=0.097422 | val_S=0.902578 | best_S=0.902964 @epoch=5 | patience=2/5
+[2026-05-29 12:15:13] [trial_042] epoch=008 | train_loss=0.089346 | val_MAE=0.097534 | val_S=0.902466 | best_S=0.902964 @epoch=5 | patience=3/5
+[2026-05-29 12:17:23] [trial_042] epoch=009 | train_loss=0.087264 | val_MAE=0.098957 | val_S=0.901043 | best_S=0.902964 @epoch=5 | patience=4/5
+[2026-05-29 12:19:33] [trial_042] epoch=010 | train_loss=0.086121 | val_MAE=0.098125 | val_S=0.901875 | best_S=0.902964 @epoch=5 | patience=5/5
+[2026-05-29 12:19:33] [trial_042] early stopping at epoch=10
+[2026-05-29 12:19:40] [trial_042] DONE | best_epoch=5 | best_val_S=0.902964 | test_MAE=nan | test_R2=nan
+[2026-05-29 12:19:44] [OPTUNA] trial_042 done | best_val_S=0.902964
+[2026-05-29 12:19:48] [OPTUNA] trial_043 start | hp={'learning_rate': 0.00017497098465506388, 'r': 8, 'lora_alpha': 64, 'lora_dropout': 0.05, 'weight_decay': 0.018159265986391615, 'warmup_ratio': 0.0}
+[2026-05-29 12:19:51] [trial_043] START | seed=42 | hp={'learning_rate': 0.00017497098465506388, 'r': 8, 'lora_alpha': 64, 'lora_dropout': 0.05, 'weight_decay': 0.018159265986391615, 'warmup_ratio': 0.0}
+[2026-05-29 12:22:05] [trial_043] epoch=001 | train_loss=0.107847 | val_MAE=0.101772 | val_S=0.898228 | best_S=0.898228 @epoch=1 | patience=0/5
+[2026-05-29 12:24:16] [trial_043] epoch=002 | train_loss=0.100392 | val_MAE=0.101223 | val_S=0.898777 | best_S=0.898777 @epoch=2 | patience=0/5
+[2026-05-29 12:26:26] [trial_043] epoch=003 | train_loss=0.097341 | val_MAE=0.097996 | val_S=0.902004 | best_S=0.902004 @epoch=3 | patience=0/5
+[2026-05-29 12:28:36] [trial_043] epoch=004 | train_loss=0.094734 | val_MAE=0.100213 | val_S=0.899787 | best_S=0.902004 @epoch=3 | patience=1/5
+[2026-05-29 12:30:47] [trial_043] epoch=005 | train_loss=0.093602 | val_MAE=0.097132 | val_S=0.902868 | best_S=0.902868 @epoch=5 | patience=0/5
+[2026-05-29 12:32:49] [trial_043] epoch=006 | train_loss=0.092244 | val_MAE=0.098302 | val_S=0.901698 | best_S=0.902868 @epoch=5 | patience=1/5
+[2026-05-29 12:34:59] [trial_043] epoch=007 | train_loss=0.090521 | val_MAE=0.097428 | val_S=0.902572 | best_S=0.902868 @epoch=5 | patience=2/5
+[2026-05-29 12:37:05] [trial_043] epoch=008 | train_loss=0.089714 | val_MAE=0.097644 | val_S=0.902356 | best_S=0.902868 @epoch=5 | patience=3/5
+[2026-05-29 12:39:15] [trial_043] epoch=009 | train_loss=0.087707 | val_MAE=0.098889 | val_S=0.901111 | best_S=0.902868 @epoch=5 | patience=4/5
+[2026-05-29 12:41:25] [trial_043] epoch=010 | train_loss=0.086595 | val_MAE=0.097982 | val_S=0.902018 | best_S=0.902868 @epoch=5 | patience=5/5
+[2026-05-29 12:41:25] [trial_043] early stopping at epoch=10
+[2026-05-29 12:41:32] [trial_043] DONE | best_epoch=5 | best_val_S=0.902868 | test_MAE=nan | test_R2=nan
+[2026-05-29 12:41:36] [OPTUNA] trial_043 done | best_val_S=0.902868
+[2026-05-29 12:41:40] [OPTUNA] trial_044 start | hp={'learning_rate': 0.0001993898411972848, 'r': 8, 'lora_alpha': 64, 'lora_dropout': 0.05, 'weight_decay': 0.014607407807833135, 'warmup_ratio': 0.0}
+[2026-05-29 12:41:44] [trial_044] START | seed=42 | hp={'learning_rate': 0.0001993898411972848, 'r': 8, 'lora_alpha': 64, 'lora_dropout': 0.05, 'weight_decay': 0.014607407807833135, 'warmup_ratio': 0.0}
+[2026-05-29 12:43:53] [trial_044] epoch=001 | train_loss=0.107425 | val_MAE=0.101738 | val_S=0.898262 | best_S=0.898262 @epoch=1 | patience=0/5
+[2026-05-29 12:46:02] [trial_044] epoch=002 | train_loss=0.099902 | val_MAE=0.102378 | val_S=0.897622 | best_S=0.898262 @epoch=1 | patience=1/5
+[2026-05-29 12:48:13] [trial_044] epoch=003 | train_loss=0.097003 | val_MAE=0.098204 | val_S=0.901796 | best_S=0.901796 @epoch=3 | patience=0/5
+[2026-05-29 12:50:22] [trial_044] epoch=004 | train_loss=0.094149 | val_MAE=0.099853 | val_S=0.900147 | best_S=0.901796 @epoch=3 | patience=1/5
+[2026-05-29 12:52:32] [trial_044] epoch=005 | train_loss=0.092866 | val_MAE=0.097360 | val_S=0.902640 | best_S=0.902640 @epoch=5 | patience=0/5
+[2026-05-29 12:54:41] [trial_044] epoch=006 | train_loss=0.091602 | val_MAE=0.098661 | val_S=0.901339 | best_S=0.902640 @epoch=5 | patience=1/5
+[2026-05-29 12:56:51] [trial_044] epoch=007 | train_loss=0.089464 | val_MAE=0.097599 | val_S=0.902401 | best_S=0.902640 @epoch=5 | patience=2/5
+[2026-05-29 12:58:59] [trial_044] epoch=008 | train_loss=0.088580 | val_MAE=0.097939 | val_S=0.902061 | best_S=0.902640 @epoch=5 | patience=3/5
+[2026-05-29 13:01:01] [trial_044] epoch=009 | train_loss=0.086521 | val_MAE=0.099222 | val_S=0.900778 | best_S=0.902640 @epoch=5 | patience=4/5
+[2026-05-29 13:03:12] [trial_044] epoch=010 | train_loss=0.085309 | val_MAE=0.098265 | val_S=0.901735 | best_S=0.902640 @epoch=5 | patience=5/5
+[2026-05-29 13:03:12] [trial_044] early stopping at epoch=10
+[2026-05-29 13:03:19] [trial_044] DONE | best_epoch=5 | best_val_S=0.902640 | test_MAE=nan | test_R2=nan
+[2026-05-29 13:03:23] [OPTUNA] trial_044 done | best_val_S=0.902640
+[2026-05-29 13:03:27] [OPTUNA] trial_045 start | hp={'learning_rate': 8.810326082301375e-05, 'r': 8, 'lora_alpha': 16, 'lora_dropout': 0.15, 'weight_decay': 0.008415070042208189, 'warmup_ratio': 0.0}
+[2026-05-29 13:03:31] [trial_045] START | seed=42 | hp={'learning_rate': 8.810326082301375e-05, 'r': 8, 'lora_alpha': 16, 'lora_dropout': 0.15, 'weight_decay': 0.008415070042208189, 'warmup_ratio': 0.0}
+[2026-05-29 13:05:43] [trial_045] epoch=001 | train_loss=0.113158 | val_MAE=0.105291 | val_S=0.894709 | best_S=0.894709 @epoch=1 | patience=0/5
+[2026-05-29 13:07:50] [trial_045] epoch=002 | train_loss=0.103634 | val_MAE=0.103033 | val_S=0.896967 | best_S=0.896967 @epoch=2 | patience=0/5
+[2026-05-29 13:10:01] [trial_045] epoch=003 | train_loss=0.100847 | val_MAE=0.101334 | val_S=0.898666 | best_S=0.898666 @epoch=3 | patience=0/5
+[2026-05-29 13:12:12] [trial_045] epoch=004 | train_loss=0.099113 | val_MAE=0.101035 | val_S=0.898965 | best_S=0.898965 @epoch=4 | patience=0/5
+[2026-05-29 13:14:23] [trial_045] epoch=005 | train_loss=0.098321 | val_MAE=0.099554 | val_S=0.900446 | best_S=0.900446 @epoch=5 | patience=0/5
+[2026-05-29 13:16:30] [trial_045] epoch=006 | train_loss=0.097420 | val_MAE=0.098914 | val_S=0.901086 | best_S=0.901086 @epoch=6 | patience=0/5
+[2026-05-29 13:18:37] [trial_045] epoch=007 | train_loss=0.096345 | val_MAE=0.099255 | val_S=0.900745 | best_S=0.901086 @epoch=6 | patience=1/5
+[2026-05-29 13:20:45] [trial_045] epoch=008 | train_loss=0.095689 | val_MAE=0.100815 | val_S=0.899185 | best_S=0.901086 @epoch=6 | patience=2/5
+[2026-05-29 13:20:45] [trial_045] PRUNED at epoch=8 | best_S=0.901086
+[2026-05-29 13:20:51] [OPTUNA] trial_045 pruned
+[2026-05-29 13:20:55] [OPTUNA] trial_046 start | hp={'learning_rate': 0.00023830385496708886, 'r': 16, 'lora_alpha': 64, 'lora_dropout': 0.05, 'weight_decay': 0.0033909307265916275, 'warmup_ratio': 0.05}
+[2026-05-29 13:20:59] [trial_046] START | seed=42 | hp={'learning_rate': 0.00023830385496708886, 'r': 16, 'lora_alpha': 64, 'lora_dropout': 0.05, 'weight_decay': 0.0033909307265916275, 'warmup_ratio': 0.05}
+[2026-05-29 13:23:11] [trial_046] epoch=001 | train_loss=0.120060 | val_MAE=0.114167 | val_S=0.885833 | best_S=0.885833 @epoch=1 | patience=0/5
+[2026-05-29 13:25:17] [trial_046] epoch=002 | train_loss=0.107384 | val_MAE=0.103782 | val_S=0.896218 | best_S=0.896218 @epoch=2 | patience=0/5
+[2026-05-29 13:27:26] [trial_046] epoch=003 | train_loss=0.101723 | val_MAE=0.102275 | val_S=0.897725 | best_S=0.897725 @epoch=3 | patience=0/5
+[2026-05-29 13:29:34] [trial_046] epoch=004 | train_loss=0.098766 | val_MAE=0.099697 | val_S=0.900303 | best_S=0.900303 @epoch=4 | patience=0/5
+[2026-05-29 13:31:43] [trial_046] epoch=005 | train_loss=0.097347 | val_MAE=0.099798 | val_S=0.900202 | best_S=0.900303 @epoch=4 | patience=1/5
+[2026-05-29 13:33:53] [trial_046] epoch=006 | train_loss=0.095099 | val_MAE=0.100266 | val_S=0.899734 | best_S=0.900303 @epoch=4 | patience=2/5
+[2026-05-29 13:36:00] [trial_046] epoch=007 | train_loss=0.092864 | val_MAE=0.100382 | val_S=0.899618 | best_S=0.900303 @epoch=4 | patience=3/5
+[2026-05-29 13:38:06] [trial_046] epoch=008 | train_loss=0.091332 | val_MAE=0.100629 | val_S=0.899371 | best_S=0.900303 @epoch=4 | patience=4/5
+[2026-05-29 13:38:06] [trial_046] PRUNED at epoch=8 | best_S=0.900303
+[2026-05-29 13:38:12] [OPTUNA] trial_046 pruned
+[2026-05-29 13:38:16] [OPTUNA] trial_047 start | hp={'learning_rate': 0.0002706731493754765, 'r': 8, 'lora_alpha': 64, 'lora_dropout': 0.05, 'weight_decay': 0.010660992631282671, 'warmup_ratio': 0.0}
+[2026-05-29 13:38:20] [trial_047] START | seed=42 | hp={'learning_rate': 0.0002706731493754765, 'r': 8, 'lora_alpha': 64, 'lora_dropout': 0.05, 'weight_decay': 0.010660992631282671, 'warmup_ratio': 0.0}
+[2026-05-29 13:40:31] [trial_047] epoch=001 | train_loss=0.106198 | val_MAE=0.100952 | val_S=0.899048 | best_S=0.899048 @epoch=1 | patience=0/5
+[2026-05-29 13:42:38] [trial_047] epoch=002 | train_loss=0.099172 | val_MAE=0.101031 | val_S=0.898969 | best_S=0.899048 @epoch=1 | patience=1/5
+[2026-05-29 13:44:48] [trial_047] epoch=003 | train_loss=0.096087 | val_MAE=0.098349 | val_S=0.901651 | best_S=0.901651 @epoch=3 | patience=0/5
+[2026-05-29 13:46:56] [trial_047] epoch=004 | train_loss=0.093118 | val_MAE=0.101175 | val_S=0.898825 | best_S=0.901651 @epoch=3 | patience=1/5
+[2026-05-29 13:49:06] [trial_047] epoch=005 | train_loss=0.091717 | val_MAE=0.097440 | val_S=0.902560 | best_S=0.902560 @epoch=5 | patience=0/5
+[2026-05-29 13:51:14] [trial_047] epoch=006 | train_loss=0.090313 | val_MAE=0.098324 | val_S=0.901676 | best_S=0.902560 @epoch=5 | patience=1/5
+[2026-05-29 13:53:22] [trial_047] epoch=007 | train_loss=0.087617 | val_MAE=0.098593 | val_S=0.901407 | best_S=0.902560 @epoch=5 | patience=2/5
+[2026-05-29 13:55:30] [trial_047] epoch=008 | train_loss=0.087081 | val_MAE=0.098140 | val_S=0.901860 | best_S=0.902560 @epoch=5 | patience=3/5
+[2026-05-29 13:57:36] [trial_047] epoch=009 | train_loss=0.084365 | val_MAE=0.099588 | val_S=0.900412 | best_S=0.902560 @epoch=5 | patience=4/5
+[2026-05-29 13:59:46] [trial_047] epoch=010 | train_loss=0.082563 | val_MAE=0.099822 | val_S=0.900178 | best_S=0.902560 @epoch=5 | patience=5/5
+[2026-05-29 13:59:46] [trial_047] PRUNED at epoch=10 | best_S=0.902560
+[2026-05-29 13:59:52] [OPTUNA] trial_047 pruned
+[2026-05-29 13:59:56] [OPTUNA] trial_048 start | hp={'learning_rate': 0.00020276751633515133, 'r': 8, 'lora_alpha': 32, 'lora_dropout': 0.1, 'weight_decay': 0.016316045358378203, 'warmup_ratio': 0.03}
+[2026-05-29 13:59:59] [trial_048] START | seed=42 | hp={'learning_rate': 0.00020276751633515133, 'r': 8, 'lora_alpha': 32, 'lora_dropout': 0.1, 'weight_decay': 0.016316045358378203, 'warmup_ratio': 0.03}
+[2026-05-29 14:02:12] [trial_048] epoch=001 | train_loss=0.119247 | val_MAE=0.112851 | val_S=0.887149 | best_S=0.887149 @epoch=1 | patience=0/5
+[2026-05-29 14:04:17] [trial_048] epoch=002 | train_loss=0.106732 | val_MAE=0.103596 | val_S=0.896404 | best_S=0.896404 @epoch=2 | patience=0/5
+[2026-05-29 14:06:27] [trial_048] epoch=003 | train_loss=0.100883 | val_MAE=0.100161 | val_S=0.899839 | best_S=0.899839 @epoch=3 | patience=0/5
+[2026-05-29 14:08:36] [trial_048] epoch=004 | train_loss=0.097778 | val_MAE=0.101031 | val_S=0.898969 | best_S=0.899839 @epoch=3 | patience=1/5
+[2026-05-29 14:10:46] [trial_048] epoch=005 | train_loss=0.096314 | val_MAE=0.097615 | val_S=0.902385 | best_S=0.902385 @epoch=5 | patience=0/5
+[2026-05-29 14:12:54] [trial_048] epoch=006 | train_loss=0.094441 | val_MAE=0.099426 | val_S=0.900574 | best_S=0.902385 @epoch=5 | patience=1/5
+[2026-05-29 14:15:03] [trial_048] epoch=007 | train_loss=0.093087 | val_MAE=0.097717 | val_S=0.902283 | best_S=0.902385 @epoch=5 | patience=2/5
+[2026-05-29 14:17:11] [trial_048] epoch=008 | train_loss=0.092116 | val_MAE=0.097821 | val_S=0.902179 | best_S=0.902385 @epoch=5 | patience=3/5
+[2026-05-29 14:17:11] [trial_048] PRUNED at epoch=8 | best_S=0.902385
+[2026-05-29 14:17:17] [OPTUNA] trial_048 pruned
+[2026-05-29 14:17:22] [OPTUNA] trial_049 start | hp={'learning_rate': 0.0001859859997901867, 'r': 8, 'lora_alpha': 16, 'lora_dropout': 0.05, 'weight_decay': 0.0003483434522908327, 'warmup_ratio': 0.0}
+[2026-05-29 14:17:25] [trial_049] START | seed=42 | hp={'learning_rate': 0.0001859859997901867, 'r': 8, 'lora_alpha': 16, 'lora_dropout': 0.05, 'weight_decay': 0.0003483434522908327, 'warmup_ratio': 0.0}
+[2026-05-29 14:19:36] [trial_049] epoch=001 | train_loss=0.108493 | val_MAE=0.102628 | val_S=0.897372 | best_S=0.897372 @epoch=1 | patience=0/5
+[2026-05-29 14:21:45] [trial_049] epoch=002 | train_loss=0.100836 | val_MAE=0.101153 | val_S=0.898847 | best_S=0.898847 @epoch=2 | patience=0/5
+[2026-05-29 14:23:54] [trial_049] epoch=003 | train_loss=0.098292 | val_MAE=0.098630 | val_S=0.901370 | best_S=0.901370 @epoch=3 | patience=0/5
+[2026-05-29 14:26:03] [trial_049] epoch=004 | train_loss=0.096135 | val_MAE=0.099411 | val_S=0.900589 | best_S=0.901370 @epoch=3 | patience=1/5
+[2026-05-29 14:28:14] [trial_049] epoch=005 | train_loss=0.095425 | val_MAE=0.097830 | val_S=0.902170 | best_S=0.902170 @epoch=5 | patience=0/5
+[2026-05-29 14:30:21] [trial_049] epoch=006 | train_loss=0.094206 | val_MAE=0.099441 | val_S=0.900559 | best_S=0.902170 @epoch=5 | patience=1/5
+[2026-05-29 14:32:28] [trial_049] epoch=007 | train_loss=0.093544 | val_MAE=0.097891 | val_S=0.902109 | best_S=0.902170 @epoch=5 | patience=2/5
+[2026-05-29 14:34:30] [trial_049] epoch=008 | train_loss=0.092644 | val_MAE=0.097836 | val_S=0.902164 | best_S=0.902170 @epoch=5 | patience=3/5
+[2026-05-29 14:34:30] [trial_049] PRUNED at epoch=8 | best_S=0.902170
+[2026-05-29 14:34:35] [OPTUNA] trial_049 pruned
+[2026-05-29 14:34:38] [OPTUNA] trial_050 start | hp={'learning_rate': 0.00014513988103738256, 'r': 8, 'lora_alpha': 64, 'lora_dropout': 0.05, 'weight_decay': 0.005463851538254367, 'warmup_ratio': 0.0}
+[2026-05-29 14:34:42] [trial_050] START | seed=42 | hp={'learning_rate': 0.00014513988103738256, 'r': 8, 'lora_alpha': 64, 'lora_dropout': 0.05, 'weight_decay': 0.005463851538254367, 'warmup_ratio': 0.0}
+[2026-05-29 14:36:51] [trial_050] epoch=001 | train_loss=0.108491 | val_MAE=0.102301 | val_S=0.897699 | best_S=0.897699 @epoch=1 | patience=0/5
+[2026-05-29 14:39:03] [trial_050] epoch=002 | train_loss=0.100844 | val_MAE=0.101072 | val_S=0.898928 | best_S=0.898928 @epoch=2 | patience=0/5
+[2026-05-29 14:41:13] [trial_050] epoch=003 | train_loss=0.097925 | val_MAE=0.098241 | val_S=0.901759 | best_S=0.901759 @epoch=3 | patience=0/5
+[2026-05-29 14:43:24] [trial_050] epoch=004 | train_loss=0.095388 | val_MAE=0.099491 | val_S=0.900509 | best_S=0.901759 @epoch=3 | patience=1/5
+[2026-05-29 14:45:32] [trial_050] epoch=005 | train_loss=0.094433 | val_MAE=0.097341 | val_S=0.902659 | best_S=0.902659 @epoch=5 | patience=0/5
+[2026-05-29 14:47:41] [trial_050] epoch=006 | train_loss=0.093113 | val_MAE=0.098926 | val_S=0.901074 | best_S=0.902659 @epoch=5 | patience=1/5
+[2026-05-29 14:49:50] [trial_050] epoch=007 | train_loss=0.091729 | val_MAE=0.097410 | val_S=0.902590 | best_S=0.902659 @epoch=5 | patience=2/5
+[2026-05-29 14:51:59] [trial_050] epoch=008 | train_loss=0.090869 | val_MAE=0.097492 | val_S=0.902508 | best_S=0.902659 @epoch=5 | patience=3/5
+[2026-05-29 14:54:09] [trial_050] epoch=009 | train_loss=0.089237 | val_MAE=0.099242 | val_S=0.900758 | best_S=0.902659 @epoch=5 | patience=4/5
+[2026-05-29 14:56:14] [trial_050] epoch=010 | train_loss=0.088166 | val_MAE=0.097602 | val_S=0.902398 | best_S=0.902659 @epoch=5 | patience=5/5
+[2026-05-29 14:56:14] [trial_050] early stopping at epoch=10
+[2026-05-29 14:56:18] [trial_050] DONE | best_epoch=5 | best_val_S=0.902659 | test_MAE=nan | test_R2=nan
+[2026-05-29 14:56:22] [OPTUNA] trial_050 done | best_val_S=0.902659
+[2026-05-29 14:56:27] [WARN] Completed Optuna trials < N_TRIALS. complete=30, total=50. This matches WavLM total-trial policy, but must be reported.
+[2026-05-29 14:56:28] Best trial: #41 | value=0.902964 | params={'learning_rate': 0.00018323185191611416, 'r': 8, 'lora_alpha': 64, 'lora_dropout': 0.05, 'weight_decay': 0.01990595122422978, 'warmup_ratio': 0.0}
+[2026-05-29 14:57:36] 
+================================================================================
+Cell | Save Optuna study results
+================================================================================
+[2026-05-29 14:57:43] Kept Optuna checkpoint dirs: ['trial_019', 'trial_025', 'trial_032', 'trial_042', 'trial_043']
+[2026-05-29 14:57:43] Removed Optuna checkpoint dirs outside top-5: 45
+[2026-05-29 14:57:43] BEST_HP: {'learning_rate': 0.00018323185191611416, 'r': 8, 'lora_alpha': 64, 'lora_dropout': 0.05, 'weight_decay': 0.01990595122422978, 'warmup_ratio': 0.0}
+[2026-05-29 14:59:20] 
+================================================================================
+Cell | Final runs
+================================================================================
+[2026-05-29 14:59:20] [FINAL] start run_01_seed_042
+[2026-05-29 14:59:28] [run_01_seed_042] START | seed=42 | hp={'learning_rate': 0.00018323185191611416, 'r': 8, 'lora_alpha': 64, 'lora_dropout': 0.05, 'weight_decay': 0.01990595122422978, 'warmup_ratio': 0.0}
+[2026-05-29 15:01:30] [run_01_seed_042] epoch=001 | train_loss=0.107723 | val_MAE=0.101772 | val_S=0.898228 | best_S=0.898228 @epoch=1 | patience=0/5
+[2026-05-29 15:03:33] [run_01_seed_042] epoch=002 | train_loss=0.100250 | val_MAE=0.101649 | val_S=0.898351 | best_S=0.898351 @epoch=2 | patience=0/5
+[2026-05-29 15:05:34] [run_01_seed_042] epoch=003 | train_loss=0.097177 | val_MAE=0.097972 | val_S=0.902028 | best_S=0.902028 @epoch=3 | patience=0/5
+[2026-05-29 15:07:33] [run_01_seed_042] epoch=004 | train_loss=0.094419 | val_MAE=0.100146 | val_S=0.899854 | best_S=0.902028 @epoch=3 | patience=1/5
+[2026-05-29 15:09:37] [run_01_seed_042] epoch=005 | train_loss=0.093388 | val_MAE=0.097131 | val_S=0.902869 | best_S=0.902869 @epoch=5 | patience=0/5
+[2026-05-29 15:11:39] [run_01_seed_042] epoch=006 | train_loss=0.091958 | val_MAE=0.098650 | val_S=0.901350 | best_S=0.902869 @epoch=5 | patience=1/5
+[2026-05-29 15:13:38] [run_01_seed_042] epoch=007 | train_loss=0.090014 | val_MAE=0.097415 | val_S=0.902585 | best_S=0.902869 @epoch=5 | patience=2/5
+[2026-05-29 15:15:39] [run_01_seed_042] epoch=008 | train_loss=0.089351 | val_MAE=0.097683 | val_S=0.902317 | best_S=0.902869 @epoch=5 | patience=3/5
+[2026-05-29 15:17:42] [run_01_seed_042] epoch=009 | train_loss=0.087293 | val_MAE=0.098654 | val_S=0.901346 | best_S=0.902869 @epoch=5 | patience=4/5
+[2026-05-29 15:19:44] [run_01_seed_042] epoch=010 | train_loss=0.086076 | val_MAE=0.098089 | val_S=0.901911 | best_S=0.902869 @epoch=5 | patience=5/5
+[2026-05-29 15:19:44] [run_01_seed_042] early stopping at epoch=10
+[2026-05-29 15:20:15] [run_01_seed_042] DONE | best_epoch=5 | best_val_S=0.902869 | test_MAE=0.099161 | test_R2=0.316773
+[2026-05-29 15:20:17] [FINAL] recorded run_01_seed_042 | test_MAE=0.099161 | test_R2=0.316773
+[2026-05-29 15:20:18] [FINAL] start run_02_seed_052
+[2026-05-29 15:20:19] [run_02_seed_052] START | seed=52 | hp={'learning_rate': 0.00018323185191611416, 'r': 8, 'lora_alpha': 64, 'lora_dropout': 0.05, 'weight_decay': 0.01990595122422978, 'warmup_ratio': 0.0}
+[2026-05-29 15:22:23] [run_02_seed_052] epoch=001 | train_loss=0.107968 | val_MAE=0.102171 | val_S=0.897829 | best_S=0.897829 @epoch=1 | patience=0/5
+[2026-05-29 15:24:27] [run_02_seed_052] epoch=002 | train_loss=0.099919 | val_MAE=0.100741 | val_S=0.899259 | best_S=0.899259 @epoch=2 | patience=0/5
+[2026-05-29 15:26:28] [run_02_seed_052] epoch=003 | train_loss=0.096762 | val_MAE=0.097747 | val_S=0.902253 | best_S=0.902253 @epoch=3 | patience=0/5
+[2026-05-29 15:28:29] [run_02_seed_052] epoch=004 | train_loss=0.094916 | val_MAE=0.099621 | val_S=0.900379 | best_S=0.902253 @epoch=3 | patience=1/5
+[2026-05-29 15:30:31] [run_02_seed_052] epoch=005 | train_loss=0.093706 | val_MAE=0.098753 | val_S=0.901247 | best_S=0.902253 @epoch=3 | patience=2/5
+[2026-05-29 15:32:33] [run_02_seed_052] epoch=006 | train_loss=0.091504 | val_MAE=0.098295 | val_S=0.901705 | best_S=0.902253 @epoch=3 | patience=3/5
+[2026-05-29 15:34:32] [run_02_seed_052] epoch=007 | train_loss=0.089938 | val_MAE=0.100212 | val_S=0.899788 | best_S=0.902253 @epoch=3 | patience=4/5
+[2026-05-29 15:36:35] [run_02_seed_052] epoch=008 | train_loss=0.088791 | val_MAE=0.099023 | val_S=0.900977 | best_S=0.902253 @epoch=3 | patience=5/5
+[2026-05-29 15:36:35] [run_02_seed_052] early stopping at epoch=8
+[2026-05-29 15:37:06] [run_02_seed_052] DONE | best_epoch=3 | best_val_S=0.902253 | test_MAE=0.098853 | test_R2=0.325443
+[2026-05-29 15:37:08] [FINAL] recorded run_02_seed_052 | test_MAE=0.098853 | test_R2=0.325443
+[2026-05-29 15:37:09] [FINAL] start run_03_seed_062
+[2026-05-29 15:37:10] [run_03_seed_062] START | seed=62 | hp={'learning_rate': 0.00018323185191611416, 'r': 8, 'lora_alpha': 64, 'lora_dropout': 0.05, 'weight_decay': 0.01990595122422978, 'warmup_ratio': 0.0}
+[2026-05-29 15:39:09] [run_03_seed_062] epoch=001 | train_loss=0.107941 | val_MAE=0.103058 | val_S=0.896942 | best_S=0.896942 @epoch=1 | patience=0/5
+[2026-05-29 15:41:13] [run_03_seed_062] epoch=002 | train_loss=0.100240 | val_MAE=0.099900 | val_S=0.900100 | best_S=0.900100 @epoch=2 | patience=0/5
+[2026-05-29 15:43:17] [run_03_seed_062] epoch=003 | train_loss=0.096760 | val_MAE=0.099068 | val_S=0.900932 | best_S=0.900932 @epoch=3 | patience=0/5
+[2026-05-29 15:45:18] [run_03_seed_062] epoch=004 | train_loss=0.094675 | val_MAE=0.098559 | val_S=0.901441 | best_S=0.901441 @epoch=4 | patience=0/5
+[2026-05-29 15:47:21] [run_03_seed_062] epoch=005 | train_loss=0.093026 | val_MAE=0.098005 | val_S=0.901995 | best_S=0.901995 @epoch=5 | patience=0/5
+[2026-05-29 15:49:21] [run_03_seed_062] epoch=006 | train_loss=0.091687 | val_MAE=0.101327 | val_S=0.898673 | best_S=0.901995 @epoch=5 | patience=1/5
+[2026-05-29 15:51:24] [run_03_seed_062] epoch=007 | train_loss=0.089751 | val_MAE=0.100202 | val_S=0.899798 | best_S=0.901995 @epoch=5 | patience=2/5
+[2026-05-29 15:53:22] [run_03_seed_062] epoch=008 | train_loss=0.088480 | val_MAE=0.099750 | val_S=0.900250 | best_S=0.901995 @epoch=5 | patience=3/5
+[2026-05-29 15:55:25] [run_03_seed_062] epoch=009 | train_loss=0.087388 | val_MAE=0.099654 | val_S=0.900346 | best_S=0.901995 @epoch=5 | patience=4/5
+[2026-05-29 15:57:25] [run_03_seed_062] epoch=010 | train_loss=0.086142 | val_MAE=0.100821 | val_S=0.899179 | best_S=0.901995 @epoch=5 | patience=5/5
+[2026-05-29 15:57:25] [run_03_seed_062] early stopping at epoch=10
+[2026-05-29 15:57:48] [run_03_seed_062] DONE | best_epoch=5 | best_val_S=0.901995 | test_MAE=0.098381 | test_R2=0.325869
+[2026-05-29 15:57:50] [FINAL] recorded run_03_seed_062 | test_MAE=0.098381 | test_R2=0.325869
+[2026-05-29 15:57:51] [FINAL] start run_04_seed_072
+[2026-05-29 15:57:52] [run_04_seed_072] START | seed=72 | hp={'learning_rate': 0.00018323185191611416, 'r': 8, 'lora_alpha': 64, 'lora_dropout': 0.05, 'weight_decay': 0.01990595122422978, 'warmup_ratio': 0.0}
+[2026-05-29 15:59:56] [run_04_seed_072] epoch=001 | train_loss=0.107806 | val_MAE=0.101431 | val_S=0.898569 | best_S=0.898569 @epoch=1 | patience=0/5
+[2026-05-29 16:01:54] [run_04_seed_072] epoch=002 | train_loss=0.099964 | val_MAE=0.101830 | val_S=0.898170 | best_S=0.898569 @epoch=1 | patience=1/5
+[2026-05-29 16:03:57] [run_04_seed_072] epoch=003 | train_loss=0.097108 | val_MAE=0.099349 | val_S=0.900651 | best_S=0.900651 @epoch=3 | patience=0/5
+[2026-05-29 16:06:00] [run_04_seed_072] epoch=004 | train_loss=0.095509 | val_MAE=0.097441 | val_S=0.902559 | best_S=0.902559 @epoch=4 | patience=0/5
+[2026-05-29 16:08:04] [run_04_seed_072] epoch=005 | train_loss=0.093629 | val_MAE=0.097017 | val_S=0.902983 | best_S=0.902983 @epoch=5 | patience=0/5
+[2026-05-29 16:10:05] [run_04_seed_072] epoch=006 | train_loss=0.092866 | val_MAE=0.102192 | val_S=0.897808 | best_S=0.902983 @epoch=5 | patience=1/5
+[2026-05-29 16:12:06] [run_04_seed_072] epoch=007 | train_loss=0.091199 | val_MAE=0.098766 | val_S=0.901234 | best_S=0.902983 @epoch=5 | patience=2/5
+[2026-05-29 16:14:09] [run_04_seed_072] epoch=008 | train_loss=0.089350 | val_MAE=0.099051 | val_S=0.900949 | best_S=0.902983 @epoch=5 | patience=3/5
+[2026-05-29 16:16:08] [run_04_seed_072] epoch=009 | train_loss=0.087786 | val_MAE=0.100385 | val_S=0.899615 | best_S=0.902983 @epoch=5 | patience=4/5
+[2026-05-29 16:18:09] [run_04_seed_072] epoch=010 | train_loss=0.087295 | val_MAE=0.098098 | val_S=0.901902 | best_S=0.902983 @epoch=5 | patience=5/5
+[2026-05-29 16:18:09] [run_04_seed_072] early stopping at epoch=10
+[2026-05-29 16:18:39] [run_04_seed_072] DONE | best_epoch=5 | best_val_S=0.902983 | test_MAE=0.098695 | test_R2=0.323789
+[2026-05-29 16:18:43] [FINAL] recorded run_04_seed_072 | test_MAE=0.098695 | test_R2=0.323789
+[2026-05-29 16:18:44] [FINAL] start run_05_seed_082
+[2026-05-29 16:18:45] [run_05_seed_082] START | seed=82 | hp={'learning_rate': 0.00018323185191611416, 'r': 8, 'lora_alpha': 64, 'lora_dropout': 0.05, 'weight_decay': 0.01990595122422978, 'warmup_ratio': 0.0}
+[2026-05-29 16:20:50] [run_05_seed_082] epoch=001 | train_loss=0.107807 | val_MAE=0.102795 | val_S=0.897205 | best_S=0.897205 @epoch=1 | patience=0/5
+[2026-05-29 16:22:52] [run_05_seed_082] epoch=002 | train_loss=0.099888 | val_MAE=0.099659 | val_S=0.900341 | best_S=0.900341 @epoch=2 | patience=0/5
+[2026-05-29 16:24:53] [run_05_seed_082] epoch=003 | train_loss=0.097026 | val_MAE=0.098259 | val_S=0.901741 | best_S=0.901741 @epoch=3 | patience=0/5
+[2026-05-29 16:26:49] [run_05_seed_082] epoch=004 | train_loss=0.094772 | val_MAE=0.100217 | val_S=0.899783 | best_S=0.901741 @epoch=3 | patience=1/5
+[2026-05-29 16:28:50] [run_05_seed_082] epoch=005 | train_loss=0.093339 | val_MAE=0.097784 | val_S=0.902216 | best_S=0.902216 @epoch=5 | patience=0/5
+[2026-05-29 16:30:50] [run_05_seed_082] epoch=006 | train_loss=0.091726 | val_MAE=0.099270 | val_S=0.900730 | best_S=0.902216 @epoch=5 | patience=1/5
+[2026-05-29 16:32:54] [run_05_seed_082] epoch=007 | train_loss=0.090177 | val_MAE=0.098109 | val_S=0.901891 | best_S=0.902216 @epoch=5 | patience=2/5
+[2026-05-29 16:34:53] [run_05_seed_082] epoch=008 | train_loss=0.089283 | val_MAE=0.098925 | val_S=0.901075 | best_S=0.902216 @epoch=5 | patience=3/5
+[2026-05-29 16:36:56] [run_05_seed_082] epoch=009 | train_loss=0.087948 | val_MAE=0.099248 | val_S=0.900752 | best_S=0.902216 @epoch=5 | patience=4/5
+[2026-05-29 16:38:58] [run_05_seed_082] epoch=010 | train_loss=0.086284 | val_MAE=0.100274 | val_S=0.899726 | best_S=0.902216 @epoch=5 | patience=5/5
+[2026-05-29 16:38:58] [run_05_seed_082] early stopping at epoch=10
+[2026-05-29 16:39:29] [run_05_seed_082] DONE | best_epoch=5 | best_val_S=0.902216 | test_MAE=0.099013 | test_R2=0.320394
+[2026-05-29 16:39:32] [FINAL] recorded run_05_seed_082 | test_MAE=0.099013 | test_R2=0.320394
+[2026-05-29 16:39:34] [FINAL] start run_06_seed_092
+[2026-05-29 16:39:35] [run_06_seed_092] START | seed=92 | hp={'learning_rate': 0.00018323185191611416, 'r': 8, 'lora_alpha': 64, 'lora_dropout': 0.05, 'weight_decay': 0.01990595122422978, 'warmup_ratio': 0.0}
+[2026-05-29 16:41:41] [run_06_seed_092] epoch=001 | train_loss=0.107781 | val_MAE=0.103744 | val_S=0.896256 | best_S=0.896256 @epoch=1 | patience=0/5
+[2026-05-29 16:43:42] [run_06_seed_092] epoch=002 | train_loss=0.099842 | val_MAE=0.101109 | val_S=0.898891 | best_S=0.898891 @epoch=2 | patience=0/5
+[2026-05-29 16:45:45] [run_06_seed_092] epoch=003 | train_loss=0.097085 | val_MAE=0.099335 | val_S=0.900665 | best_S=0.900665 @epoch=3 | patience=0/5
+[2026-05-29 16:47:46] [run_06_seed_092] epoch=004 | train_loss=0.094846 | val_MAE=0.099464 | val_S=0.900536 | best_S=0.900665 @epoch=3 | patience=1/5
+[2026-05-29 16:49:45] [run_06_seed_092] epoch=005 | train_loss=0.093844 | val_MAE=0.100754 | val_S=0.899246 | best_S=0.900665 @epoch=3 | patience=2/5
+[2026-05-29 16:51:47] [run_06_seed_092] epoch=006 | train_loss=0.091872 | val_MAE=0.098982 | val_S=0.901018 | best_S=0.901018 @epoch=6 | patience=0/5
+[2026-05-29 16:53:46] [run_06_seed_092] epoch=007 | train_loss=0.091297 | val_MAE=0.100455 | val_S=0.899545 | best_S=0.901018 @epoch=6 | patience=1/5
+[2026-05-29 16:55:47] [run_06_seed_092] epoch=008 | train_loss=0.089162 | val_MAE=0.098347 | val_S=0.901653 | best_S=0.901653 @epoch=8 | patience=0/5
+[2026-05-29 16:57:49] [run_06_seed_092] epoch=009 | train_loss=0.087669 | val_MAE=0.101862 | val_S=0.898138 | best_S=0.901653 @epoch=8 | patience=1/5
+[2026-05-29 16:59:50] [run_06_seed_092] epoch=010 | train_loss=0.086618 | val_MAE=0.100366 | val_S=0.899634 | best_S=0.901653 @epoch=8 | patience=2/5
+[2026-05-29 17:01:48] [run_06_seed_092] epoch=011 | train_loss=0.085617 | val_MAE=0.101955 | val_S=0.898045 | best_S=0.901653 @epoch=8 | patience=3/5
+[2026-05-29 17:03:51] [run_06_seed_092] epoch=012 | train_loss=0.083570 | val_MAE=0.103309 | val_S=0.896691 | best_S=0.901653 @epoch=8 | patience=4/5
+[2026-05-29 17:05:54] [run_06_seed_092] epoch=013 | train_loss=0.083084 | val_MAE=0.101507 | val_S=0.898493 | best_S=0.901653 @epoch=8 | patience=5/5
+[2026-05-29 17:05:54] [run_06_seed_092] early stopping at epoch=13
+[2026-05-29 17:06:24] [run_06_seed_092] DONE | best_epoch=8 | best_val_S=0.901653 | test_MAE=0.099429 | test_R2=0.313960
+[2026-05-29 17:06:28] [FINAL] recorded run_06_seed_092 | test_MAE=0.099429 | test_R2=0.313960
+[2026-05-29 17:06:30] [FINAL] start run_07_seed_102
+[2026-05-29 17:06:31] [run_07_seed_102] START | seed=102 | hp={'learning_rate': 0.00018323185191611416, 'r': 8, 'lora_alpha': 64, 'lora_dropout': 0.05, 'weight_decay': 0.01990595122422978, 'warmup_ratio': 0.0}
+[2026-05-29 17:08:35] [run_07_seed_102] epoch=001 | train_loss=0.107717 | val_MAE=0.103010 | val_S=0.896990 | best_S=0.896990 @epoch=1 | patience=0/5
+[2026-05-29 17:10:35] [run_07_seed_102] epoch=002 | train_loss=0.098762 | val_MAE=0.099026 | val_S=0.900974 | best_S=0.900974 @epoch=2 | patience=0/5
+[2026-05-29 17:12:38] [run_07_seed_102] epoch=003 | train_loss=0.096580 | val_MAE=0.098232 | val_S=0.901768 | best_S=0.901768 @epoch=3 | patience=0/5
+[2026-05-29 17:14:41] [run_07_seed_102] epoch=004 | train_loss=0.094450 | val_MAE=0.101861 | val_S=0.898139 | best_S=0.901768 @epoch=3 | patience=1/5
+[2026-05-29 17:16:43] [run_07_seed_102] epoch=005 | train_loss=0.092788 | val_MAE=0.098744 | val_S=0.901256 | best_S=0.901768 @epoch=3 | patience=2/5
+[2026-05-29 17:18:46] [run_07_seed_102] epoch=006 | train_loss=0.090878 | val_MAE=0.097565 | val_S=0.902435 | best_S=0.902435 @epoch=6 | patience=0/5
+[2026-05-29 17:20:45] [run_07_seed_102] epoch=007 | train_loss=0.089678 | val_MAE=0.098721 | val_S=0.901279 | best_S=0.902435 @epoch=6 | patience=1/5
+[2026-05-29 17:22:47] [run_07_seed_102] epoch=008 | train_loss=0.087933 | val_MAE=0.100893 | val_S=0.899107 | best_S=0.902435 @epoch=6 | patience=2/5
+[2026-05-29 17:24:46] [run_07_seed_102] epoch=009 | train_loss=0.086938 | val_MAE=0.099102 | val_S=0.900898 | best_S=0.902435 @epoch=6 | patience=3/5
+[2026-05-29 17:26:48] [run_07_seed_102] epoch=010 | train_loss=0.086167 | val_MAE=0.100726 | val_S=0.899274 | best_S=0.902435 @epoch=6 | patience=4/5
+[2026-05-29 17:28:50] [run_07_seed_102] epoch=011 | train_loss=0.084536 | val_MAE=0.099537 | val_S=0.900463 | best_S=0.902435 @epoch=6 | patience=5/5
+[2026-05-29 17:28:50] [run_07_seed_102] early stopping at epoch=11
+[2026-05-29 17:29:20] [run_07_seed_102] DONE | best_epoch=6 | best_val_S=0.902435 | test_MAE=0.099086 | test_R2=0.315698
+[2026-05-29 17:29:25] [FINAL] recorded run_07_seed_102 | test_MAE=0.099086 | test_R2=0.315698
+[2026-05-29 17:29:26] [FINAL] start run_08_seed_112
+[2026-05-29 17:29:28] [run_08_seed_112] START | seed=112 | hp={'learning_rate': 0.00018323185191611416, 'r': 8, 'lora_alpha': 64, 'lora_dropout': 0.05, 'weight_decay': 0.01990595122422978, 'warmup_ratio': 0.0}
+[2026-05-29 17:31:32] [run_08_seed_112] epoch=001 | train_loss=0.108463 | val_MAE=0.103519 | val_S=0.896481 | best_S=0.896481 @epoch=1 | patience=0/5
+[2026-05-29 17:33:37] [run_08_seed_112] epoch=002 | train_loss=0.100025 | val_MAE=0.099407 | val_S=0.900593 | best_S=0.900593 @epoch=2 | patience=0/5
+[2026-05-29 17:35:39] [run_08_seed_112] epoch=003 | train_loss=0.097431 | val_MAE=0.100207 | val_S=0.899793 | best_S=0.900593 @epoch=2 | patience=1/5
+[2026-05-29 17:37:42] [run_08_seed_112] epoch=004 | train_loss=0.094822 | val_MAE=0.099758 | val_S=0.900242 | best_S=0.900593 @epoch=2 | patience=2/5
+[2026-05-29 17:39:45] [run_08_seed_112] epoch=005 | train_loss=0.093279 | val_MAE=0.100118 | val_S=0.899882 | best_S=0.900593 @epoch=2 | patience=3/5
+[2026-05-29 17:41:48] [run_08_seed_112] epoch=006 | train_loss=0.092145 | val_MAE=0.098320 | val_S=0.901680 | best_S=0.901680 @epoch=6 | patience=0/5
+[2026-05-29 17:43:46] [run_08_seed_112] epoch=007 | train_loss=0.090012 | val_MAE=0.098751 | val_S=0.901249 | best_S=0.901680 @epoch=6 | patience=1/5
+[2026-05-29 17:45:48] [run_08_seed_112] epoch=008 | train_loss=0.088656 | val_MAE=0.098772 | val_S=0.901228 | best_S=0.901680 @epoch=6 | patience=2/5
+[2026-05-29 17:47:50] [run_08_seed_112] epoch=009 | train_loss=0.087946 | val_MAE=0.100942 | val_S=0.899058 | best_S=0.901680 @epoch=6 | patience=3/5
+[2026-05-29 17:49:52] [run_08_seed_112] epoch=010 | train_loss=0.085680 | val_MAE=0.099024 | val_S=0.900976 | best_S=0.901680 @epoch=6 | patience=4/5
+[2026-05-29 17:51:51] [run_08_seed_112] epoch=011 | train_loss=0.084701 | val_MAE=0.103046 | val_S=0.896954 | best_S=0.901680 @epoch=6 | patience=5/5
+[2026-05-29 17:51:51] [run_08_seed_112] early stopping at epoch=11
+[2026-05-29 17:52:14] [run_08_seed_112] DONE | best_epoch=6 | best_val_S=0.901680 | test_MAE=0.099328 | test_R2=0.306610
+[2026-05-29 17:52:18] [FINAL] recorded run_08_seed_112 | test_MAE=0.099328 | test_R2=0.306610
+[2026-05-29 17:52:20] [FINAL] start run_09_seed_122
+[2026-05-29 17:52:22] [run_09_seed_122] START | seed=122 | hp={'learning_rate': 0.00018323185191611416, 'r': 8, 'lora_alpha': 64, 'lora_dropout': 0.05, 'weight_decay': 0.01990595122422978, 'warmup_ratio': 0.0}
+[2026-05-29 17:54:24] [run_09_seed_122] epoch=001 | train_loss=0.107946 | val_MAE=0.102403 | val_S=0.897597 | best_S=0.897597 @epoch=1 | patience=0/5
+[2026-05-29 17:56:23] [run_09_seed_122] epoch=002 | train_loss=0.099263 | val_MAE=0.099006 | val_S=0.900994 | best_S=0.900994 @epoch=2 | patience=0/5
+[2026-05-29 17:58:25] [run_09_seed_122] epoch=003 | train_loss=0.096657 | val_MAE=0.100216 | val_S=0.899784 | best_S=0.900994 @epoch=2 | patience=1/5
+[2026-05-29 18:00:26] [run_09_seed_122] epoch=004 | train_loss=0.094324 | val_MAE=0.100801 | val_S=0.899199 | best_S=0.900994 @epoch=2 | patience=2/5
+[2026-05-29 18:02:30] [run_09_seed_122] epoch=005 | train_loss=0.092730 | val_MAE=0.098627 | val_S=0.901373 | best_S=0.901373 @epoch=5 | patience=0/5
+[2026-05-29 18:04:33] [run_09_seed_122] epoch=006 | train_loss=0.090947 | val_MAE=0.099649 | val_S=0.900351 | best_S=0.901373 @epoch=5 | patience=1/5
+[2026-05-29 18:06:32] [run_09_seed_122] epoch=007 | train_loss=0.090140 | val_MAE=0.097881 | val_S=0.902119 | best_S=0.902119 @epoch=7 | patience=0/5
+[2026-05-29 18:08:31] [run_09_seed_122] epoch=008 | train_loss=0.087880 | val_MAE=0.098692 | val_S=0.901308 | best_S=0.902119 @epoch=7 | patience=1/5
+[2026-05-29 18:10:34] [run_09_seed_122] epoch=009 | train_loss=0.087413 | val_MAE=0.103843 | val_S=0.896157 | best_S=0.902119 @epoch=7 | patience=2/5
+[2026-05-29 18:12:32] [run_09_seed_122] epoch=010 | train_loss=0.085989 | val_MAE=0.100992 | val_S=0.899008 | best_S=0.902119 @epoch=7 | patience=3/5
+[2026-05-29 18:14:32] [run_09_seed_122] epoch=011 | train_loss=0.084025 | val_MAE=0.101179 | val_S=0.898821 | best_S=0.902119 @epoch=7 | patience=4/5
+[2026-05-29 18:16:35] [run_09_seed_122] epoch=012 | train_loss=0.082802 | val_MAE=0.102236 | val_S=0.897764 | best_S=0.902119 @epoch=7 | patience=5/5
+[2026-05-29 18:16:35] [run_09_seed_122] early stopping at epoch=12
+[2026-05-29 18:17:03] [run_09_seed_122] DONE | best_epoch=7 | best_val_S=0.902119 | test_MAE=0.098945 | test_R2=0.317059
+[2026-05-29 18:17:07] [FINAL] recorded run_09_seed_122 | test_MAE=0.098945 | test_R2=0.317059
+[2026-05-29 18:17:09] [FINAL] start run_10_seed_132
+[2026-05-29 18:17:10] [run_10_seed_132] START | seed=132 | hp={'learning_rate': 0.00018323185191611416, 'r': 8, 'lora_alpha': 64, 'lora_dropout': 0.05, 'weight_decay': 0.01990595122422978, 'warmup_ratio': 0.0}
+[2026-05-29 18:19:13] [run_10_seed_132] epoch=001 | train_loss=0.108788 | val_MAE=0.105708 | val_S=0.894292 | best_S=0.894292 @epoch=1 | patience=0/5
+[2026-05-29 18:21:17] [run_10_seed_132] epoch=002 | train_loss=0.100018 | val_MAE=0.102122 | val_S=0.897878 | best_S=0.897878 @epoch=2 | patience=0/5
+[2026-05-29 18:23:21] [run_10_seed_132] epoch=003 | train_loss=0.096954 | val_MAE=0.099730 | val_S=0.900270 | best_S=0.900270 @epoch=3 | patience=0/5
+[2026-05-29 18:25:23] [run_10_seed_132] epoch=004 | train_loss=0.094390 | val_MAE=0.100608 | val_S=0.899392 | best_S=0.900270 @epoch=3 | patience=1/5
+[2026-05-29 18:27:26] [run_10_seed_132] epoch=005 | train_loss=0.092738 | val_MAE=0.099963 | val_S=0.900037 | best_S=0.900270 @epoch=3 | patience=2/5
+[2026-05-29 18:29:23] [run_10_seed_132] epoch=006 | train_loss=0.090787 | val_MAE=0.099164 | val_S=0.900836 | best_S=0.900836 @epoch=6 | patience=0/5
+[2026-05-29 18:31:23] [run_10_seed_132] epoch=007 | train_loss=0.089787 | val_MAE=0.099594 | val_S=0.900406 | best_S=0.900836 @epoch=6 | patience=1/5
+[2026-05-29 18:33:23] [run_10_seed_132] epoch=008 | train_loss=0.088484 | val_MAE=0.102028 | val_S=0.897972 | best_S=0.900836 @epoch=6 | patience=2/5
+[2026-05-29 18:35:24] [run_10_seed_132] epoch=009 | train_loss=0.087018 | val_MAE=0.103907 | val_S=0.896093 | best_S=0.900836 @epoch=6 | patience=3/5
+[2026-05-29 18:37:26] [run_10_seed_132] epoch=010 | train_loss=0.085956 | val_MAE=0.100767 | val_S=0.899233 | best_S=0.900836 @epoch=6 | patience=4/5
+[2026-05-29 18:39:25] [run_10_seed_132] epoch=011 | train_loss=0.084011 | val_MAE=0.101923 | val_S=0.898077 | best_S=0.900836 @epoch=6 | patience=5/5
+[2026-05-29 18:39:25] [run_10_seed_132] early stopping at epoch=11
+[2026-05-29 18:39:56] [run_10_seed_132] DONE | best_epoch=6 | best_val_S=0.900836 | test_MAE=0.099719 | test_R2=0.307347
+[2026-05-29 18:40:01] [FINAL] recorded run_10_seed_132 | test_MAE=0.099719 | test_R2=0.307347
+[2026-05-29 18:41:58] 
+================================================================================
+Cell | Aggregate statistics, selection, and ensemble
+================================================================================
+[2026-05-29 18:41:58] [FINAL] Extra WavLM-compatible statistical artifacts saved.
+[2026-05-29 18:44:02] 
+================================================================================
+Cell | Loss diagnostics and overfit/underfit analysis
+================================================================================
+[2026-05-29 18:46:01] 
+================================================================================
+Cell | R2 and regression-to-the-mean diagnostics
+================================================================================
+[2026-05-29 18:48:04] 
+================================================================================
+Cell | Posthoc diagnostics aliases
+================================================================================
+[2026-05-29 18:48:04] Posthoc alias folder prepared: /workspace/hubert_finetune/outputs/posthoc_diagnostics
+[2026-05-29 18:50:00] 
+================================================================================
+Cell | Appendix-ready exports and artifact index
+================================================================================
+[2026-05-29 18:50:00] Notebook completed successfully.
+[2026-05-29 18:50:00] Appendix folder: /workspace/hubert_finetune/outputs/appendix_ready

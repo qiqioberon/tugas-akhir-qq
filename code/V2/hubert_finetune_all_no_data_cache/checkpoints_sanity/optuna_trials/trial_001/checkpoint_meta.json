@@ -1,0 +1,19 @@
+{
+  "run_name": "trial_001",
+  "seed": 42,
+  "best_epoch": 2,
+  "best_val_S": 0.8749189078807831,
+  "total_params": 94864773,
+  "trainable_params": 493061,
+  "hp": {
+    "learning_rate": 0.00013410758562377848,
+    "r": 8,
+    "lora_alpha": 32,
+    "lora_dropout": 0.15,
+    "weight_decay": 0.0018958594997496498,
+    "warmup_ratio": 0.0
+  },
+  "is_optuna": true,
+  "model_name": "facebook/hubert-base-ls960",
+  "experiment_name": "HuBERT_LoRA_Sanity"
+}

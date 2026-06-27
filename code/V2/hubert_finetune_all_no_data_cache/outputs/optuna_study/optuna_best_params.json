@@ -1,0 +1,8 @@
+{
+  "learning_rate": 0.00018323185191611416,
+  "r": 8,
+  "lora_alpha": 64,
+  "lora_dropout": 0.05,
+  "weight_decay": 0.01990595122422978,
+  "warmup_ratio": 0.0
+}

@@ -1,0 +1,9 @@
+Interpretasi Diagnostik Train Loss dan Validation Loss
+
+Analisis ini membaca history.csv dari setiap final run HuBERT + LoRA pada strict split.
+Train loss dihitung sebagai MAE/L1 loss, sedangkan validation loss direpresentasikan oleh val_mae_mean.
+Jumlah run terbaca: 10.
+Jumlah run dengan indikasi overfitting yang perlu dicermati: 5.
+Jumlah run dengan indikasi underfitting/optimisasi belum efektif: 10.
+
+Interpretasi ini bersifat post-hoc dan tidak mengubah hasil eksperimen utama.

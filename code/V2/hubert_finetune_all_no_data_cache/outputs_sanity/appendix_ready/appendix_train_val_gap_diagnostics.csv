@@ -1,0 +1,2 @@
+run_id,seed,best_epoch,stop_epoch,best_train_loss,best_val_loss_mae,gap_val_minus_train_best_epoch,last_train_loss,last_val_loss_mae,gap_val_minus_train_last_epoch,train_loss_improvement_first_to_last,val_loss_improvement_first_to_best,overfit_diagnosis,underfit_note
+run_01_seed_042,42,2,2,0.1221133721992373,0.1250810921192169,0.002967719919979586,0.1221133721992373,0.1250810921192169,0.002967719919979586,0.0016280170530080934,0.0003219991922377985,tidak menunjukkan overfitting berat,tidak ada indikasi underfitting yang jelas dari loss

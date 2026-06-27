@@ -1,0 +1,3 @@
+selection,run_id,seed,best_epoch,stop_epoch,best_val_S,test_MAE_mean,test_RMSE_mean,test_R2_mean,test_Acc_mean,checkpoint_path
+best_val,run_01_seed_042,42,2,2,0.8749189078807831,0.1176608353853225,0.1435169726610183,-0.0211141347885131,0.8823391795158386,/workspace/hubert_finetune/checkpoints_sanity/final_runs/run_01_seed_042/best_model.pt
+median,run_01_seed_042,42,2,2,0.8749189078807831,0.1176608353853225,0.1435169726610183,-0.0211141347885131,0.8823391795158386,/workspace/hubert_finetune/checkpoints_sanity/final_runs/run_01_seed_042/best_model.pt

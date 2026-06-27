@@ -1,0 +1,3 @@
+state,count
+TrialState.COMPLETE,30
+TrialState.PRUNED,20

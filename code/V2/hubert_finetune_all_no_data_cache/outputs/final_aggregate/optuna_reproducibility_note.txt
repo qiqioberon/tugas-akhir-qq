@@ -1,0 +1,6 @@
+Optuna reproducibility note:
+- N_TRIALS = 50
+- Remaining trials dihitung dari total len(study.trials), bukan jumlah COMPLETE.
+- Sampler tidak dibuat eksplisit agar sesuai dengan notebook WavLM.
+- Pruner = <optuna.pruners._median.MedianPruner object at 0x7f1bb2a3da90>
+- Selection metric = validation S = 1 - MAE mean.

@@ -1,0 +1,11 @@
+run_id,seed,best_epoch,stop_epoch
+run_01_seed_042,42,5,10
+run_02_seed_052,52,3,8
+run_03_seed_062,62,5,10
+run_04_seed_072,72,5,10
+run_05_seed_082,82,5,10
+run_06_seed_092,92,8,13
+run_07_seed_102,102,6,11
+run_08_seed_112,112,6,11
+run_09_seed_122,122,7,12
+run_10_seed_132,132,6,11
