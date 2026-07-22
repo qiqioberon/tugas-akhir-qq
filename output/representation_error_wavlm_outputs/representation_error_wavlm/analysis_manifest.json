@@ -1,0 +1,48 @@
+{
+  "analysis_scope": "Frozen-backbone Ridge baseline error paired with the pooled embedding actually used by that baseline; not a post-LoRA representation analysis.",
+  "baseline_zip": "/mnt/data/baseline_strict(1).zip",
+  "model": "wavlm",
+  "zip_members": {
+    "train_embedding": "baseline_strict/embeddings/wavlm/train_emb.npy",
+    "train_clip_id": "baseline_strict/embeddings/wavlm/train_clip_id.csv",
+    "test_embedding": "baseline_strict/embeddings/wavlm/test_emb.npy",
+    "test_clip_id": "baseline_strict/embeddings/wavlm/test_clip_id.csv",
+    "test_predictions": "baseline_strict/results/wavlm/pred_test_full.csv"
+  },
+  "train_embedding_shape": [
+    5936,
+    768
+  ],
+  "test_embedding_shape": [
+    2039,
+    768
+  ],
+  "paired_test_rows": 2039,
+  "embedding_dimension": 768,
+  "group_size_each_10pct": 204,
+  "pca_fit_scope": "standardized training embeddings only",
+  "centroid_distance_scope": "Euclidean distance after StandardScaler fitted on training embeddings only",
+  "checks": {
+    "train_clip_id_duplicates": 0,
+    "test_clip_id_duplicates": 0,
+    "prediction_clip_id_duplicates": 0,
+    "pairing_counts": {
+      "both": 2039,
+      "left_only": 0,
+      "right_only": 0
+    },
+    "train_embedding_has_nan": false,
+    "train_embedding_has_inf": false,
+    "test_embedding_has_nan": false,
+    "test_embedding_has_inf": false
+  },
+  "outputs": [
+    "representation_error_per_sample.csv",
+    "representation_error_correlations.csv",
+    "error_group_comparison_10pct.csv",
+    "pca_explained_variance.csv",
+    "pca_embedding_test_colored_by_mae.png",
+    "embedding_norm_vs_mae.png",
+    "centroid_distance_vs_mae.png"
+  ]
+}
